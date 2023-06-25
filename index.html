@@ -1,0 +1,369 @@
+<!DOCTYPE html
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="./imagem/icon.png" type="x-icon">
+		<title>Escola Leticia</title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+
+		<style scoped>
+
+			:root{ /* #1b204f */  /* 1956ac */
+			--corPrincipal:  #091930; /* Azul Escuro: */
+			--corSecundaria: #163259; /*Azul Medio */
+			--corTerceira: #060427 ; /*Azul Normal*/
+			--corQuarta: #5089D8; /* Azul Claro*/
+			--text: black; /* Texto */
+			--textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
+			--destaque: #d94241; /* Vermelho */
+			--fontNegrito: 'Ysabeau', sans-serif;
+            }
+			
+			*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+          }
+			
+			body{
+   	     font-family: 'Montserrat', sans-serif;
+			background-color: white;
+			color: white;
+			user-select: none;
+            }
+            
+            .navbar{
+            width: 100vw;
+            height: 120px;
+            background-color: var(--corSecundaria);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            z-index: 10;
+            }
+            
+            .navbar-right{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            background: var(--corSecundaria);
+            position: relative;
+            }
+            
+            .navbar-right ion-icon{
+            position: absolute;
+            right: 35;
+            top: 35;
+            width: 60px;
+            height: 60px;
+            color: white;
+            cursor: pointer;
+            }
+            
+            #abrirMenu{
+            display: block;
+            }
+            
+            #fecharMenu{
+            display: none;
+            }
+            
+            .navbar-left{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            background: var(--corSecundaria);
+            }
+            
+            .navbar-left img{
+            width: 170px;
+            height: 170px;
+            margin-bottom: 20px;
+            }
+            
+            /* --- Container --- */
+            
+            .container{
+            margin-top: 10px;
+            margin-left: 1vw;
+            width: 98vw;
+            border: 2px solid var(--corSecundaria);
+            position: relative;
+            padding-bottom: 20px;
+            }
+            
+            .container-titulo{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: var(--corSecundaria);
+            display: flex;
+            align-items: center;
+            }
+            
+            .container-titulo h1{
+            font-size: 18px;
+            color: whtie;
+            margin-left: 10px;
+            }
+            
+            .content{
+            position: relative;
+            top: 10;
+            left: 50%;
+            transform: translate(-50%, -0%);
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--corTerceira);
+            padding-bottom: 15px;
+            }
+            
+            .content h1{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 26px;
+            }
+            
+            .content-text{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            }
+            
+            .content-text p{
+            font-size: 17px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 1px black;
+            }
+            
+            .content-text a{
+            color: var(--corQuarta);
+            font-size: 17px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 1px black;
+            }
+            
+            .content-text button{
+            width: 110px;
+            height: 29px;
+            border: none;
+            border-radius: 2px;
+            background: var(--corQuarta);
+            color: white;
+            box-shadow: 1.5px 2px 1px var(--corQuarta);
+            cursor: pointer;
+            transition: all .2s ease-in;
+            }
+            
+            .content-text button:hover{
+            color: white;
+            text-shadow: 0 0 10px white;
+            background-color: #000000;
+            box-shadow: 1.5px 2px 1px black;
+            }
+            
+            /* Navgation em baixo */
+            
+            .navgation{
+            margin: 1vw;
+            width: 98vw;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+             
+            .navgation-pagins{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 50%;
+            }
+            
+            .navgation-pagins a{
+            padding: 10px;
+            color: var(--corQuarta);
+            font-size: 17px;
+            text-shadow: 0 0 1px black;
+            }
+            
+            .navgation-pagins a:hover{
+            transition: all .3s ease-in;
+            color: var(--corTerceira);
+            }
+            
+            .navgation-creditos{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            width: 100%;
+            height: 50%;
+            }
+            
+            .navgation-creditos p{
+            color: black;
+            text-shadow: 0 0 1px black;
+            font-size: 16px;
+            }
+            
+            /* MenuPagin */
+            
+            .menuPagin{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 110px;
+            background-color: var(--corSecundaria);
+            color: black;
+            z-index: 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            
+            .menuPagin a{
+            color: white;
+            font-size: 17px;
+            padding: 12px;
+            }
+            
+            .menuPagin a:hover{
+            color: var(--corQuarta);
+            transition: all .2s ease-in;
+            }
+            																
+		</style>
+		
+		<body>
+			
+			<nav class="navbar">
+				
+				<nav class="navbar-left">
+					<img src="./imagem/logo.png"/>
+				</nav>
+				
+				<nav class="navbar-right">
+						<ion-icon id="abrirMenu" name="menu-outline"></ion-icon>
+						<ion-icon id="fecharMenu" name="close-outline"></ion-icon>
+				</nav>
+				
+		
+			</nav>
+			
+			 <!-- MenuPagin -->
+				
+				<div class="menuPagin">
+					<div class="menuPagin-pagins">
+						<a href="#">Sobre</a>
+						<a href="#">Contato</a>
+						<a href="./termos.html">Termos / Privacidade</a>
+					</div>
+				</div>
+			
+			<main class="container">
+				
+				<div class="container-titulo">
+					<h1>Bem Vindo ao Site Leticia </h1>
+				</div>
+				
+				<div class="content">
+					
+					<h1>[  Bem Vindo ao Leticia  ]</h1>
+					
+					<div class="content-text">
+					<p>O website Leticia foi criado para divulgaçao de noticias escolares e publicaçoes importantes (Datas,  Horarios, etc...)</p>
+					
+					<p>O acesso ao site so pode ser liberado para alunos e professores da escola
+					"E.E PROFA Leticia Godoy Bueno da Carvalho Lopes"</p>
+					
+					<p>O site Leticia possui:
+					<br>* Horarios de aulas e reunioes
+					<br>* Datas de provas externas e interna
+					<br>* Novidades da Escola</p>
+					
+					
+					<p>Para <a href="./login.html">entrar</a>, clique no bottao Login</p>
+					
+					<button onclick="login()">Login</button>
+					
+					</div>
+					
+					
+				</div>
+				
+			</main>
+			
+			<main class="navgation">
+				
+				<div class="navgation-pagins">
+					<a href="">Sobre</a>
+					<a href="">Contato</a>
+					<a href="./termos.html">Termos / Privacidade</a>
+				</div>
+				
+				<div class="navgation-creditos">
+					<p>Aluno Production
+					<br>Leticia @ 2023</p>
+				</div>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+
+		<script>
+		
+		function login(){
+		window.location.href = "./login.html";
+		}
+			
+			
+		// MENU
+		var abrirMenu = document.getElementById("abrirMenu");
+		var fecharMenu = document.getElementById("fecharMenu");
+		var container = document.querySelector(".container");
+		var menuPagin = document.querySelector(".menuPagin");
+		abrirMenu.addEventListener("click", openMenu);
+		fecharMenu.addEventListener("click", closeMenu);
+			
+			function openMenu(){
+			menuPagin.style.transition = "top .2s ease-in";
+			menuPagin.style.top = "105";
+			container.style.transition = "margin-top .2s ease-in";
+			container.style.marginTop = "105px";
+			abrirMenu.style.display = "none";
+			fecharMenu.style.display = "block";
+			}
+			
+			function closeMenu(){menuPagin.style.top = "0";
+			container.style.marginTop = "10px";
+			fecharMenu.style.display = "none";
+			abrirMenu.style.display = "block";
+			}
+			
+			
+		</script>
+	
+			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
