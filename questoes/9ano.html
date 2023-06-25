@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="./imagem/icon.png" type="x-icon">
+		<link rel="icon" href="../imagem/icon.png" type="x-icon">
 		<title>Escola Leticia / Questoes - 9ano</title>
 		
         <style>
@@ -22,7 +22,7 @@
 			--textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
 			--destaque: #d94241; /* Vermelho */
 			--fontNegrito: 'Ysabeau', sans-serif;
-            }
+      }
 			
 			*{
 			padding: 0;
@@ -221,22 +221,24 @@
             }
             
             .matematica-content{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+	            display: flex;
+	            flex-direction: column;
+	            justify-content: center;
+	            align-items: center;
             }
             
             .matematica-text{
-            width: 80%;
-            text-align: center;
-            border: 1px solid var(--corQuarta);
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            }
+            	background-color: #f1f1f1;
+	            width: 80%;
+	            text-align: center;
+	            border: 1px solid var(--corQuarta);
+	            margin-top: 20px;
+	            margin-bottom: 20px;
+	            border-radius: 5px;
+	            display: flex;
+	            flex-direction: column;
+	            align-items: flex-start;
+	           }
             
             .matematica-text h2{
             margin-bottom: 10px;
@@ -269,17 +271,49 @@
             padding-left: 20px;
             }
             
-            .alternativas a{ 
+            .alternativas a{
             font-size: 16px;
             font-weight: 400;
-            cursor: pointer;
             }
             
-            .alternativas a:hover{ 
-            transition: all .1s ease-in;
-            color: gray;
-            text-shadow: 0 0 10px gray;
+            .figura {
+            	width: 100%;
+            	height: 195px;
+            	display: flex;
+            	justify-content: center;
+            	align-items: center;
             }
+            
+            .retangulo {
+            	width: 80%;
+            	height: 125px;
+            	background-color: #95BFD5;
+            	border: 2px solid var(--corQuarta);
+            	position: relative;
+            }
+            
+            .retangulo h4 {
+            	font-size: 18px;
+            	color: #191919;
+            	position: absolute;
+            	top: -30;
+            	left: 50%;
+            	transform: translateX(-50%);
+            }
+            
+            .retangulo h5 {
+            	font-size: 18px;
+            	color: #191919;
+            	position: absolute;
+            	top: 50%;
+            	right: -50;
+            	transform: translateY(-50%);
+            }
+            
+            .ultima {
+            	margin-bottom: 50px;
+            }
+          
             																
 		</style>
 		
@@ -288,7 +322,7 @@
 			<nav class="navbar">
 				
 				<nav class="navbar-left">
-					<img src="./imagem/logo.png"/>
+					<img src="../imagem/logo.png"/>
 				</nav>
 				
 				<nav class="navbar-right">
@@ -304,9 +338,9 @@
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
 						<a href="../home.html">Home</a>
-						<a href="#">Sobre</a>
+						<a href="../sobre.html">Sobre</a>
 						<a href="#">Contato</a>
-						<a href="./termos.html">Termos / Privacidade</a>
+						<a href="../termos.html">Termos / Privacidade</a>
 					</div>
 				</div>
 			
@@ -327,11 +361,109 @@
 								<h2>Questao 1</h2>
 								<p>A soma das solucoes da equacao x^2 + 4x -5 = 0 e igual a:</p>
 								<div class="alternativas">
-									<a onclick="errado()">( A ) -5</a><br>
-									<a onclick="certo()">( B ) -4</a><br>
-									<a onclick="errado()">( C ) -1</a><br>
-									<a onclick="errado()">( D ) 0</a><br>
-									<a onclick="errado()">( E ) 1</a>
+									<a>( A ) -5</a><br>
+									<a>( B ) -4</a><br>
+									<a>( C ) -1</a><br>
+									<a>( D ) 0</a><br>
+									<a>( E ) 1</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 2</h2>
+								<p>Uma regiao retangular texe as suas dimensoes descritas em metros, conforme a imagem a seguir:</p>
+								<div class="figura">
+									<div class="retangulo">
+										<h4>(X+3)</h4>
+										<h5>(X-1)</h5>
+									</div>
+								</div>
+								<p>O valor de x que faz que a area dessa regiao seja igual a 21 e:</p>
+								<div class="alternativas">
+									<a>( A ) -5</a><br>
+									<a>( B ) -4</a><br>
+									<a>( C ) -1</a><br>
+									<a>( D ) 0</a><br>
+									<a>( E ) 1</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 3</h2>
+								<p>Dadas as equaçoes quadraticas abaixo, sabendo que a = 1, qual e a equaçao que possui as soluçoes x1 = 2 e x2 = -3?</p>
+								<div class="alternativas">
+									<a>( A ) x^2 + x - 6 = 0</a><br>
+									<a>( B ) x^2 - x - 6 = 0</a><br>
+									<a>( C ) x^2 + 5x + 6 = 0</a><br>
+									<a>( D ) x^2 - 5x + 6 = 0</a><br>
+									<a>( E ) x^2 + x - 1 = 0</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 4</h2>
+								<p>O produto entre as raizes da equaçao 2x^2 + 4x - 6 = 0 e igual a:</p>
+								<div class="alternativas">
+									<a>( A ) -2</a><br>
+									<a>( B ) 2</a><br>
+									<a>( C ) 1</a><br>
+									<a>( D ) 3</a><br>
+									<a>( E ) -3</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 5</h2>
+								<p>A multiplicaçao entre a idade de Isadora e a idade de Vitor e igual a 374. Isadora e 5ano mais velha que Vitor. Quantos anos Isadora e Vitor possuem respectivamente?</p>
+								<div class="alternativas">
+									<a>( A ) 12 e 17anos</a><br>
+									<a>( B ) 17 e 22anos</a><br>
+									<a>( C ) 22 e 27anos</a><br>
+									<a>( D ) 20 e 25anos</a><br>
+									<a>( E ) 18 e 23anos</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 6</h2>
+								<p>Dada a equaçao -x^2 - 4x + 5 = 0, podemos afirmar que o conjunto verdade dessa equaçao e:</p>
+								<div class="alternativas">
+									<a>( A ) V = { 2 , -1 }</a><br>
+									<a>( B ) V = { -10 , -1 }</a><br>
+									<a>( C ) V = { -5 , 1 }</a><br>
+									<a>( D ) V = { 5 , 1 }</a><br>
+									<a>( E ) V = { 6 , -6 }</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text">
+								<h2>Questao 7</h2>
+								<p>(Fatec) Se a equaçao x^2 - 10x + k = 0 tem uma raiz de multiplicidade 2, entao o valor de k e:</p>
+								<div class="alternativas">
+									<a>( A ) 100</a><br>
+									<a>( B ) 25</a><br>
+									<a>( C ) 5</a><br>
+									<a>( D ) 1</a><br>
+									<a>( E ) 0</a>
+								</div>
+								
+							</div>
+							
+							<div class="matematica-text ultima">
+								<h2>Questao 8</h2>
+								<p>(UERGS) Sendo S a soma e P o produto das raizes da equaçao 2x^2 - 5x - 7 = 0, pode-se afirmar que:</p>
+								<div class="alternativas">
+									<a>( A ) S - P = 6</a><br>
+									<a>( B ) S + P = 2</a><br>
+									<a>( C ) S . P = 4</a><br>
+									<a>( D ) S / P = 1</a><br>
+									<a>( E ) S < P </a>
 								</div>
 								
 							</div>
@@ -347,9 +479,9 @@
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
-					<a href="">Sobre</a>
+					<a href="../sobre.html">Sobre</a>
 					<a href="">Contato</a>
-					<a href="./termos.html">Termos / Privacidade</a>
+					<a href="../termos.html">Termos / Privacidade</a>
 				</div>
 				
 				<div class="navgation-creditos">
@@ -383,12 +515,12 @@
 			fecharMenu.style.display = "block";
 			}
 			
-			function closeMenu(){menuPagin.style.top = "0";
+			function closeMenu(){
+			menuPagin.style.top = "0";
 			container.style.marginTop = "10px";
 			fecharMenu.style.display = "none";
 			abrirMenu.style.display = "block";
 			}
-			
 			
 		</script>
 	
