@@ -272,7 +272,7 @@
 				
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
-						<a href="#">Sobre</a>
+						<a href="./sobre.html">Sobre</a>
 						<a href="#">Contato</a>
 						<a href="./termos.html">Termos / Privacidade</a>
 					</div>
@@ -314,7 +314,7 @@
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
-					<a href="">Sobre</a>
+					<a href="./sobre.html">Sobre</a>
 					<a href="">Contato</a>
 					<a href="./termos.html">Termos / Privacidade</a>
 				</div>
@@ -365,5 +365,144 @@
 	
 			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
+					<a id="horarios">Horarios</a>
+                    <a href="#">Informacoes</a>
+					<a href="#">Provas</a>
+					<a id="fim" href="./sobre.html">Sobre</a>
+                    
+                    <div class="periodo">
+                        <a class="tarde" href="./periodo/tarde.html">Tarde</a>
+                        <a class="manha" href="./periodo/manha.html">Manha</a>
+                    </div>
+
+                </div>
+
+						
+			</div>
+			<!-- Fim da Navigation -->
+	
+					<!-- Container -->
+				
+				<main class="container">
+				
+				<!-- Div Noticias Recentes-->	
+					
+				<div class="noticias">
+					<h1>Noticias Recentes</h1>
+					
+					<div class="noticiasContent">
+					
+						<h2>Ganhadora da obmep</h2>
+						<img src="./imagem/obmep.jpg"/>
+						<p>Uma aluna da nossa escola "Isadora Provasi Ramos de Jesus" ganhou a medalha de bronze da Obmep...
+						<a id="noticiasMais" onclick="noticiasMais()">Ler mais</a> </p>
+						
+					</div>
+					
+				</div>	
+						
+				<!-- Div Destaque -->	
+					<div class="destaque">
+						<h1>Destaques</h1>
+									
+						<div class="destaqueContent">
+							
+							<h2>Novo Gremio</h2>
+							<img src="./imagem/gremio.jpg"/>
+							
+							<p>Novo gremio estudantil do leticia: A chapa revolucionarios ganhou a eleicao do gremio e agora tem uma grande impor-tancia para escola...
+							<a id="destaqueMais" onclick="destaqueMais()">
+							Ler mais
+							</a>
+							</p>
+								
+							</div>
+															
+					</div>
+								
+				</main>
+				
+				<!-- Noticias Recentes Grande -->
+				
+				<main class="containerNoticias">
+					
+					<div class="noticiasGrande">
+					<h1>Noticias Recentes</h1>
+					
+					<div class="noticiasContentGrande">
+					
+						<h2>Ganhadora da obmep</h2>
+						<img src="./imagem/obmep.jpg"/>
+						<p>Uma aluna da nossa escola "Isadora Provasi de" no 8ano ganhou a medalha de bronze da Obmep </p>
+						
+					</div>
+					
+				</main>
+				
+				<!-- Destaque Grande -->
+				
+				<main class="containerDestaques">
+				
+					<div class="destaqueGrande">
+						<h1>Destaques</h1>
+									
+						<div class="destaqueContentGrande">
+					
+						<div class="destaqueGrandeTitulo">
+							<h2>Novo Gremio Estudantil</h2>
+							<img src="./imagem/gremio.jpg"/>
+						</div>
+						
+							<div class="destaqueGrandeText">
+							<p>Novo gremio estudantil do leticia, a chapa revolucionarios ganhou a eleicao do gremio e agora tem uma grande importancia para escola. O gremio contem 14 integrantes,
+                              com cargos como: presidente geral, cordenador de eventos, cordenador de esportes, cordenador de comunicacao e etc...
+							</p>
+							</div>
+								
+							</div>
+															
+					</div>
+					
+				</main>
+		
+		</body>
+
+			<script>
+			
+			
+			var container = document.querySelector('.container');
+			var containerDestaques = document.querySelector('.containerDestaques');
+			var containerNoticias = document.querySelector('.containerNoticias');
+			
+			function destaqueMais() {
+			container.style.display = 'none';
+			containerDestaques.style.display = 'flex';
+			}
+			
+			function noticiasMais(){
+			container.style.display = 'none';
+			containerNoticias.style.display = 'flex';
+			}
+			
+   		var horarios = document.getElementById("horarios");
+   		var tarde = document.querySelector(".tarde");
+   		var manha = document.querySelector(".manha");
+   		
+     	  horarios.addEventListener("click", function(){
+     	  	
+     	  	if ( tarde.style.display === "none" & manha.style.display === "none"){
+     	  		tarde.style.display = "block";
+     	  		manha.style.display = "block";
+     	  	}else {
+     	  		tarde.style.display = "none";
+     	  		manha.style.display = "none";
+     	  	}
+     	  	
+     	  });
+            
+			
+			</script>
 
 </html>

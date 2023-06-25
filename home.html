@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="./imagem/icon.png" type="x-icon">
+		<link type="stylesheet" src="./style.css">
 		<title>Escola Leticia / Home</title>
 		
         <style>
@@ -23,14 +24,15 @@
 			--destaque: #d94241; /* Vermelho */
 			--fontNegrito: 'Ysabeau', sans-serif;
             --fontSans: 'Open Sans', sans-serif;
-            }
+   }
 			
 			*{
 			padding: 0;
 			margin: 0;
+			border: 0;
 			box-sizing: border-box;
 			text-decoration: none;
-           }
+    }
 			
 			body{
    	     font-family: 'Montserrat', sans-serif;
@@ -411,6 +413,23 @@
   		  font-weight: 500;
   		  }
   		  
+  		  @media (max-width: 600px){
+  		      
+  		      .tabela-desafio{
+  		          font-size: 11px;
+  		          font-weight: 400;
+  		      }
+  		      
+  		      .tabela-desafio th {
+  		          padding: 5px;
+  		      }
+  		      
+  		      .tabela-desafio td {
+  		          padding: 5px;
+  		      }
+  		      
+  		  }
+  		  
   		  .tabela-desafio th{
   		  border: 2px solid black;
   		  padding: 10px;
@@ -444,7 +463,7 @@
   		  }
   		  
   		  .simulado h1{
-  		  bwidth: 100%;
+  		  width: 100%;
   		  height: 30px;
   		  background-color: var(--corSecundaria);
   		  color: white;
@@ -459,6 +478,13 @@
   		  display: flex;
   		  flex-direction: column;
   		  align-items: center;
+  		  }
+  		  
+  		  .simulado video {
+  		  	width: 90%;
+  		  	height: 300px;
+  		  	border: 2px solid black;
+  		  	margin-top: 20px;
   		  }
   		  
   		  .simulado-content h2{
@@ -502,7 +528,7 @@
   		  }
   		  
   		                                              
-          </style>
+      </style>
 		
 		<body>
 			
@@ -524,7 +550,7 @@
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
 						<a href="./home.html">Home</a>
-						<a href="#">Sobre</a>
+						<a href="./sobre.html">Sobre</a>
 						<a href="#">Contato</a>
 						<a href="./termos.html">Termos / Privacidade</a>
 					</div>
@@ -539,9 +565,16 @@
 				<div class="content">
 					
 					<div class="simulado">
+					
 						<h1>Questoes de Vestibulares</h1>
 						
 						<div class="simulado-content">
+							
+							<video controls>
+							<source src="./imagem/vestibular.mp4" type="video/mp4">
+							Carregando...
+						</video>
+							
 							<h2>[  Questoes Testes  ]</h2>
 							
 							<div class="simulado-text">
@@ -631,24 +664,7 @@
 							</table>
 							
 					</div>
-					
-					<!-- Noticias -->
-					<div class="noticias">
-						<h1>Noticias</h1>
-						
-						<div class="noticias-content">
-							
-							<img src="./imagem/obmep.jpg"/>
-							
-							<div class="noticias-text">
-								<h2>Ganhadores Obmep (1 fase)</h2>
-								<p>O total de alunos que passaram na 1 fase da OBMEP 2023 em nossa escola foi de .., sendo do 9anoA, 9anoB, 8anoA, 8anoB</p>
-							</div>
-							
-						</div>
-						
-					</div>
-					
+									
 					<!-- Informacoes -->
 					<div class="informacoes">
 						<h1>Informaçoes</h1>
@@ -697,7 +713,7 @@
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
-					<a href="">Sobre</a>
+					<a href="./sobre.html">Sobre</a>
 					<a href="">Contato</a>
 					<a href="./termos.html">Termos / Privacidade</a>
 				</div>

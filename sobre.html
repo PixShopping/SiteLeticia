@@ -205,8 +205,112 @@
             padding-bottom: 15px;
             }
             
+            /*------------------------
+            		  SOBRE
+            ------------------------*/
             
-            																
+            .content h1 {
+            	font-size: 24px;
+            	font-weight: 500;
+            	color: #191919;
+            	margin-top: 20px;
+            	margin-bottom: 20px;
+            }
+            
+            .content img {
+            	width: 80%;
+            	border: 2px solid black;
+            	margin-bottom: 20px;
+            }
+            
+            .content h2 {
+            	color: var(--corSecundaria);
+            	text-transform: uppercase;
+            	font-size: 22px;
+            	font-weight: 800;
+            	margin-bottom: 15px;
+            }
+            
+            .tabela-sobre {
+            	color: #000;
+            	border-collapse: collapse;
+            	margin-bottom: 25px;
+            }
+            
+            .tabela-sobre tr {
+            	border: 2px solid black;
+            	padding: 5px;
+            }
+            
+            .tabela-sobre th {
+            	padding: 10px;
+            	border: 2px solid black;
+            	font-size: 16px;
+            	font-weight: 700;
+            	background-color: var(--corSecundaria);
+            	color: white;
+            }
+            
+            .tabela-sobre td {
+            	padding: 10px;
+            	border: 2px solid black;
+            	font-size: 16px;
+            	font-weight: 600;
+            	color: #191919;
+            }
+            
+            @media (max-width: 600px){
+            	
+	            .tabela-sobre th {
+	            	padding: 7px;
+	            	font-size: 15px;
+	            	font-weight: 700;
+	            }
+	            
+	            .tabela-sobre td {
+	            	padding: 7px;
+	            	font-size: 15px;
+	            	font-weight: 600;
+	            }
+            	
+            }
+            
+            /*---------------------
+            	   GOVERNO
+            ---------------------*/
+            
+            .governo {
+            	width: 100%;
+            	height: 200px;
+            	background-color: #333;
+            	color: white;
+            	display: flex;
+            	flex-direction: column;
+            	align-items: center;
+            	text-align: center;
+            }
+            
+            .governo h1 {
+            	color: white;
+            	font-size: 18px;
+            	font-weight: 500;
+            	margin-bottom: 4px;
+            }
+            
+            .governo p {
+            	color: gray;
+            	font-size: 14px;
+            	font-weight: 500;
+            	width: 80%;
+            	margin-bottom: 8px;
+            }
+            
+            .governo img {
+            	width: 100px;
+            	height: 100px;
+            }
+            
+  
 		</style>
 		
 		<body>
@@ -238,12 +342,52 @@
 			<main class="container">
 				
 				<div class="container-titulo">
-					<h1>Sobre nos</h1>
+					<h1>Sobre</h1>
 				</div>
 				
 				<div class="content">
 					
 					<h1>[  Sobre  ]</h1>
+					<img src="./imagem/escola.jpg">
+					<h2>Informaçoes</h2>
+					
+					<table class="tabela-sobre">
+						
+						<tr>
+							<th>Nome da escola</th>
+							<td>Leticia de Godoy Bueno de Carvalho Lopes PROFA</td>
+						</tr>
+						
+						<tr>
+							<th>Tipo de escola</th>
+							<td>E.E (Escola Estadual)</td>
+						</tr>
+						
+						<tr>
+							<th>Endereço</th>
+							<td>Avenida Pedro Galeazi, 370 - Jardim das Roseiras - Araraquara</td>
+						</tr>
+						
+						<tr>
+							<th>CEP</th>
+							<td>14806015</td>
+						</tr>
+						
+						<tr>
+							<th>Telefone</th>
+							<td>(16) 33242256</td>
+						</tr>
+						
+					</table>
+					
+					<div class="governo">
+						
+						<h1>Secretaria da Educaçao do Estado de Sao Paulo</h1>
+						<p>Praça da Republica, 53 - Centro - CEP 01045-903 - Sao Paulo / SP - Brasil - Tel: 0800 77 000 12</p>
+						<img src="./imagem/SaoPaulo.png">
+						
+												
+					</div>
 					
 				</div>
 				
@@ -252,8 +396,8 @@
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
-					<a href="">Sobre</a>
-					<a href="">Contato</a>
+					<a href="#">Sobre</a>
+					<a href="#">Contato</a>
 					<a href="./termos.html">Termos / Privacidade</a>
 				</div>
 				
