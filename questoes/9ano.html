@@ -1,0 +1,398 @@
+<!DOCTYPE html
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="./imagem/icon.png" type="x-icon">
+		<title>Escola Leticia / Questoes - 9ano</title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+
+		<style scoped>
+
+			:root{ /* #1b204f */  /* 1956ac */
+			--corPrincipal:  #091930; /* Azul Escuro: */
+			--corSecundaria: #163259; /*Azul Medio */
+			--corTerceira: #060427 ; /*Azul Normal*/
+			--corQuarta: #5089D8; /* Azul Claro*/
+			--text: black; /* Texto */
+			--textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
+			--destaque: #d94241; /* Vermelho */
+			--fontNegrito: 'Ysabeau', sans-serif;
+            }
+			
+			*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+          }
+			
+			body{
+   	     font-family: 'Montserrat', sans-serif;
+			background-color: white;
+			color: white;
+			user-select: none;
+            }
+            
+            .navbar{
+            width: 100vw;
+            height: 120px;
+            background-color: var(--corSecundaria);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            z-index: 10;
+            }
+            
+            .navbar-right{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            background: var(--corSecundaria);
+            position: relative;
+            }
+            
+            .navbar-right ion-icon{
+            position: absolute;
+            right: 35;
+            top: 35;
+            width: 60px;
+            height: 60px;
+            color: white;
+            cursor: pointer;
+            }
+            
+            #abrirMenu{
+            display: block;
+            }
+            
+            #fecharMenu{
+            display: none;
+            }
+            
+            .navbar-left{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            background: var(--corSecundaria);
+            }
+            
+            .navbar-left img{
+            width: 170px;
+            height: 170px;
+            margin-bottom: 20px;
+            }
+            
+            /* Navgation em baixo */
+            
+            .navgation{
+            margin: 1vw;
+            width: 98vw;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+             
+            .navgation-pagins{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 50%;
+            }
+            
+            .navgation-pagins a{
+            padding: 10px;
+            color: var(--corQuarta);
+            font-size: 17px;
+            text-shadow: 0 0 1px black;
+            }
+            
+            .navgation-pagins a:hover{
+            transition: all .3s ease-in;
+            color: var(--corTerceira);
+            }
+            
+            .navgation-creditos{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            width: 100%;
+            height: 50%;
+            }
+            
+            .navgation-creditos p{
+            color: black;
+            text-shadow: 0 0 1px black;
+            font-size: 16px;
+            }
+            
+            /* MenuPagin */
+            
+            .menuPagin{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 110px;
+            background-color: var(--corSecundaria);
+            color: black;
+            z-index: 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            
+            .menuPagin a{
+            color: white;
+            font-size: 17px;
+            padding: 12px;
+            }
+            
+            .menuPagin a:hover{
+            color: var(--corQuarta);
+            transition: all .2s ease-in;
+            }
+            
+            /* --- Container --- */
+            
+            .container{
+            margin-top: 10px;
+            margin-left: 1vw;
+            width: 98vw;
+            border: 2px solid var(--corSecundaria);
+            position: relative;
+            padding-bottom: 20px;
+            }
+            
+            .container-titulo{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: var(--corSecundaria);
+            display: flex;
+            align-items: center;
+            }
+            
+            .container-titulo h1{
+            font-size: 18px;
+            color: whtie;
+            margin-left: 10px;
+            }
+            
+            .content{
+            position: relative;
+            top: 10;
+            left: 50%;
+            transform: translate(-50%, -0%);
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--corTerceira);
+            padding-bottom: 15px;
+            }
+            
+            .matematica{
+            width: 100%;
+            border: 2px solid var(--corSecundaria);
+            }
+            
+            .matematica h1{
+            width: 100%;
+            height: 30px;
+            background-color: var(--corSecundaria);
+            color: white;
+            font-size: 20px;
+            padding-top: 4px;
+            padding-left: 10px;
+            }
+            
+            .matematica-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            
+            .matematica-text{
+            width: 80%;
+            text-align: center;
+            border: 1px solid var(--corQuarta);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            }
+            
+            .matematica-text h2{
+            margin-bottom: 10px;
+            font-size: 21px;
+            font-weight: 600;
+            width: 100%;
+            height: 35px;
+            background-color: var(--corQuarta);
+            padding-top: 2px;
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px 5px 0px 0px; 
+            color: white;
+            text-shadow: 0 0 1px black;
+            }
+            
+            .matematica-text p{
+            margin-bottom: 15px;
+            font-size: 17px;
+            padding-left: 20px;
+            padding-right: 20px;
+            }
+            
+            .alternativas{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            }
+            
+            .alternativas a{ 
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            }
+            
+            .alternativas a:hover{ 
+            transition: all .1s ease-in;
+            color: gray;
+            text-shadow: 0 0 10px gray;
+            }
+            																
+		</style>
+		
+		<body>
+			
+			<nav class="navbar">
+				
+				<nav class="navbar-left">
+					<img src="./imagem/logo.png"/>
+				</nav>
+				
+				<nav class="navbar-right">
+						<ion-icon id="abrirMenu" name="menu-outline"></ion-icon>
+						<ion-icon id="fecharMenu" name="close-outline"></ion-icon>
+				</nav>
+				
+		
+			</nav>
+			
+			 <!-- MenuPagin -->
+				
+				<div class="menuPagin">
+					<div class="menuPagin-pagins">
+						<a href="../home.html">Home</a>
+						<a href="#">Sobre</a>
+						<a href="#">Contato</a>
+						<a href="./termos.html">Termos / Privacidade</a>
+					</div>
+				</div>
+			
+			<main class="container">
+				
+				<div class="container-titulo">
+					<h1>Questoes 9ano</h1>
+				</div>
+				
+				<div class="content">
+					
+					<div class="matematica">
+						<h1>Matematica</h1>
+						
+						<div class="matematica-content">
+						
+							<div class="matematica-text">
+								<h2>Questao 1</h2>
+								<p>A soma das solucoes da equacao x^2 + 4x -5 = 0 e igual a:</p>
+								<div class="alternativas">
+									<a onclick="errado()">( A ) -5</a><br>
+									<a onclick="certo()">( B ) -4</a><br>
+									<a onclick="errado()">( C ) -1</a><br>
+									<a onclick="errado()">( D ) 0</a><br>
+									<a onclick="errado()">( E ) 1</a>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</main>
+			
+			<main class="navgation">
+				
+				<div class="navgation-pagins">
+					<a href="">Sobre</a>
+					<a href="">Contato</a>
+					<a href="./termos.html">Termos / Privacidade</a>
+				</div>
+				
+				<div class="navgation-creditos">
+					<p>Aluno Production
+					<br>Leticia @ 2023</p>
+				</div>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+
+		<script>
+	
+			
+		// MENU
+		var abrirMenu = document.getElementById("abrirMenu");
+		var fecharMenu = document.getElementById("fecharMenu");
+		var container = document.querySelector(".container");
+		var menuPagin = document.querySelector(".menuPagin");
+		abrirMenu.addEventListener("click", openMenu);
+		fecharMenu.addEventListener("click", closeMenu);
+			
+			function openMenu(){
+			menuPagin.style.transition = "top .2s ease-in";
+			menuPagin.style.top = "105";
+			container.style.transition = "margin-top .2s ease-in";
+			container.style.marginTop = "105px";
+			abrirMenu.style.display = "none";
+			fecharMenu.style.display = "block";
+			}
+			
+			function closeMenu(){menuPagin.style.top = "0";
+			container.style.marginTop = "10px";
+			fecharMenu.style.display = "none";
+			abrirMenu.style.display = "block";
+			}
+			
+			
+		</script>
+	
+			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
