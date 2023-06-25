@@ -569,7 +569,7 @@
 						
 						<div class="simulado-content">
 							
-							<video autoplay loop>
+							<video id="video" autoplay loop>
 							<source src="./imagem/vestibular.mp4" type="video/mp4">
 							Carregando...
 						</video>
@@ -784,6 +784,13 @@
 			horarios.addEventListener("click", () => {
 				window.location.href = "./info/horarios.html";
 			});
+
+                        var video = document.getElementById("meuVideo");
+
+                        video.addEventListener("ended", function() {
+                        video.currentTime = 0; // Reinicia o vídeo para o início
+                        video.play(); // Inicia novamente
+                        });
 			
 		</script>
 	
