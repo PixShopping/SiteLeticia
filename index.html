@@ -257,7 +257,7 @@
 			<nav class="navbar">
 				
 				<nav class="navbar-left">
-					<img src="./imagem/logo.png"/>
+					<img onclick="home()" src="./imagem/logo.png"/>
 				</nav>
 				
 				<nav class="navbar-right">
@@ -273,7 +273,7 @@
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
 						<a href="./sobre.html">Sobre</a>
-						<a href="tel:5516998877665">Contato</a
+						<a href="tel:5516998877665">Contato</a>
 					</div>
 				</div>
 			
@@ -301,7 +301,7 @@
 					
 					<p>Para <a href="./home.html">Entrar</a>, clique no botão Login</p>
 					
-					<button onclick="login()">Entrar no Site</button>
+					<button onclick="home()">Entrar no Site</button>
 					
 					</div>
 					
@@ -330,10 +330,9 @@
 
 		<script>
 		
-		function login(){
+		function home(){
 		window.location.href = "./home.html";
-		}
-			
+		}	
 			
 		// MENU
 		var abrirMenu = document.getElementById("abrirMenu");
