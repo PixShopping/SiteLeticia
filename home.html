@@ -534,7 +534,7 @@
 			<nav class="navbar">
 				
 				<nav class="navbar-left">
-					<img src="./imagem/logo.png"/>
+					<img onclick="home()" src="./imagem/logo.png"/>
 				</nav>
 				
 				<nav class="navbar-right">
@@ -551,7 +551,6 @@
 						<a href="./home.html">Home</a>
 						<a href="./sobre.html">Sobre</a>
 						<a href="#">Contato</a>
-						<a href="./termos.html">Termos / Privacidade</a>
 					</div>
 				</div>
 			
@@ -712,9 +711,9 @@
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
+					<a href="./home.html">Home</a>
 					<a href="./sobre.html">Sobre</a>
 					<a href="#">Contato</a>
-					<a href="./termos.html">Termos / Privacidade</a>
 				</div>
 				
 				<div class="navgation-creditos">
@@ -729,7 +728,11 @@
 		<!---- JavaScript ---->
 
 		<script>
-		
+
+		function home(){
+		window.location.href = "./home.html";
+		}
+			
 		//Questoes
 		function nonoAno(){
 		window.location.href = "./questoes/9ano.html";
