@@ -278,7 +278,7 @@
 			<nav class="navbar">
 				
 				<section class="navbar-left">
-					<img src="../imagem/logo.png"/>
+					<img onclick="home()" src="../imagem/logo.png"/>
 				</section>
 				
 				<section class="navbar-right">
@@ -292,8 +292,8 @@
 				
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
-						<a href="./home.html">Home</a>
-						<a href="./sobre.html">Sobre</a>
+						<a href="../home.html">Home</a>
+						<a href="../sobre.html">Sobre</a>
 						<a href="#">Contato</a>
 					</div>
 				</div>
@@ -464,6 +464,12 @@
 			abrirMenu.style.display = "block";
 			}
 			
+			
+			// HOME
+			
+			function home(){
+				window.location.href = "../home.html";
+			}
 			
 		</script>
 	
