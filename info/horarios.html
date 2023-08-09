@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="../imagem/icon.png" type="x-icon">
-		<title>Escola Leticia / Interclasse </title>
+		<title>Escola Leticia / Horarios </title>
 		
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
@@ -205,6 +205,70 @@
             padding-bottom: 15px;
             }
             
+            .botoes {
+            	width: 100%;
+            	height: 100%;
+            	display: flex;
+            	flex-direction: column;
+            	align-items: center;
+            	padding: 20px 0px;
+            }
+            
+            .botoes button {
+            	width: 175px;
+            	height: 40px;
+            	background: var(--corSecundaria);
+            	color: white;
+            	font-size: 16px;
+            	font-weight: 600;
+            	border-radius: 10px;
+            	border: none;
+            	outline: none;
+            	margin: 10px;
+            	box-shadow: 0px -5px 15px var(--corSecundaria);
+            	cursor: pointer;
+            }
+            
+            .botoes button:hover {
+            	transition: all .3s ease-in-out;
+            	background: var(--corPrincipal);
+            	color: ;
+            	box-shadow: 0px -5px 15px var(--corTerceira);
+            }
+            
+            table {
+            	color: black;
+            	border-collapse: collapse;
+            	margin: 25px 0px 25px 0px;
+            }
+            
+            table th {
+            	border: 2px solid black;
+            	color: var(--corSecundaria);
+            	padding: 5px;
+            }
+            
+            table tr {
+            	border: 2px solid black;
+            	
+            }
+            
+            table tr:last-child {
+            	border-bottom: none;
+            	border-right: none;
+            }
+            
+            table p {
+            	margin: 0px 0px auto 0px;
+            	text-align: center;
+            	width: 100%;
+            	font-size: 16px;
+            	padding: 5px;
+            	border-bottom: 2px solid black;
+            	border-right: 2px solid black;
+            }
+            
+            
             
             
             </style>
@@ -237,12 +301,91 @@
 			<main class="container">
 				
 				<div class="container-titulo">
-					<h1>Interclasse</h1>
+					<h1>Horarios</h1>
 				</div>
 				
 					<div class="content">
 						
-						<h1 style="margin: 20px auto;">Em breve...</h1>
+						<section class="botoes">
+							
+							<button onclick="openSexto()">6 ANO</button>
+							<button onclick="openSetimo()">7 ANO</button>
+							<button onclick="openOitavo()">8 ANO</button>
+							<button onclick="openNono()">9 ANO</button>
+							
+						</section>
+						
+						<!-- 9ANO -->
+						<table id="9ano" style="display: none;">
+							
+							<tr>
+								<th>Segunda</th>
+								<th>Terça</th>
+								<th>Quarta</th>
+								<th>Quinta</th>
+								<th>Sexta</th>
+							</tr>
+							
+							<tr>
+								
+								<!-- Segunda -->
+								<td>
+									<p>Geografia</p>
+									<p>Matematica</p>
+									<p>Portugues</p>
+									<p>Ed.Fisica</p>
+									<p>P.V</p>
+									<p>Portugues</p>
+									<p>Tecnologia</p>
+								</td>
+								
+								<!-- Terça -->
+								<td>
+									<p>Historia</p>
+									<p>Historia</p>
+									<p>Artes</p>
+									<p>Portugues</p>
+									<p>Artes</p>
+									<p>Ingles</p>
+									<p>Ingles</p>
+								</td>
+								
+								<!-- Quarta -->
+								<td>
+									<p>Eletiva</p>
+									<p>Eletiva</p>
+									<p>Ciencias</p>
+									<p>Ciencias</p>
+									<p>Portugues</p>
+									<p>Matematica</p>
+									<p>Geografica</p>
+								</td>
+								
+								<!-- Quinta -->
+								<td>
+									<p>Geografia</p>
+									<p>Portugues</p>
+									<p>Matematica</p>
+									<p>Geografia</p>
+									<p>Portugues</p>
+									<p>Matematica</p>
+									<p>Ed.Fisca</p>
+								</td>
+								
+								<!-- Sexta -->
+								<td>
+									<p>Ciencias</p>
+									<p>P.V</p>
+									<p>Matematica</p>
+									<p>Ciencias</p>
+									<p>Historia</p>
+									<p>Matematica</p>
+									<p>Historia</p>
+								</td>
+								
+							</tr>
+							
+						</table>
 						
 					</div>
 					
@@ -269,6 +412,33 @@
 
 		<script>
 			
+		// Abrir Tabelas de Horarios
+		
+		var botoes = document.querySelector('.botoes');
+		
+		function openNono(){
+			var tabela = document.getElementById('9ano');
+			botoes.style.display = "none";
+			tabela.style.display = "block";
+		}
+		
+		function openOitavo(){
+			var tabela = document.getElementById('8ano');
+			botoes.style.display = "none";
+			tabela.style.display = "block";
+		}
+		
+		function openSetimo(){
+			var tabela = document.getElementById('7ano');
+			botoes.style.display = "none";
+			tabela.style.display = "block";
+		}
+		
+		function openSexto(){
+			var tabela = document.getElementById('6ano');
+			botoes.style.display = "none";
+			tabela.style.display = "block";
+		}
 			
 		// MENU
 		var abrirMenu = document.getElementById("abrirMenu");
@@ -287,7 +457,8 @@
 			fecharMenu.style.display = "block";
 			}
 			
-			function closeMenu(){menuPagin.style.top = "0";
+			function closeMenu() {
+			menuPagin.style.top = "0";
 			container.style.marginTop = "10px";
 			fecharMenu.style.display = "none";
 			abrirMenu.style.display = "block";
@@ -296,7 +467,7 @@
 			
 		</script>
 	
-			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
