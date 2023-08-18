@@ -216,7 +216,7 @@
 		margin: 15px 0px 15px 0px;
             }
             
-            .series h1{
+            .series h1 {
 		           position: relative;
 		           top: 0;
 		           left: 0;
@@ -239,7 +239,7 @@
             	flex-direction: column;
             }
             
-            .series ul li {
+            .series ul li{
             	width: 100%;
             	height: 45px;
             	display: flex;
@@ -265,7 +265,7 @@
             	font-size: 18px;
             	font-weight: 750;
             	letter-spacing: 0.5px;
-		margin: 0px 0px 0px 5px;
+				margin: 0px 0px 0px 5px;
             }
             
             /* Horarios */
@@ -340,8 +340,8 @@
 				
 				<div class="menuPagin">
 					<div class="menuPagin-pagins">
-						<a href="../home.html">Home</a>
-						<a href="../sobre.html">Sobre</a>
+						<a href='/home'>Home</a>
+						<a href='/sobre'>Sobre</a>
 						<a href="#">Contato</a>
 					</div>
 				</div>
@@ -354,7 +354,7 @@
 				
 					<div class="content">
 						
-						<section class="series">
+						<section class="series" id="seriesManha">
 							
 							<h1>Manha</h1>
 							
@@ -368,7 +368,7 @@
 								<li onclick="openSegundoA()">
 									<a>2ANO A</a>
 								</li>
-								<li onclick="openSegundooB()">
+								<li onclick="openSegundoB()">
 									<a>2ANO B</a>
 								</li>
 								<li onclick="openSegundoC()">
@@ -389,7 +389,7 @@
 						</section>
 
 						<!-- Manha -->
-						<section class="series">
+						<section class="series" id="seriesTarde">
 							
 							<h1>Tarde</h1>
 							
@@ -427,7 +427,9 @@
 						
 				<!-- 1ANO A -->
 				<section class="horarios" id="1anoA">
+					
 					<h1>1anoA</h1>
+
 						<table>
 							
 							<tr>
@@ -442,57 +444,57 @@
 								
 								<!-- Segunda -->
 								<td>
-									<p>Geografia</p>
-									<p>Ed.Fisica</p>
 									<p>Matematica</p>
-									<p>Artes</p>
 									<p>Portugues</p>
-									<p>Geografia</p>
-									<p>Ciencias</p>
+									<p>Ingles</p>
+									<p>Portugues</p>
+									<p>Filosofia</p>
+									<p>Matematica</p>
+									<p>Filosofia</p>
 								</td>
 								
 								<!-- Terça -->
 								<td>
-									<p>Ingles</p>
-									<p>Historia</p>
-									<p>Portugues</p>
-									<p>Historia</p>
-									<p>Ed.Fisica</p>
+									<p>Tecnologia</p>
+									<p>Geografia</p>
 									<p>Matematica</p>
-									<p>Portugues</p>
+									<p>Historia</p>
+									<p>Historia</p>
+									<p>Quimica</p>
+									<p>Quimica</p>
 								</td>
 								
 								<!-- Quarta -->
 								<td>
+									<p>Fisica</p>
+									<p>Ed.Fisica</p>
+									<p>PV</p>
+									<p>Ed.Fisica</p>
+									<p>PV</p>
 									<p>Eletiva</p>
 									<p>Eletiva</p>
-									<p>Geografia</p>
-									<p>Historia</p>
-									<p>Matematica</p>
-									<p>Portugues</p>
-									<p>Ciencias</p>
 								</td>
 								
 								<!-- Quinta -->
 								<td>
-									<p>Ingles</p>
-									<p>Matematica</p>
-									<p>Historia</p>
 									<p>Artes</p>
+									<p>Ingles</p>
 									<p>Geografia</p>
 									<p>Portugues</p>
-									<p>Portugues</p>
+									<p>Biologia</p>
+									<p>Fisica</p>
+									<p>Biologia</p>
 								</td>
 								
 								<!-- Sexta -->
 								<td>
-									<p>P.V</p>
-									<p>P.V</p>
-									<p>Ciencias</p>
 									<p>Matematica</p>
-									<p>Ciencias</p>
-									<p>Tecnologia</p>
+									<p>Portugues</p>
+									<p>Sociologia</p>
 									<p>Matematica</p>
+									<p>Artes</p>
+									<p>Portugues</p>
+									<p>Sociologia</p>
 								</td>
 								
 							</tr>
@@ -502,7 +504,9 @@
 
 					<!-- 1ANO B -->
 					<section class="horarios" id="1anoB">
-						<h1>1anoA</h1>
+						
+						<h1>1anoB</h1>
+
 							<table>
 								
 								<tr>
@@ -517,57 +521,211 @@
 									
 									<!-- Segunda -->
 									<td>
-										<p>Geografia</p>
-										<p>Ed.Fisica</p>
-										<p>Matematica</p>
-										<p>Artes</p>
 										<p>Portugues</p>
-										<p>Geografia</p>
-										<p>Ciencias</p>
+										<p>Filosofia</p>
+										<p>Portugues</p>
+										<p>Matematica</p>
+										<p>Matematica</p>
+										<p>Sociologia</p>
+										<p>Sociologia</p>
 									</td>
 									
 									<!-- Terça -->
 									<td>
-										<p>Ingles</p>
-										<p>Historia</p>
-										<p>Portugues</p>
-										<p>Historia</p>
-										<p>Ed.Fisica</p>
-										<p>Matematica</p>
+										<p>Biologia</p>
+										<p>Biologia</p>
+										<p>Fisica</p>
+										<p>Geografia</p>
+										<p>PV</p>
+										<p>Tecnologia</p>
 										<p>Portugues</p>
 									</td>
 									
 									<!-- Quarta -->
 									<td>
+										<p>Ed.Fisica</p>
+										<p>Fisica</p>
+										<p>Ingles</p>
+										<p>PV</p>
+										<p>Ed.Fisica</p>
 										<p>Eletiva</p>
 										<p>Eletiva</p>
-										<p>Geografia</p>
-										<p>Historia</p>
-										<p>Matematica</p>
-										<p>Portugues</p>
-										<p>Ciencias</p>
 									</td>
 									
 									<!-- Quinta -->
 									<td>
 										<p>Ingles</p>
-										<p>Matematica</p>
-										<p>Historia</p>
+										<p>Artes</p>
 										<p>Artes</p>
 										<p>Geografia</p>
-										<p>Portugues</p>
-										<p>Portugues</p>
+										<p>Matematica</p>
+										<p>Historia</p>
+										<p>Quimica</p>
 									</td>
 									
 									<!-- Sexta -->
 									<td>
-										<p>P.V</p>
-										<p>P.V</p>
-										<p>Ciencias</p>
+										<p>Filosofia</p>
 										<p>Matematica</p>
-										<p>Ciencias</p>
+										<p>Matematica</p>
+										<p>Portugues</p>
+										<p>Historia</p>
+										<p>Quimica</p>
+										<p>Portugues</p>
+									</td>
+									
+								</tr>
+								
+							</table>
+						</section>
+
+					<!-- 2ANO A -->
+					<section class="horarios" id="2anoA">
+						
+						<h1>2anoA</h1>
+
+							<table>
+								
+								<tr>
+									<th>Segunda</th>
+									<th>Terça</th>
+									<th>Quarta</th>
+									<th>Quinta</th>
+									<th>Sexta</th>
+								</tr>
+								
+								<tr>
+									
+									<!-- Segunda -->
+									<td>
+										<p>Sociologia</p>
+										<p>Ingles</p>
+										<p>Matematica</p>
+										<p>Biologia</p>
+										<p>Biologia</p>
+										<p>Critica e Lit..</p>
+										<p>Critica e Lit..</p>
+									</td>
+									
+									<!-- Terça -->
+									<td>
+										<p>Geografia</p>
+										<p>Portugues</p>
 										<p>Tecnologia</p>
 										<p>Matematica</p>
+										<p>Quimica</p>
+										<p>Clube Estudo..</p>
+										<p>Clube Estudo..</p>
+									</td>
+									
+									<!-- Quarta -->
+									<td>
+										<p>Portugues</p>
+										<p>Ingles</p>
+										<p>Filosofia</p>
+										<p>Filosofia</p>
+										<p>Quimica</p>
+										<p>Luta C/Pratica</p>
+										<p>Luta C/Pratica</p>
+									</td>
+									
+									<!-- Quinta -->
+									<td>
+										<p>PV</p>
+										<p>Geografia</p>
+										<p>Matematica</p>
+										<p>Historia</p>
+										<p>Historia</p>
+										<p>Luta C/Pratica</p>
+										<p>Estet.corpo</p>
+									</td>
+									
+									<!-- Sexta -->
+									<td>
+										<p>Portugues</p>
+										<p>Ed.Fisica</p>
+										<p>Fisica</p>
+										<p>Fisica</p>
+										<p>Sociologia</p>
+										<p>Estet.corpo</p>
+										<p>Estet.corpo</p>
+									</td>
+									
+								</tr>
+								
+							</table>
+						</section>
+
+						<!-- 2ANO B -->
+					<section class="horarios" id="2anoB">
+						
+						<h1>2anoB</h1>
+
+							<table>
+								
+								<tr>
+									<th>Segunda</th>
+									<th>Terça</th>
+									<th>Quarta</th>
+									<th>Quinta</th>
+									<th>Sexta</th>
+								</tr>
+								
+								<tr>
+									
+									<!-- Segunda -->
+									<td>
+										<p>Portugues/p>
+										<p>Filosofia</p>
+										<p>Portugues</p>
+										<p>Matematica</p>
+										<p>Matematica</p>
+										<p>Sociologia</p>
+										<p>Sociologia</p>
+									</td>
+									
+									<!-- Terça -->
+									<td>
+										<p>Biologia</p>
+										<p>Biologia</p>
+										<p>Fisica</p>
+										<p>Geografia</p>
+										<p>PV</p>
+										<p>Tecnologia</p>
+										<p>Portugues</p>
+									</td>
+									
+									<!-- Quarta -->
+									<td>
+										<p>Ed.Fisica</p>
+										<p>Fisica</p>
+										<p>Ingles</p>
+										<p>PV</p>
+										<p>Ed.Fisica</p>
+										<p>Eletiva</p>
+										<p>Eletiva</p>
+									</td>
+									
+									<!-- Quinta -->
+									<td>
+										<p>Ingles</p>
+										<p>Artes</p>
+										<p>Artes</p>
+										<p>Geografia</p>
+										<p>Matematica</p>
+										<p>Historia</p>
+										<p>Quimica</p>
+									</td>
+									
+									<!-- Sexta -->
+									<td>
+										<p>Filosofia</p>
+										<p>Matematica</p>
+										<p>Matematica</p>
+										<p>Portugues</p>
+										<p>Historia</p>
+										<p>Quimica</p>
+										<p>Portugues</p>
 									</td>
 									
 								</tr>
@@ -580,7 +738,9 @@
 						
 				<!-- 6ANO A -->
 				<section class="horarios" id="6anoA">
+					
 					<h1>6anoA</h1>
+
 						<table>
 							
 							<tr>
@@ -656,7 +816,9 @@
 				
 				<!-- 6ANO B -->
 				<section class="horarios" id="6anoB">
+					
 					<h1>6anoB</h1>
+
 						<table>
 							
 							<tr>
@@ -732,7 +894,9 @@
 				
 				<!-- 7ANO A -->
 				<section class="horarios" id="7anoA">
+					
 					<h1>7anoA</h1>
+
 						<table>
 							
 							<tr>
@@ -808,7 +972,9 @@
 				
 				<!-- 7ANO B -->
 				<section class="horarios" id="7anoB">
+					
 					<h1>7anoB</h1>
+
 						<table>
 							
 							<tr>
@@ -884,7 +1050,9 @@
 				
 				<!-- 8ANO A -->
 				<section class="horarios" id="8anoA">
+					
 					<h1>8anoA</h1>
+
 						<table>
 							
 							<tr>
@@ -960,7 +1128,9 @@
 				
 				<!-- 8ANO B -->
 				<section class="horarios" id="8anoB">
+					
 					<h1>8anoB</h1>
+
 						<table>
 							
 							<tr>
@@ -1036,7 +1206,9 @@
 				
 				<!-- 9ANO A -->
 				<section class="horarios" id="9anoA">
+					
 					<h1>9anoA</h1>
+
 						<table>
 							
 							<tr>
@@ -1112,7 +1284,9 @@
 								
 				<!-- 9ANO B-->
 				<section class="horarios" id="9anoB">
+					
 					<h1>9anoB</h1>
+
 						<table>
 							
 							<tr>
@@ -1185,9 +1359,6 @@
 						</table>
 					</section>
 					
-					
-							
-						
 					</div>
 					
 			</main>
@@ -1215,54 +1386,123 @@
 			
 		// Abrir Tabelas de Horarios
 		
-		var botoes = document.querySelector('.series');
+		var seriesManha = document.getElementById('seriesManha');
+		var seriesTarde = document.getElementById('seriesTarde');
+
+		// ----- Periodo da Manha -----
 		
+		function openPrimeiroA() {
+			var tabela = document.getElementById('1anoA');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openPrimeiroB() {
+			var tabela = document.getElementById('1anoB');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openSegundoA() {
+			var tabela = document.getElementById('2anoA');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openSegundoB() {
+			var tabela = document.getElementById('2anoB');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openSegundoC() {
+			var tabela = document.getElementById('2anoC');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openTerceiroA() {
+			var tabela = document.getElementById('3anoA');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openTerceiroB() {
+			var tabela = document.getElementById('3anoB');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		function openTerceiroC() {
+			var tabela = document.getElementById('3anoC');
+			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
+		}
+
+		// ----- Periodo da TARDE -----
+
 		function openNonoA(){
 			var tabela = document.getElementById('9anoA');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesTarde.style.display = "none";
+			seriesManha.style.display = "none";
 		}
 		
 		function openNonoB(){
 			var tabela = document.getElementById('9anoB');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 		
 		function openOitavoA(){
 			var tabela = document.getElementById('8anoA');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 		
 		function openOitavoB(){
 			var tabela = document.getElementById('8anoB');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 		
 		function openSetimoA(){
 			var tabela = document.getElementById('7anoA');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 		
 		function openSetimoB(){
 			var tabela = document.getElementById('7anoB');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
-		
+
 		function openSextoA(){
 			var tabela = document.getElementById('6anoA');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 		
 		function openSextoB(){
 			var tabela = document.getElementById('6anoB');
-			botoes.style.display = "none";
 			tabela.style.display = "block";
+			seriesManha.style.display = "none";
+			seriesTarde.style.display = "none";
 		}
 			
 		// MENU
