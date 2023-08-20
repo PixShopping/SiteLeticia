@@ -316,7 +316,80 @@
 		.navbar-left img {
 		  cursor: pointer;
 		}
-            
+		
+		/* AVISOS */
+  
+        .aviso {
+        	width: 375px;
+        	height: auto;
+        	border-radius: 10px;
+        	background: var(--corSecundaria);
+        	box-shadow: 0px 5px 15px var(--corSecundaria);
+        	position: fixed;
+        	top: 50%;
+        	left: 50%;
+        	transform: translate(-50%, -50%);
+        	transition: all .5s ease-in-out;
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        }          
+        
+        .aviso h1{
+        	width: 100%;
+        	height: 35px;
+        	background: var(--corPrincipal);
+        	font-size: 18px;
+        	font-weight: 800;
+        	border-radius: 10px 10px 0px 0px;
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        	letter-spacing: 0.8px;
+        }
+        
+        .aviso h2 {
+        	margin: 10px 0px 5px 0px;
+        	text-transform: uppercase;
+        	font-size: 21px;
+        	font-weight: 700;
+        	letter-spacing: 0.5px;
+        }
+        
+        .aviso p {
+        	margin: 0px;
+        	text-transform: uppercase;
+        	font-size: 15px;
+        	font-weight: 400;
+        	letter-spacing: 0.8px;
+        	color: #CCC;
+        }
+        
+        .aviso button {
+        	width: 80%;
+        	height: 32.5px;
+        	border-radius: 5px;
+        	border: none;
+        	background: white;
+        	color: #191919;
+        	font-size: 16px;
+        	font-weight: 700;
+        	box-shadow: 0px 4px 10px white;
+        	margin: 25px auto 25px auto;
+        	cursor: pointer;
+        	transition: all .3s ease-in-out;
+        }
+        
+        .aviso button:hover {
+        	background: #191919;
+        	color: #F1F1F1;
+        	box-shadow: 0px 4px 10px gray;
+        }
+        
+        #araraquara {
+        	display: none;
+        	opacity: 0%;
+        }
   
 		</style>
 		
@@ -415,25 +488,47 @@
 				
 			</main>
 			
+			<!------------ AVISOS ------------>
+			
+			<!-- Aniversario de araraquara -->
+			<div class="aviso" id="araraquara">
+				<h1>AVISO</h1>
+				<h2>22 de agosto FERIADO</h2>
+				<p>Feliz Aniversario Araraquara!!</p>
+				<button onclick="closeAviso()">Entendido</button>
+			</div>
+			
 		</body>
 
 		<!---- JavaScript ---->
 
 		<script>
 		
-		// Teste de aviso com DATA expecifica
-		
-		// Obtem a data e hora atual
+		// Area de avisos pelo JavaScript:
 		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
 		
-		// Define a data e hora alvo ( 20 de agosto as 18:00)
-		var dataAlvo = new Date(agora.getFullYear(),  7, 20, 18, 0, 0);
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
 		
-		// Compara as duas datas
-		if (agora.getTime() >= dataAlvo.getTime()) {
-			// Se a data atual for igual ou posterior a data alvo, mostrar o aviso
-			alert("E hora de mostrar o aviso!!")
+		if (agora.getTime() >=  aniversario.getTime()) {
+			avisoAraraquara.style.display = "flex";
+			setTimeout( () => {
+				avisoAraraquara.style.opacity = "100%";
+			}, 200);
 		}
+		
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
+		
+		// Fim da area dos avisos
+		
 		
 		
 		function login(){
@@ -470,4 +565,4 @@
 			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-						</html>
+</html>
