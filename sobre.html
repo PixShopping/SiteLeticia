@@ -421,6 +421,21 @@
 
 		<script>
 		
+		// Teste de aviso com DATA expecifica
+		
+		// Obtem a data e hora atual
+		var agora = new Date();
+		
+		// Define a data e hora alvo ( 20 de agosto as 18:00)
+		var dataAlvo = new Date(agora.getFullYear(),  7, 20, 18, 0, 0);
+		
+		// Compara as duas datas
+		if (agora.getTime() >= dataAlvo.getTime()) {
+			// Se a data atual for igual ou posterior a data alvo, mostrar o aviso
+			alert("E hora de mostrar o aviso!!")
+		}
+		
+		
 		function login(){
 		window.location.href = "./login.html";
 		}
@@ -455,4 +470,4 @@
 			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-</html>
+						</html>
