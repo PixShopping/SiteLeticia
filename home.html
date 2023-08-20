@@ -557,6 +557,80 @@
 		   width: 100%;
 		   height: auto;
 		}
+
+		/* AVISOS */
+  
+        .aviso {
+        	width: 375px;
+        	height: auto;
+        	border-radius: 10px;
+        	background: var(--corSecundaria);
+        	box-shadow: 0px 5px 15px var(--corSecundaria);
+        	position: fixed;
+        	top: 50%;
+        	left: 50%;
+        	transform: translate(-50%, -50%);
+        	transition: all .5s ease-in-out;
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        }          
+        
+        .aviso h1{
+        	width: 100%;
+        	height: 35px;
+        	background: var(--corPrincipal);
+        	font-size: 18px;
+        	font-weight: 800;
+        	border-radius: 10px 10px 0px 0px;
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        	letter-spacing: 0.8px;
+        }
+        
+        .aviso h2 {
+        	margin: 10px 0px 5px 0px;
+        	text-transform: uppercase;
+        	font-size: 21px;
+        	font-weight: 700;
+        	letter-spacing: 0.5px;
+        }
+        
+        .aviso p {
+        	margin: 0px;
+        	text-transform: uppercase;
+        	font-size: 15px;
+        	font-weight: 400;
+        	letter-spacing: 0.8px;
+        	color: #CCC;
+        }
+        
+        .aviso button {
+        	width: 80%;
+        	height: 32.5px;
+        	border-radius: 5px;
+        	border: none;
+        	background: white;
+        	color: #191919;
+        	font-size: 16px;
+        	font-weight: 700;
+        	box-shadow: 0px 4px 10px white;
+        	margin: 25px auto 25px auto;
+        	cursor: pointer;
+        	transition: all .3s ease-in-out;
+        }
+        
+        .aviso button:hover {
+        	background: #191919;
+        	color: #F1F1F1;
+        	box-shadow: 0px 4px 10px gray;
+        }
+        
+        #araraquara {
+        	display: none;
+        	opacity: 0%;
+	}
 		
       </style>
 		
