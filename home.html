@@ -1,966 +1,1048 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="./imagem/icon.png" type="x-icon">
-		<link type="stylesheet" src="./style.css">
-		<title>Escola Letícia / Home</title>
-		
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
-        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-        </style>
-        
-		<style scoped>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./imagem/icon.png" type="x-icon" />
+    <link type="stylesheet" src="./style.css" />
+    <title>Escola Letícia / Home</title>
 
-			:root{ /* #1b204f */  /* 1956ac */
-			--corPrincipal:  #091930; /* Azul Escuro: */
-			--corSecundaria: #163259; /*Azul Medio */
-			--corTerceira: #060427 ; /*Azul Normal*/
-			--corQuarta: #5089D8; /* Azul Claro*/
-			--text: black; /* Texto */
-			--textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
-			--destaque: #d94241; /* Vermelho */
-			--fontNegrito: 'Ysabeau', sans-serif;
-            --fontSans: 'Open Sans', sans-serif;
-   }
-			
-			*{
-			padding: 0;
-			margin: 0;
-			border: 0;
-			box-sizing: border-box;
-			text-decoration: none;
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+    </style>
+
+    <style scoped>
+
+      :root {
+        /* #1b204f */ /* 1956ac */
+        --corPrincipal: #091930; /* Azul Escuro: */
+        --corSecundaria: #163259; /*Azul Medio */
+        --corTerceira: #060427; /*Azul Normal*/
+        --corQuarta: #5089d8; /* Azul Claro*/
+        --text: black; /* Texto */
+        --textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
+        --destaque: #d94241; /* Vermelho */
+        --fontNegrito: "Ysabeau", sans-serif;
+        --fontSans: "Open Sans", sans-serif;
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: white;
+        color: white;
+        user-select: none;
+      }
+
+      .navbar {
+        width: 100vw;
+        height: 120px;
+        background-color: var(--corSecundaria);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: 10;
+      }
+
+      .navbar-right {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        background: var(--corSecundaria);
+        position: relative;
+      }
+
+      .navbar-right ion-icon {
+        position: absolute;
+        right: 35;
+        top: 35;
+        width: 60px;
+        height: 60px;
+        color: white;
+        cursor: pointer;
+      }
+
+      #abrirMenu {
+        display: block;
+      }
+
+      #fecharMenu {
+        display: none;
+      }
+
+      .navbar-left {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        background: var(--corSecundaria);
+      }
+
+      .navbar-left img {
+        width: 170px;
+        height: 170px;
+        margin-bottom: 20px;
+      }
+
+      /* Navgation em baixo */
+
+      .navgation {
+        margin: 1vw;
+        width: 98vw;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navgation-pagins {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 50%;
+      }
+
+      .navgation-pagins a {
+        padding: 10px;
+        color: var(--corQuarta);
+        font-size: 17px;
+        text-shadow: 0 0 1px black;
+      }
+
+      .navgation-creditos {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+      }
+
+      .navgation-creditos p {
+        color: black;
+        text-shadow: 0 0 1px black;
+        font-size: 16px;
+      }
+
+      /* MenuPagin */
+
+      .menuPagin {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 110px;
+        background-color: var(--corSecundaria);
+        color: black;
+        z-index: 8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menuPagin a {
+        color: white;
+        font-size: 17px;
+        padding: 12px;
+      }
+
+      .menuPagin a:hover {
+        color: var(--corQuarta);
+        transition: all 0.2s ease-in;
+      }
+
+      /* --- Container --- */
+
+      .container {
+        margin-top: 10px;
+        margin-left: 1vw;
+        width: 98vw;
+        border: 2px solid var(--corSecundaria);
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .container-titulo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background-color: var(--corSecundaria);
+        display: flex;
+        align-items: center;
+      }
+
+      .container-titulo h1 {
+        font-size: 18px;
+        color: white;
+        margin-left: 10px;
+        font-weight: 500;
+      }
+
+      .content {
+        position: relative;
+        top: 10;
+        left: 50%;
+        transform: translate(-50%, -0%);
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--corTerceira);
+      }
+
+      .informacoes {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 97.7vw;
+        height: 300px;
+        background: linear-gradient(180deg, white 50%, var(--corPrincipal) 50%);
+      }
+
+      .informacoes h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        width: 100%;
+        height: 30px;
+        background-color: var(--corPrincipal);
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .informacoes-content {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+
+      .info {
+        width: 160px;
+        height: 160px;
+        background-color: var(--corPrincipal);
+        box-shadow: 0 0 5px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .info:hover {
+        background-color: white;
+        top: -9;
+        box-shadow: 0 0 10px black;
+        transition: all 0.3s ease-in;
+      }
+
+      .info:hover * {
+        color: black;
+        transition: all 0.4s ease-in;
+      }
+
+      .info-content {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: space-start;
+        padding-left: 4px;
+      }
+
+      .info-content h2 {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 5px;
+        font-weight: 900;
+      }
+
+      .info-content p {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 12px;
+        font-family: var(--fontSans);
+        font-weight: 550;
+      }
+
+      .info-content ion-icon {
+        width: 50px;
+        height: 50px;
+        color: white;
+        margin-bottom: 3px;
+        margin-top: 7px;
+      }
+
+      /* Noticias */
+
+      .noticias {
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid var(--corSecundaria);
+      }
+
+      .noticias h1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        background-color: var(--corSecundaria);
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .noticias-content {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 95%;
+        height: 200px;
+        background-color: #f1f1f1;
+        box-shadow: 0 0 10px gray; /* <----- */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .noticias-content img {
+        width: 180px;
+        height: 90%;
+        margin-left: 5px;
+      }
+
+      .noticias-text {
+        width: 56%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2.5%;
+      }
+
+      .noticias-text h2 {
+        font-size: 19px;
+        font-weight: 400;
+        color: #191919;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+
+      .noticias-text p {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 350;
+      }
+
+      /* Dia do Desafio */
+
+      .desafio {
+        width: 100%;
+        border: 2px solid var(--corSecundaria);
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      .desafio h1 {
+        position: absolute;
+        top: 0;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        height: 30px;
+        background-color: var(--corSecundaria);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .desafio h2 {
+        color: var(--corQuarta);
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-top: 45px;
+        margin-bottom: 10px;
+      }
+
+      .desafio h3 {
+        color: red;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .tabela-desafio {
+        border: 2px solid black;
+        border-collapse: collapse;
+        color: black;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      @media (max-width: 600px) {
+        .tabela-desafio {
+          font-size: 11px;
+          font-weight: 400;
+        }
+
+        .tabela-desafio th {
+          padding: 5px;
+        }
+
+        .tabela-desafio td {
+          padding: 5px;
+        }
+      }
+
+      .tabela-desafio th {
+        border: 2px solid black;
+        padding: 10px;
+        color: red;
+      }
+
+      .tabela-desafio td {
+        padding: 10px;
+        border: 2px solid black;
+      }
+
+      #lose {
+        color: red;
+      }
+
+      #win {
+        color: green;
+      }
+
+      .tabela-desafio-tarde {
+        margin-bottom: 30px;
+      }
+
+      /* Simulado */
+
+      .simulado {
+        width: 100%;
+        border: 2px solid var(--corSecundaria);
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+
+      .simulado h1 {
+        width: 100%;
+        height: 30px;
+        background-color: var(--corSecundaria);
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-top: 3px;
+      }
+
+      .simulado-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .simulado video {
+        width: 90%;
+        height: 300px;
+        margin-top: 20px;
+      }
+
+      .simulado-content h2 {
+        color: #191919;
+        font-size: 22px;
+        font-weight: 400;
+        margin-top: 25px;
+        margin-bottom: 20px;
+      }
+
+      .simulado-text {
+        width: 80%;
+        text-align: center;
+      }
+
+      .simulado-text div {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .simulado-text div button {
+        width: 100px;
+        height: 35px;
+        color: white;
+        background-color: var(--corSecundaria);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .simulado-text div button:hover {
+        color: #191919;
+        text-shadow: 0 0 1px black;
+        background-color: var(--corQuarta);
+        transition: all 0.3s ease-in;
+      }
+
+      /* Logo link */
+      .navbar-left img {
+        cursor: pointer;
+      }
+
+      /* COMUNICADO */
+
+      .comunicado {
+        width: 100%;
+        height: auto;
+        border: 2px solid var(--corSecundaria);
+        margin: 15px 0px 15px 0px;
+      }
+
+      .comunicado h1 {
+        width: 100%;
+        height: 30px;
+        background-color: var(--corSecundaria);
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-top: 3px;
+      }
+
+      .comunicado img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* AVISOS */
+
+      .aviso {
+        width: 375px;
+        height: auto;
+        border-radius: 10px;
+        background: var(--corSecundaria);
+        box-shadow: 0px 5px 15px var(--corSecundaria);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .aviso h1 {
+        width: 100%;
+        height: 35px;
+        background: var(--corPrincipal);
+        font-size: 18px;
+        font-weight: 800;
+        border-radius: 10px 10px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.8px;
+      }
+
+      .aviso h2 {
+        margin: 10px 0px 5px 0px;
+        text-transform: uppercase;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .aviso p {
+        margin: 0px;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+        color: #ccc;
+      }
+
+      .aviso button {
+        width: 80%;
+        height: 32.5px;
+        border-radius: 5px;
+        border: none;
+        background: white;
+        color: #191919;
+        font-size: 16px;
+        font-weight: 700;
+        box-shadow: 0px 4px 10px white;
+        margin: 25px auto 25px auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .aviso button:hover {
+        background: #191919;
+        color: #f1f1f1;
+        box-shadow: 0px 4px 10px gray;
+      }
+
+      #araraquara {
+        display: none;
+        opacity: 0%;
+      }
+
+      .enviarImagem {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        height: 400px;
+        background: var(--corPrincipal);
+        border-radius: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .enviarImagem input {
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+        background: var(--corSecundaria);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .enviarImagem button {
+        width: 200px;
+        height: 35px;
+        background: var(--corQuarta);
+        border-radius: 5px;
+        border: none;
+        color: var(--corPrincipal);
+        margin: 10px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <nav class="navbar-left">
+        <img onclick="home()" src="./imagem/logo.png" />
+      </nav>
+
+      <nav class="navbar-right">
+        <ion-icon id="abrirMenu" name="menu-outline"></ion-icon>
+        <ion-icon id="fecharMenu" name="close-outline"></ion-icon>
+      </nav>
+    </nav>
+
+    <!-- MenuPagin -->
+
+    <div class="menuPagin">
+      <div class="menuPagin-pagins">
+        <a href="/home">Home</a>
+        <a href="/sobre">Sobre</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+
+    <main class="container">
+      <div class="container-titulo">
+        <h1>Site Letícia</h1>
+      </div>
+
+      <!-- Comunicados -->
+      <div class="content">
+        <div class="comunicado">
+          <h1>7 de Setembro</h1>
+          <img src="./imagem/7setembro.jpg" />
+        </div>
+
+        <div class="comunicado">
+          <h1>Prova Paulista</h1>
+          <img src="./imagem/prova.png" />
+        </div>
+
+        <div class="comunicado">
+          <h1>Reuniao de Pais</h1>
+          <img src="./imagem/reuniao.png" />
+        </div>
+
+        <div class="simulado">
+          <h1>Questões de Vestibulares</h1>
+
+          <div class="simulado-content">
+            <video id="meuVideo" autoplay loop>
+              <source src="./imagem/vestibular.mp4" type="video/mp4" />
+              Carregando...
+            </video>
+
+            <h2>[ Questões Testes ]</h2>
+
+            <div class="simulado-text">
+              <p>
+                Faça as Questões Testes de Vestibulares e pratique com as nossas
+                perguntas dinâmicas
+              </p>
+              <div>
+                <button onclick="nonoAno()">9°ano</button>
+                <button onclick="">1°ano</button>
+                <button onclick="">2°ano</button>
+                <button onclick="">3°ano</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="desafio">
+          <h1>Dia do Desafio - 31/05</h1>
+          <h2>Manhã</h2>
+
+          <table class="tabela-desafio">
+            <tr>
+              <th>1 aula</th>
+              <td>7h - 7h 45</td>
+              <td><span id="win">1B </span> x <span id="win">2A</span></td>
+              <td>Profs: Cris Correia / Vitória</td>
+            </tr>
+
+            <tr>
+              <th>2 aula</th>
+              <td>7h 45 - 8h 30</td>
+              <td><span id="win">1A</span> x <span id="win">2B</span></td>
+              <td>Profs: Cris Correia / Vitória</td>
+            </tr>
+
+            <tr>
+              <th>3 aula</th>
+              <td>8h 30 - 9h 15</td>
+              <td><span id="win">3A</span> x <span id="win">3B</span></td>
+              <td>Profs: Cris Correia / Tânia / Gustavo</td>
+            </tr>
+
+            <tr>
+              <th>4 aula</th>
+              <td>9h 15 - 10h</td>
+              <td><span id="win">2C</span> x <span id="win">3C</span></td>
+              <td>Profs: Cris Correia / Márcia / Ana Margarete</td>
+            </tr>
+          </table>
+
+          <h3>Tarde</h3>
+
+          <table class="tabela-desafio tabela-desafio-tarde">
+            <tr>
+              <th>2 aula</th>
+              <td>13h 45 - 14h 30</td>
+              <td><span id="win">6A</span> x <span id="win">6B</span></td>
+              <td>Profs: Cris Correia / Margarete / Gustavo</td>
+            </tr>
+
+            <tr>
+              <th>3 aula</th>
+              <td>14h 30 - 15h 15</td>
+              <td><span id="win">7A </span> x <span id="win">7B</span></td>
+              <td>Profs: Cris Correia / Jacilene / Hugo</td>
+            </tr>
+
+            <tr>
+              <th>4 aula</th>
+              <td>15h 15 - 16h</td>
+              <td><span id="lose">8B</span> x <span id="win">9B</span></td>
+              <td>Profs: Cris Correia / Marcela</td>
+            </tr>
+
+            <tr>
+              <th>5 aula</th>
+              <td>16h 20 - 17h 05</td>
+              <td><span id="lose">8A </span> x <span id="win">9A</span></td>
+              <td>Profs: Cris Correia / Cris bras</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Informacoes -->
+        <div class="informacoes">
+          <h1>Informações</h1>
+
+          <div class="informacoes-content">
+            <div class="info provas">
+              <div class="info-content">
+                <ion-icon name="book-outline"></ion-icon>
+                <h2>Provas</h2>
+                <p>
+                  Confira as datas das provas e aproveite as oportunidades de
+                  aprendizado...
+                </p>
+              </div>
+            </div>
+
+            <div class="info interclasse">
+              <div class="info-content">
+                <ion-icon name="ribbon-outline"></ion-icon>
+                <h2>Interclasses</h2>
+                <p>
+                  Fique atento ao nosso calendário escolar para participar e
+                  torcer pela sua sala!
+                </p>
+              </div>
+            </div>
+
+            <div class="info horarios">
+              <div class="info-content">
+                <ion-icon name="time-outline"></ion-icon>
+                <h2>Horários</h2>
+                <p>
+                  Confira as datas das provas e quais questões podem cair nos
+                  vestibulares...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="navgation">
+      <div class="navgation-pagins">
+        <a href="/home">Home</a>
+        <a href="/sobre">Sobre</a>
+        <a href="#">Contato</a>
+      </div>
+
+      <div class="navgation-creditos">
+        <p>9°A Production <br />Leticia © 2023</p>
+      </div>
+    </main>
+
+    <!------------ AVISOS ------------>
+
+    <!-- Aniversario de araraquara -->
+    <div class="aviso" id="araraquara">
+      <h1>AVISO</h1>
+      <h2>22 de agosto FERIADO</h2>
+      <p>Feliz Aniversario Araraquara!!</p>
+      <button onclick="closeAviso()">Entendido</button>
+    </div>
+
+    <section class="enviarImagem">
+      <input type="file" id="inputImage" accept="image/jpeg, image/png">
+      <button onclick="enviarImagens()">Enviar</button>
+    </section>
+
+  </body>
+
+  <!---- JavaScript ---->
+
+  <script>
+    // Area de avisos pelo JavaScript:
+    var agora = new Date();
+    // Designer dos avisos
+    const avisoAraraquara = document.getElementById("araraquara");
+    const avisos = document.querySelector(".aviso");
+
+    // Aniversario de Araraquara
+    var aniversario = new Date(agora.getFullYear(), 7, 22, 0, 0, 0);
+
+    if (agora.getTime() >= aniversario.getTime()) {
+      if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+        avisoAraraquara.style.display = "flex";
+        setTimeout(() => {
+          avisoAraraquara.style.opacity = "100%";
+        }, 200);
+      }
     }
-			
-			body{
-   	     font-family: 'Montserrat', sans-serif;
-			background-color: white;
-			color: white;
-			user-select: none;
-            }
-            
-            .navbar{
-            width: 100vw;
-            height: 120px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            z-index: 10;
-            }
-            
-            .navbar-right{
-            width: 20%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            z-index: 10;
-            background: var(--corSecundaria);
-            position: relative;
-            }
-            
-            .navbar-right ion-icon{
-            position: absolute;
-            right: 35;
-            top: 35;
-            width: 60px;
-            height: 60px;
-            color: white;
-            cursor: pointer;
-            }
-            
-            #abrirMenu{
-            display: block;
-            }
-            
-            #fecharMenu{
-            display: none;
-            }
-            
-            .navbar-left{
-            width: 90%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            z-index: 10;
-            background: var(--corSecundaria);
-            }
-            
-            .navbar-left img{
-            width: 170px;
-            height: 170px;
-            margin-bottom: 20px;
-            }
-            
-            /* Navgation em baixo */
-            
-            .navgation{
-            margin: 1vw;
-            width: 98vw;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            }
-            
-            .navgation-pagins{
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            width: 100%;
-            height: 50%;
-            }
-            
-            .navgation-pagins a{
-            padding: 10px;
-            color: var(--corQuarta);
-            font-size: 17px;
-            text-shadow: 0 0 1px black;
-            }
-            
-            .navgation-creditos{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: center;
-            width: 100%;
-            height: 50%;
-            }
-            
-            .navgation-creditos p{
-            color: black;
-            text-shadow: 0 0 1px black;
-            font-size: 16px;
-            }
-            
-            /* MenuPagin */
-            
-            .menuPagin{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 110px;
-            background-color: var(--corSecundaria);
-            color: black;
-            z-index: 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            }
-            
-            .menuPagin a{
-            color: white;
-            font-size: 17px;
-            padding: 12px;
-            }
-            
-            .menuPagin a:hover{
-            color: var(--corQuarta);
-            transition: all .2s ease-in;
-            }
-            
-            /* --- Container --- */
-            
-            .container{
-            margin-top: 10px;
-            margin-left: 1vw;
-            width: 98vw;
-            border: 2px solid var(--corSecundaria);
-            position: relative;
-            padding-bottom: 10px;
-            }
-            
-            .container-titulo{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            align-items: center;
-            }
-            
-            .container-titulo h1{
-            font-size: 18px;
-            color: white;
-            margin-left: 10px;
-            font-weight: 500;
-            }
-            
-            .content{
-            position: relative;
-            top: 10;
-            left: 50%;
-            transform: translate(-50%, -0%);
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--corTerceira);
-            }
-            
-            .informacoes{
-            position: relative;
-            bottom: 0;
-            left: 0;
-            width: 97.7vw;
-            height: 300px;
-            background: linear-gradient(180deg, white 50%, var(--corPrincipal) 50%);
-           }
-            
-            .informacoes h1{
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 20px;
-            font-weight: 500;
-            color: white;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corPrincipal);
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
-            }
-            
-            .informacoes-content{
-            position: absolute;
-            top: 25%;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            padding-left: 3px;
-            padding-right: 3px;
-            }
-            
-            .info{
-            width: 160px;
-            height: 160px;
-            background-color: var(--corPrincipal);
-            box-shadow: 0 0 5px black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            }
-            
-            .info:hover{
-            background-color: white;
-            top: -9;
-            box-shadow: 0 0 10px black;
-            transition: all .3s ease-in;
-            }
-            
-            .info:hover *{
-            color: black;
-            transition: all .4s ease-in;
-            }
-            
-            .info-content{
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: space-start;
-            padding-left: 4px;
-            }
-  			
-  		  .info-content h2{
-  		  color: white;
-  		  font-size: 18px;
-  		  margin-bottom: 5px;
-  		  font-weight: 900;
-  		  }
-  		  
-  		  .info-content p{
-  		  margin-bottom: 10px;
-  		  color: white;
-  		  font-size: 12px;
-  		  font-family: var(--fontSans);
-  		  font-weight: 550;
-  		  }
-  		  
-  		  .info-content ion-icon{
-  		  width: 50px;
-  		  height: 50px;
-  		  color: white;
-  		  margin-bottom: 3px;
-  		  margin-top: 7px;
-  		  }
-  		  
-  		  /* Noticias */
-  		  
-  		  .noticias{
-  		  width: 100%;
-  		  margin-bottom: 15px;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  border: 2px solid var(--corSecundaria);
-  		  }
-  		  
-  		  .noticias h1{
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  color: white;
-  		  background-color: var(--corSecundaria);
-  		  width: 100%;
-  		  height: 30px;
-  		  display: flex;
-  		  align-items: center;
-  		  padding-left: 10px;
-  		  }
-  		  
-  		  .noticias-content{
-  		  margin-top: 15px;
-  		  margin-bottom: 15px;
-  		  width: 95%;
-  		  height: 200px;
-  		  background-color: #f1f1f1;
-  		  box-shadow: 0 0 10px gray; /* <----- */
-  		  display: flex;
-  		  flex-direction: row;
-  		  align-items: center;
-  		  }
-  		  
-  		  .noticias-content img{
-  		  width: 180px;
-  		  height: 90%;
-  		  margin-left: 5px;
-  		  }
-  		  
-  		  .noticias-text{
-  		  width: 56%;
-  		  height: 90%;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: flex-start;
-  		  padding-left: 2.5%;
-  		  }
-  		  
-  		  .noticias-text h2{
-  		  font-size: 19px;
-  		  font-weight: 400;
-  		  color: #191919;
-  		  text-transform: uppercase;
-  		  margin-top: 10px;
-  		  }
-  		  
-  		  .noticias-text p{
-  		  margin-top: 5px;
-  		  font-size: 16px;
-  		  font-weight: 350;
-  		  }
-  		  
-  		  /* Dia do Desafio */
-  		  
-  		  .desafio{
-  		  width: 100%;
-  		  border: 2px solid var(--corSecundaria);
-  		  margin-bottom: 15px;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  position: relative;
-  		  }
-  		  
-  		  .desafio h1{
-  		  position: absolute;
-  		  top: 0;
-  		  color: white;
-  		  font-size: 20px;
-  		  font-weight: 600;
-  		  height: 30px;
-  		  background-color: var(--corSecundaria);
-  		  width: 100%;
-  		  display: flex;
-  		  align-items: center;
-  		  padding-left: 10px;
-  		  }
-  		  
-  		  .desafio h2{
-  		  color: var(--corQuarta);
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  text-transform: uppercase;
-  		  margin-top: 45px;
-  		  margin-bottom: 10px;
-  		  }
-  		  
-  		  .desafio h3{
-  		  color: red;
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  text-transform: uppercase;
-  		  margin-top: 10px;
-  		  margin-bottom: 10px;
-  		  }
-  		  
-  		  .tabela-desafio{
-  		  border: 2px solid black;
-  		  border-collapse: collapse;
-  		  color: black;
-  		  margin-bottom: 5px;
-  		  font-size: 14px;
-  		  font-weight: 500;
-  		  }
-  		  
-  		  @media (max-width: 600px){
-  		      
-  		      .tabela-desafio{
-  		          font-size: 11px;
-  		          font-weight: 400;
-  		      }
-  		      
-  		      .tabela-desafio th {
-  		          padding: 5px;
-  		      }
-  		      
-  		      .tabela-desafio td {
-  		          padding: 5px;
-  		      }
-  		      
-  		  }
-  		  
-  		  .tabela-desafio th{
-  		  border: 2px solid black;
-  		  padding: 10px;
-  		  color: red;
-  		  }
-  		  
-  		  .tabela-desafio td{
-  		  padding: 10px;
-  		  border: 2px solid black;
-  		  }
-  		  
-  		  #lose{
-  		  color: red;
-  		  }
-  		  
-  		  #win{
-  		  color: green;
-  		  }
-  		  
-  		  .tabela-desafio-tarde{
-  		  margin-bottom: 30px;
-  		  }
-  		  
-  		  /* Simulado */
-  		  
-  		  .simulado{
-  		  width: 100%;
-  		  border: 2px solid var(--corSecundaria);
-  		  margin-bottom: 20px;
-  		  margin-top: 10px;
-  		  }
-  		  
-  		  .simulado h1{
-  		  width: 100%;
-  		  height: 30px;
-  		  background-color: var(--corSecundaria);
-  		  color: white;
-  		  font-size: 20px;
-  		  padding-left: 10px;
-  		  padding-top: 3px;
-  		  }
-  		  
-  		  .simulado-content{
-  		  width: 100%;
-  		  height: 100%;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  }
-  		  
-  		  .simulado video {
-  		  	width: 90%;
-  		  	height: 300px;
-  		  	margin-top: 20px;
-  		  }
-  		  
-  		  .simulado-content h2{
-  		  color: #191919;
-  		  font-size: 22px;
-  		  font-weight: 400;
-  		  margin-top: 25px;
-  		  margin-bottom: 20px;
-  		  }
-  		  
-  		  .simulado-text{
-  		  width: 80%;
-  		  text-align: center;
-  		  }
-  		  
-  		  .simulado-text div{
-  		  margin-top: 20px;
-  		  margin-bottom: 30px;
-  		  display: flex;
-  		  justify-content: center;
-  		  align-items: center;
-  		  }
-  		  
-  		  .simulado-text div button{
-  		  width: 100px;
-  		  height: 35px;
-  		  color: white;
-  		  background-color: var(--corSecundaria);
-  		  border: none;
-  		  border-radius: 5px;
-  		  cursor: pointer;
-  		  margin-left: 5px;
-  		  margin-right: 5px;
-  		  }
-  		  
-  		  .simulado-text div button:hover{
-  		  color: #191919;
-  		  text-shadow: 0 0 1px black;
-  		  background-color: var(--corQuarta);
-  		  transition: all .3s ease-in;
-  		  }
 
-		 /* Logo link */
-		.navbar-left img {
-		  cursor: pointer;
-		}
-		
-		
-		
-		
-		/* COMUNICADO */
-		
-		.comunicado {
-		   width: 100%;
-		   height: auto;
-		   border: 2px solid var(--corSecundaria);
-	  	   margin: 15px 0px 15px 0px;
-		}
+    function closeAviso() {
+      avisos.style.opacity = "0%";
+      setTimeout(() => {
+        avisos.style.display = "none";
+      }, 300);
+    }
 
-		.comunicado h1 {
-		  width: 100%;
-		  height: 30px;
-		  background-color: var(--corSecundaria);
-		  color: white;
-		  font-size: 20px;
-		  padding-left: 10px;
-		  padding-top: 3px;
-		}
+    // Fim da area dos avisos
 
-		.comunicado img {
-		   width: 100%;
-		   height: auto;
-		}
+    function home() {
+      window.location.href = "./home.html";
+    }
 
-		/* AVISOS */
-  
-        .aviso {
-        	width: 375px;
-        	height: auto;
-        	border-radius: 10px;
-        	background: var(--corSecundaria);
-        	box-shadow: 0px 5px 15px var(--corSecundaria);
-        	position: fixed;
-        	top: 50%;
-        	left: 50%;
-        	transform: translate(-50%, -50%);
-        	transition: all .5s ease-in-out;
-        	display: flex;
-        	flex-direction: column;
-        	align-items: center;
-        }          
-        
-        .aviso h1{
-        	width: 100%;
-        	height: 35px;
-        	background: var(--corPrincipal);
-        	font-size: 18px;
-        	font-weight: 800;
-        	border-radius: 10px 10px 0px 0px;
-        	display: flex;
-        	align-items: center;
-        	justify-content: center;
-        	letter-spacing: 0.8px;
-        }
-        
-        .aviso h2 {
-        	margin: 10px 0px 5px 0px;
-        	text-transform: uppercase;
-        	font-size: 21px;
-        	font-weight: 700;
-        	letter-spacing: 0.5px;
-        }
-        
-        .aviso p {
-        	margin: 0px;
-        	text-transform: uppercase;
-        	font-size: 15px;
-        	font-weight: 400;
-        	letter-spacing: 0.8px;
-        	color: #CCC;
-        }
-        
-        .aviso button {
-        	width: 80%;
-        	height: 32.5px;
-        	border-radius: 5px;
-        	border: none;
-        	background: white;
-        	color: #191919;
-        	font-size: 16px;
-        	font-weight: 700;
-        	box-shadow: 0px 4px 10px white;
-        	margin: 25px auto 25px auto;
-        	cursor: pointer;
-        	transition: all .3s ease-in-out;
-        }
-        
-        .aviso button:hover {
-        	background: #191919;
-        	color: #F1F1F1;
-        	box-shadow: 0px 4px 10px gray;
-        }
-        
-        #araraquara {
-        	display: none;
-        	opacity: 0%;
-	}
-		
-      </style>
-		
-		<body>
-			
-			<nav class="navbar">
-				
-				<nav class="navbar-left">
-					<img onclick="home()" src="./imagem/logo.png"/>
-				</nav>
-				
-				<nav class="navbar-right">
-						<ion-icon id="abrirMenu" name="menu-outline"></ion-icon>
-						<ion-icon id="fecharMenu" name="close-outline"></ion-icon>
-				</nav>
-				
-			</nav>
-			
-			 <!-- MenuPagin -->
-				
-				<div class="menuPagin">
-					<div class="menuPagin-pagins">
-						<a href="./home.html">Home</a>
-						<a href="./sobre.html">Sobre</a>
-						<a href="#">Contato</a>
-					</div>
-				</div>
-			
-			<main class="container">
-				
-				<div class="container-titulo">
-					<h1>Site Letícia</h1>
-				</div>
+    //Questoes
+    function nonoAno() {
+      window.location.href = "./questoes/9ano.html";
+    }
+    function primeiroAno() {
+      window.location.href = "./questoes/1ano.html";
+    }
+    function segundoAno() {
+      window.location.href = "./questoes/2ano.html";
+    }
+    function terceiroAno() {
+      window.location.href = "./questoes/3ano.html";
+    }
 
-				<!-- Comunicados -->
-				<div class="content">
+    // MENU
+    var abrirMenu = document.getElementById("abrirMenu");
+    var fecharMenu = document.getElementById("fecharMenu");
+    var container = document.querySelector(".container");
+    var menuPagin = document.querySelector(".menuPagin");
+    abrirMenu.addEventListener("click", openMenu);
+    fecharMenu.addEventListener("click", closeMenu);
 
-					
-                                        <div class="comunicado">
-					   <h1>7 de Setembro</h1>
-						<img src="./imagem/7setembro.jpg">
-					</div>
-					
-					<div class="comunicado">
-					   <h1>Prova Paulista</h1>
-						<img src="./imagem/prova.png">
-					</div>
-					
-					<div class="comunicado">
-					   <h1>Reuniao de Pais</h1>
-						<img src="./imagem/reuniao.png">
-					</div>
-					
-					<div class="simulado">
-					
-						<h1>Questões de Vestibulares</h1>
-						
-						<div class="simulado-content">
-							
-							<video id="meuVideo" autoplay loop>
-							<source src="./imagem/vestibular.mp4" type="video/mp4">
-							Carregando...
-						        </video>
-							
-							<h2>[  Questões Testes  ]</h2>
-							
-							<div class="simulado-text">
-								<p>Faça as Questões Testes de Vestibulares e pratique com as nossas perguntas dinâmicas</p>
-								<div>
-									
-									<button onclick="nonoAno()">9°ano</button>
-									<button onclick="1ano()">1°ano</button>
-									<button onclick="2ano()">2°ano</button>
-									<button onclick="3ano()">3°ano</button>
-									
-								</div>
-							</div>	
-							
-						</div>
-						
-					</div>
-					
-					<div class="desafio">
-						<h1>Dia do Desafio - 31/05</h1>
-							<h2>Manhã</h2>
-							
-							<table class="tabela-desafio">
-								
-								<tr>
-									<th>1 aula</th>
-									<td>7h - 7h 45</td>
-									<td><span id="win">1B </span> x <span id="win">2A</span></td>
-									<td>Profs: Cris Correia / Vitória</td>
-								</tr>
-								
-								<tr>
-									<th>2 aula</th>
-									<td>7h 45 - 8h 30</td>
-									<td><span id="win">1A</span> x <span id="win">2B</span></td>
-									<td>Profs: Cris Correia / Vitória</td>
-								</tr>
+    function openMenu() {
+      menuPagin.style.transition = "top .2s ease-in";
+      menuPagin.style.top = "105";
+      container.style.transition = "margin-top .2s ease-in";
+      container.style.marginTop = "105px";
+      abrirMenu.style.display = "none";
+      fecharMenu.style.display = "block";
+    }
 
-								<tr>
-									<th>3 aula</th>
-									<td>8h 30 - 9h 15</td>
-									<td><span id="win">3A</span> x <span id="win">3B</span></td>
-									<td>Profs: Cris Correia / Tânia / Gustavo</td>
-								</tr>
+    function closeMenu() {
+      menuPagin.style.top = "0";
+      container.style.marginTop = "10px";
+      fecharMenu.style.display = "none";
+      abrirMenu.style.display = "block";
+    }
 
-								<tr>
-									<th>4 aula</th>
-									<td>9h 15 - 10h</td>
-									<td><span id="win">2C</span> x <span id="win">3C</span></td>
-									<td>Profs: Cris Correia / Márcia / Ana Margarete</td>
-								</tr>
-								
-							</table>
-							
-							<h3>Tarde</h3>
-							
-							<table class="tabela-desafio tabela-desafio-tarde">
-								
-								<tr>
-									<th>2 aula</th>
-									<td>13h 45 - 14h 30</td>
-									<td><span id="win">6A</span> x <span id="win">6B</span></td>
-									<td>Profs: Cris Correia / Margarete / Gustavo</td>
-								</tr>
-								
-								<tr>
-									<th>3 aula</th>
-									<td>14h 30 - 15h 15</td>
-									<td><span id="win">7A </span> x <span id="win">7B</span></td>
-									<td>Profs: Cris Correia / Jacilene / Hugo</td>
-								</tr>
+    //OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
 
-								<tr>
-									<th>4 aula</th>
-									<td>15h 15 - 16h</td>
-									<td><span id="lose">8B</span> x <span id="win">9B</span></td>
-									<td>Profs: Cris Correia / Marcela</td>
-								</tr>
+    // Entrar em Pagins BOTTOM-NAVGATION
 
-								<tr>
-									<th>5 aula</th>
-									<td>16h 20 - 17h 05</td>
-									<td><span id="lose">8A </span> x <span id="win">9A</span></td>
-									<td>Profs: Cris Correia / Cris bras</td>
-								</tr>
-								
-							</table>
-							
-					</div>
-									
-					<!-- Informacoes -->
-					<div class="informacoes">
-						<h1>Informações</h1>
-							
-							<div class="informacoes-content">
-								
-								<div class="info provas">
-									<div class="info-content">
-										
-										<ion-icon name="book-outline"></ion-icon>
-										<h2>Provas</h2>
-										<p>Confira as datas das provas e aproveite as oportunidades de aprendizado...</p>
-									
-									</div>
-								</div>
-								
-								<div class="info interclasse">
-									<div class="info-content">
-										
-										<ion-icon name="ribbon-outline"></ion-icon>
-										<h2>Interclasses</h2>
-										<p>Fique atento ao nosso calendário escolar para participar e torcer pela sua sala!</p>
-									
-									</div>
-								</div>
-								
-								<div class="info horarios">
-									<div class="info-content">
-										
-										<ion-icon name="time-outline"></ion-icon>
-										<h2>Horários</h2>
-										<p>Confira as datas das provas e quais questões podem cair nos vestibulares...</p>
-									
-									</div>
-								</div>
-								
-							</div>
-								
-					</div>
-					
-				</div>
-				
-				
-			</main>
-			
-			<main class="navgation">
-				
-				<div class="navgation-pagins">
-					<a href="./home.html">Home</a>
-					<a href="./sobre.html">Sobre</a>
-					<a href="#">Contato</a>
-				</div>
-				
-				<div class="navgation-creditos">
-					<p>9°A Production
-					<br>Leticia © 2023</p>
-				</div>
-				
-			</main>
+    //Interclasse
+    var interclasse = document.querySelector(".interclasse");
+    interclasse.addEventListener("click", () => {
+      window.location.href = "./info/interclasse.html";
+    });
 
-			<!------------ AVISOS ------------>
-			
-			<!-- Aniversario de araraquara -->
-			<div class="aviso" id="araraquara">
-				<h1>AVISO</h1>
-				<h2>22 de agosto FERIADO</h2>
-				<p>Feliz Aniversario Araraquara!!</p>
-				<button onclick="closeAviso()">Entendido</button>
-			</div>
-			
-		</body>
+    //Provas
+    var provas = document.querySelector(".provas");
+    provas.addEventListener("click", () => {
+      window.location.href = "./info/provas.html";
+    });
 
-		<!---- JavaScript ---->
+    //Horarios
+    var horarios = document.querySelector(".horarios");
+    horarios.addEventListener("click", () => {
+      window.location.href = "./info/horarios.html";
+    });
 
-		<script>
+    var video = document.getElementById("meuVideo");
 
-                // Area de avisos pelo JavaScript:
-		var agora = new Date();
-		// Designer dos avisos
-		const avisoAraraquara = document.getElementById('araraquara');
-		const avisos = document.querySelector('.aviso');
-		
-		// Aniversario de Araraquara
-		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
-		
-		if (agora.getTime() >=  aniversario.getTime()) {
-			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
-				avisoAraraquara.style.display = "flex";
-				setTimeout( () => {
-					avisoAraraquara.style.opacity = "100%";
-				}, 200);
-			}
-		}
+    video.addEventListener("ended", function () {
+      video.currentTime = 0; // Reinicia o vídeo para o início
+      video.play(); // Inicia novamente
+    });
+  </script>
 
-		function closeAviso() {
-			avisos.style.opacity = "0%";
-			setTimeout( () => {
-				avisos.style.display = "none";
-			}, 300);
-		}
-		
-		// Fim da area dos avisos
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
 
-			
-		function home(){
-		window.location.href = "./home.html";
-		}
-			
-		//Questoes
-		function nonoAno(){
-		window.location.href = "./questoes/9ano.html";
-		}function primeiroAno(){
-		window.location.href = "./questoes/1ano.html";
-		}function segundoAno(){
-		window.location.href = "./questoes/2ano.html";
-		}function terceiroAno(){
-		window.location.href = "./questoes/3ano.html";
-		}
-		
-			
-		// MENU
-		var abrirMenu = document.getElementById("abrirMenu");
-		var fecharMenu = document.getElementById("fecharMenu");
-		var container = document.querySelector(".container");
-		var menuPagin = document.querySelector(".menuPagin");
-		abrirMenu.addEventListener("click", openMenu);
-		fecharMenu.addEventListener("click", closeMenu);
-			
-			function openMenu(){
-			menuPagin.style.transition = "top .2s ease-in";
-			menuPagin.style.top = "105";
-			container.style.transition = "margin-top .2s ease-in";
-			container.style.marginTop = "105px";
-			abrirMenu.style.display = "none";
-			fecharMenu.style.display = "block";
-			}
-			
-			function closeMenu(){menuPagin.style.top = "0";
-			container.style.marginTop = "10px";
-			fecharMenu.style.display = "none";
-			abrirMenu.style.display = "block";
-			}
-			
-			//OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
-			
-			
-			// Entrar em Pagins BOTTOM-NAVGATION
-			
-			//Interclasse
-			var interclasse = document.querySelector(".interclasse");
-			interclasse.addEventListener("click", () => {
-				window.location.href = "./info/interclasse.html";
-			});
-			
-			//Provas
-			var provas = document.querySelector(".provas");
-			provas.addEventListener("click", () => {
-				window.location.href = "./info/provas.html";
-			});
-			
-			//Horarios
-			var horarios = document.querySelector(".horarios");
-			horarios.addEventListener("click", () => {
-				window.location.href = "./info/horarios.html";
-			});
+  <!-- LINKS DO BANCO DE DADOS -->
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
 
-                        var video = document.getElementById("meuVideo");
+  <script>
 
-                        video.addEventListener("ended", function() {
-                        video.currentTime = 0; // Reinicia o vídeo para o início
-                        video.play(); // Inicia novamente
-                        });
-			
-		</script>
-	
-			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAgc6YZY5FIZaOk-utuQh1I9RRRrdRLVew",
+      authDomain: "website-leticia.firebaseapp.com",
+      projectId: "website-leticia",
+      storageBucket: "website-leticia.appspot.com",
+      messagingSenderId: "723129834232",
+      appId: "1:723129834232:web:f166362fc6943ca492790d"
+    };
 
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+  function enviarImagens() {
+
+    const storageRef = firebase.storage().ref();
+    const inputImage = document.getElementById('inputImage');
+    const file = inputImage.files[0];
+
+    if (file) {
+      // Use o nome original do arquivo
+      const fileName = file.name;
+      const imageRef = storageRef.child('imagens/' + fileName);
+      imageRef.put(file).then(function(snapshot) {
+        console.log('Imagem enviada com sucesso para o Firebase Storage.');
+
+        // Agora você pode obter a URL da imagem para referência no Firestore
+        imageRef.getDownloadURL().then(function(url) {
+          console.log('URL da imagem:', url);
+
+          // Em seguida, você pode armazenar esta URL no Firestore
+          const db = firebase.firestore();
+          db.collection('imagens').add({
+            imagemURL: url
+          }).then(function(docRef) {
+            console.log('URL da imagem armazenada no Firestore com ID:', docRef.id);
+          }).catch(function(error) {
+            console.error('Erro ao armazenar a URL da imagem no Firestore:', error);
+          });
+        }).catch(function(error) {
+          console.error('Erro ao obter a URL da imagem:', error);
+        });
+      }).catch(function(error) {
+        console.error('Erro ao enviar a imagem para o Firebase Storage:', error);
+      });
+    } else {
+      console.log('Nenhuma imagem selecionada');
+    }
+
+  }
+
+
+  </script>
 </html>
