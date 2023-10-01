@@ -204,6 +204,38 @@
         color: var(--corTerceira);
       }
 
+      /* MenuPagin */
+
+      .menuPagin{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 110px;
+        background-color: var(--corSecundaria);
+        color: black;
+        z-index: 8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .menuPagin a{
+        color: white;
+        font-size: 17px;
+        padding: 12px;
+        }
+
+        .menuPagin a:hover{
+        color: var(--corQuarta);
+        transition: all .2s ease-in;
+        }
+
+        /* Logo link */
+        .navbar-left img {
+          cursor: pointer;
+        }
+
       .informacoes {
         position: relative;
         bottom: 0;
@@ -682,9 +714,9 @@
 
     <div class="menuPagin">
       <div class="menuPagin-pagins">
-        <a href="/home">Home</a>
-        <a href="/sobre">Sobre</a>
-        <a href="#">Contato</a>
+        <a href='/home'>Home</a>
+        <a href='/sobre'>Sobre</a>
+        <a href="tel:5516998877665">Contato</a>
       </div>
     </div>
 
