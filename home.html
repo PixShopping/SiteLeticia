@@ -42,7 +42,7 @@
         user-select: none;
       }
 
-      .navbar {
+      .navbar{
         width: 100vw;
         height: 120px;
         background-color: var(--corSecundaria);
@@ -50,9 +50,9 @@
         flex-direction: row;
         justify-content: space-between;
         z-index: 10;
-      }
+        }
 
-      .navbar-right {
+        .navbar-right{
         width: 20%;
         height: 100%;
         display: flex;
@@ -60,9 +60,9 @@
         z-index: 10;
         background: var(--corSecundaria);
         position: relative;
-      }
+        }
 
-      .navbar-right ion-icon {
+        .navbar-right ion-icon{
         position: absolute;
         right: 35;
         top: 35;
@@ -70,111 +70,43 @@
         height: 60px;
         color: white;
         cursor: pointer;
-      }
+        }
 
-      #abrirMenu {
+        #abrirMenu{
         display: block;
-      }
+        }
 
-      #fecharMenu {
+        #fecharMenu{
         display: none;
-      }
+        }
 
-      .navbar-left {
+        .navbar-left{
         width: 90%;
         height: 100%;
         display: flex;
         align-items: center;
         z-index: 10;
         background: var(--corSecundaria);
-      }
+        }
 
-      .navbar-left img {
+        .navbar-left img{
         width: 170px;
         height: 170px;
         margin-bottom: 20px;
-      }
+        }
 
-      /* Navgation em baixo */
+        /* --- Container --- */
 
-      .navgation {
-        margin: 1vw;
-        width: 98vw;
-        height: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .navgation-pagins {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        width: 100%;
-        height: 50%;
-      }
-
-      .navgation-pagins a {
-        padding: 10px;
-        color: var(--corQuarta);
-        font-size: 17px;
-        text-shadow: 0 0 1px black;
-      }
-
-      .navgation-creditos {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        text-align: center;
-        width: 100%;
-        height: 50%;
-      }
-
-      .navgation-creditos p {
-        color: black;
-        text-shadow: 0 0 1px black;
-        font-size: 16px;
-      }
-
-      /* MenuPagin */
-
-      .menuPagin {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 110px;
-        background-color: var(--corSecundaria);
-        color: black;
-        z-index: 8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .menuPagin a {
-        color: white;
-        font-size: 17px;
-        padding: 12px;
-      }
-
-      .menuPagin a:hover {
-        color: var(--corQuarta);
-        transition: all 0.2s ease-in;
-      }
-
-      /* --- Container --- */
-
-      .container {
+        .container{
         margin-top: 10px;
         margin-left: 1vw;
         width: 98vw;
         border: 2px solid var(--corSecundaria);
         position: relative;
-        padding-bottom: 10px;
-      }
+        padding-bottom: 20px;
+        }
 
-      .container-titulo {
+        .container-titulo{
         position: relative;
         top: 0;
         left: 0;
@@ -183,16 +115,15 @@
         background-color: var(--corSecundaria);
         display: flex;
         align-items: center;
-      }
+        }
 
-      .container-titulo h1 {
+        .container-titulo h1{
         font-size: 18px;
-        color: white;
+        color: whtie;
         margin-left: 10px;
-        font-weight: 500;
-      }
+        }
 
-      .content {
+        .content{
         position: relative;
         top: 10;
         left: 50%;
@@ -202,11 +133,103 @@
         flex-direction: column;
         align-items: center;
         color: var(--corTerceira);
-      }
+        padding-bottom: 15px;
+        }
 
-      /* MenuPagin */
+        .content h1{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 26px;
+        }
 
-      .menuPagin{
+        .content-text{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        }
+
+        .content-text p{
+        font-size: 17px;
+        margin-bottom: 30px;
+        text-shadow: 0 0 1px black;
+        }
+
+        .content-text a{
+        color: var(--corQuarta);
+        font-size: 17px;
+        margin-bottom: 30px;
+        text-shadow: 0 0 1px black;
+        }
+
+        .content-text button{
+        width: 110px;
+        height: 29px;
+        border: none;
+        border-radius: 2px;
+        background: var(--corQuarta);
+        color: white;
+        box-shadow: 1.5px 2px 1px var(--corQuarta);
+        cursor: pointer;
+        transition: all .2s ease-in;
+        }
+
+        .content-text button:hover{
+        color: white;
+        text-shadow: 0 0 10px white;
+        background-color: #000000;
+        box-shadow: 1.5px 2px 1px black;
+        }
+
+        /* Navgation em baixo */
+
+        .navgation{
+        margin: 1vw;
+        width: 98vw;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .navgation-pagins{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 50%;
+        }
+
+        .navgation-pagins a{
+        padding: 10px;
+        color: var(--corQuarta);
+        font-size: 17px;
+        text-shadow: 0 0 1px black;
+        }
+
+        .navgation-pagins a:hover{
+        transition: all .3s ease-in;
+        color: var(--corTerceira);
+        }
+
+        .navgation-creditos{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        }
+
+        .navgation-creditos p{
+        color: black;
+        text-shadow: 0 0 1px black;
+        font-size: 16px;
+        }
+
+        /* MenuPagin */
+
+        .menuPagin{
         position: absolute;
         left: 0;
         top: 0;
