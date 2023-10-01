@@ -630,9 +630,11 @@
         #araraquara {
         	display: none;
         	opacity: 0%;
-	}
+	      }
 
       </style>
+
+    </head>
 
 		<body>
 
@@ -702,9 +704,9 @@
 								<div>
 
 									<button onclick="nonoAno()">9°ano</button>
-									<button onclick="">1°ano</button>
-									<button onclick="">2°ano</button>
-									<button onclick="">3°ano</button>
+									<button onclick="1ano()">1°ano</button>
+									<button onclick="2ano()">2°ano</button>
+									<button onclick="3ano()">3°ano</button>
 
 								</div>
 							</div>
@@ -855,62 +857,57 @@
 				<button onclick="closeAviso()">Entendido</button>
 			</div>
 
-    <section class="enviarImagem">
-      <input type="file" id="inputImage" accept="image/jpeg, image/png">
-      <button onclick="enviarImagens()">Enviar</button>
-    </section>
+		</body>
 
-  </body>
+		<!---- JavaScript ---->
 
-  <!---- JavaScript ---->
+		<script>
 
-  <script>
-    // Area de avisos pelo JavaScript:
-    var agora = new Date();
-    // Designer dos avisos
-    const avisoAraraquara = document.getElementById("araraquara");
-    const avisos = document.querySelector(".aviso");
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
 
-    // Aniversario de Araraquara
-    var aniversario = new Date(agora.getFullYear(), 7, 22, 0, 0, 0);
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
 
-    if (agora.getTime() >= aniversario.getTime()) {
-      if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
-        avisoAraraquara.style.display = "flex";
-        setTimeout(() => {
-          avisoAraraquara.style.opacity = "100%";
-        }, 200);
-      }
-    }
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
+			}
+		}
 
-    function closeAviso() {
-      avisos.style.opacity = "0%";
-      setTimeout(() => {
-        avisos.style.display = "none";
-      }, 300);
-    }
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
 
-    // Fim da area dos avisos
+		// Fim da area dos avisos
 
-    function home() {
-      window.location.href = "./home.html";
-    }
 
-    //Questoes
-    function nonoAno() {
-      window.location.href = "./questoes/9ano.html";
-    }
-    function primeiroAno() {
-      window.location.href = "./questoes/1ano.html";
-    }
-    function segundoAno() {
-      window.location.href = "./questoes/2ano.html";
-    }
-    function terceiroAno() {
-      window.location.href = "./questoes/3ano.html";
-    }
+		function home(){
+		window.location.href = "./home.html";
+		}
 
-    // MENU
+		//Questoes
+		function nonoAno(){
+		window.location.href = "./questoes/9ano.html";
+		}function primeiroAno(){
+		window.location.href = "./questoes/1ano.html";
+		}function segundoAno(){
+		window.location.href = "./questoes/2ano.html";
+		}function terceiroAno(){
+		window.location.href = "./questoes/3ano.html";
+		}
+
+
+		// MENU
 		var abrirMenu = document.getElementById("abrirMenu");
 		var fecharMenu = document.getElementById("fecharMenu");
 		var container = document.querySelector(".container");
@@ -927,110 +924,45 @@
 			fecharMenu.style.display = "block";
 			}
 
-			function closeMenu(){
-      menuPagin.style.top = "0";
+			function closeMenu(){menuPagin.style.top = "0";
 			container.style.marginTop = "10px";
 			fecharMenu.style.display = "none";
 			abrirMenu.style.display = "block";
 			}
 
-    //OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
-
-    // Entrar em Pagins BOTTOM-NAVGATION
-
-    //Interclasse
-    var interclasse = document.querySelector(".interclasse");
-    interclasse.addEventListener("click", () => {
-      window.location.href = "./info/interclasse.html";
-    });
-
-    //Provas
-    var provas = document.querySelector(".provas");
-    provas.addEventListener("click", () => {
-      window.location.href = "./info/provas.html";
-    });
-
-    //Horarios
-    var horarios = document.querySelector(".horarios");
-    horarios.addEventListener("click", () => {
-      window.location.href = "./info/horarios.html";
-    });
-
-    var video = document.getElementById("meuVideo");
-
-    video.addEventListener("ended", function () {
-      video.currentTime = 0; // Reinicia o vídeo para o início
-      video.play(); // Inicia novamente
-    });
-  </script>
-
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-
-  <!-- LINKS DO BANCO DE DADOS -->
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
-
-  <script>
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyAgc6YZY5FIZaOk-utuQh1I9RRRrdRLVew",
-      authDomain: "website-leticia.firebaseapp.com",
-      projectId: "website-leticia",
-      storageBucket: "website-leticia.appspot.com",
-      messagingSenderId: "723129834232",
-      appId: "1:723129834232:web:f166362fc6943ca492790d"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-  function enviarImagens() {
-
-    const storageRef = firebase.storage().ref();
-    const inputImage = document.getElementById('inputImage');
-    const file = inputImage.files[0];
-
-    if (file) {
-      // Use o nome original do arquivo
-      const fileName = file.name;
-      const imageRef = storageRef.child('imagens/' + fileName);
-      imageRef.put(file).then(function(snapshot) {
-        console.log('Imagem enviada com sucesso para o Firebase Storage.');
-
-        // Agora você pode obter a URL da imagem para referência no Firestore
-        imageRef.getDownloadURL().then(function(url) {
-          console.log('URL da imagem:', url);
-
-          // Em seguida, você pode armazenar esta URL no Firestore
-          const db = firebase.firestore();
-          db.collection('imagens').add({
-            imagemURL: url
-          }).then(function(docRef) {
-            console.log('URL da imagem armazenada no Firestore com ID:', docRef.id);
-          }).catch(function(error) {
-            console.error('Erro ao armazenar a URL da imagem no Firestore:', error);
-          });
-        }).catch(function(error) {
-          console.error('Erro ao obter a URL da imagem:', error);
-        });
-      }).catch(function(error) {
-        console.error('Erro ao enviar a imagem para o Firebase Storage:', error);
-      });
-    } else {
-      console.log('Nenhuma imagem selecionada');
-    }
-
-  }
+			//OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
 
 
-  </script>
+			// Entrar em Pagins BOTTOM-NAVGATION
+
+			//Interclasse
+			var interclasse = document.querySelector(".interclasse");
+			interclasse.addEventListener("click", () => {
+				window.location.href = "./info/interclasse.html";
+			});
+
+			//Provas
+			var provas = document.querySelector(".provas");
+			provas.addEventListener("click", () => {
+				window.location.href = "./info/provas.html";
+			});
+
+			//Horarios
+			var horarios = document.querySelector(".horarios");
+			horarios.addEventListener("click", () => {
+				window.location.href = "./info/horarios.html";
+			});
+
+                        var video = document.getElementById("meuVideo");
+
+                        video.addEventListener("ended", function() {
+                        video.currentTime = 0; // Reinicia o vídeo para o início
+                        video.play(); // Inicia novamente
+                        });
+
+		</script>
+
+			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </html>
