@@ -911,28 +911,28 @@
     }
 
     // MENU
-    var abrirMenu = document.getElementById("abrirMenu");
-    var fecharMenu = document.getElementById("fecharMenu");
-    var container = document.querySelector(".container");
-    var menuPagin = document.querySelector(".menuPagin");
-    abrirMenu.addEventListener("click", openMenu);
-    fecharMenu.addEventListener("click", closeMenu);
+		var abrirMenu = document.getElementById("abrirMenu");
+		var fecharMenu = document.getElementById("fecharMenu");
+		var container = document.querySelector(".container");
+		var menuPagin = document.querySelector(".menuPagin");
+		abrirMenu.addEventListener("click", openMenu);
+		fecharMenu.addEventListener("click", closeMenu);
 
-    function openMenu() {
-      menuPagin.style.transition = "top .2s ease-in";
-      menuPagin.style.top = "105";
-      container.style.transition = "margin-top .2s ease-in";
-      container.style.marginTop = "105px";
-      abrirMenu.style.display = "none";
-      fecharMenu.style.display = "block";
-    }
+			function openMenu(){
+			menuPagin.style.transition = "top .2s ease-in";
+			menuPagin.style.top = "105";
+			container.style.transition = "margin-top .2s ease-in";
+			container.style.marginTop = "105px";
+			abrirMenu.style.display = "none";
+			fecharMenu.style.display = "block";
+			}
 
-    function closeMenu() {
+			function closeMenu(){
       menuPagin.style.top = "0";
-      container.style.marginTop = "10px";
-      fecharMenu.style.display = "none";
-      abrirMenu.style.display = "block";
-    }
+			container.style.marginTop = "10px";
+			fecharMenu.style.display = "none";
+			abrirMenu.style.display = "block";
+			}
 
     //OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
 
