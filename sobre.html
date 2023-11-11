@@ -24,19 +24,22 @@
 			--fontNegrito: 'Ysabeau', sans-serif;
             }
 			
-			*{
-			padding: 0;
-			margin: 0;
-			box-sizing: border-box;
-			text-decoration: none;
-          }
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				text-decoration: none;
+			}
 			
-			body{
-   	     font-family: 'Montserrat', sans-serif;
-			background-color: white;
-			color: white;
-			user-select: none;
-            }
+			body {
+				font-family: 'Montserrat', sans-serif;
+				background-color: white;
+				color: white;
+				user-select: none;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
             
             .navbar{
             width: 100vw;
@@ -122,87 +125,84 @@
             color: var(--corTerceira);
             }
             
-            .navgation-creditos{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: center;
-            width: 100%;
-            height: 50%;
+            .navgation-creditos {
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				text-align: center;
+				width: 100%;
+				height: 50%;
             }
             
-            .navgation-creditos p{
-            color: black;
-            text-shadow: 0 0 1px black;
-            font-size: 16px;
+            .navgation-creditos p {
+				color: black;
+				text-shadow: 0 0 1px black;
+				font-size: 16px;
             }
             
             /* MenuPagin */
             
-            .menuPagin{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 110px;
-            background-color: var(--corSecundaria);
-            color: black;
-            z-index: 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            .menuPagin {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100vw;
+				height: 110px;
+				background-color: var(--corSecundaria);
+				color: black;
+				z-index: 8;
+				display: flex;
+				align-items: center;
+				justify-content: center;
             }
             
-            .menuPagin a{
-            color: white;
-            font-size: 17px;
-            padding: 12px;
+            .menuPagin a {
+				color: white;
+				font-size: 17px;
+				padding: 12px;
             }
             
-            .menuPagin a:hover{
-            color: var(--corQuarta);
-            transition: all .2s ease-in;
+            .menuPagin a:hover {
+				color: var(--corQuarta);
+				transition: all .2s ease-in;
             }
             
             /* --- Container --- */
             
-            .container{
-            margin-top: 10px;
-            margin-left: 1vw;
-            width: 98vw;
-            border: 2px solid var(--corSecundaria);
-            position: relative;
-            padding-bottom: 20px;
+            .container {
+				margin-top: 10px;
+				margin-left: 1vw;
+				width: 95vw;
+				max-width: 650px;
+				border: 2px solid var(--corSecundaria);
+				position: relative;
             }
             
-            .container-titulo{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            align-items: center;
+            .container-titulo {
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				background-color: var(--corSecundaria);
+				display: flex;
+				align-items: center;
             }
             
-            .container-titulo h1{
-            font-size: 18px;
-            color: whtie;
-            margin-left: 10px;
+            .container-titulo h1 {
+				font-size: 18px;
+				color: white;
+				margin-left: 10px;
             }
             
-            .content{
-            position: relative;
-            top: 10;
-            left: 50%;
-            transform: translate(-50%, -0%);
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--corTerceira);
-            padding-bottom: 15px;
+            .content {
+				position: relative;
+				top: 0px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				color: var(--corTerceira);
             }
             
             /*------------------------
@@ -215,13 +215,13 @@
             	color: #191919;
             	margin-top: 20px;
             	margin-bottom: 20px;
-		display: none;
+				display: none;
             }
             
             .content img {
-            	width: 90%;
-            	border: 2px solid black;
-            	margin-bottom: 20px;
+            	width: 100%;
+            	margin: 0px 0px 15px 0px;
+				border-bottom: 2px solid var(--corSecundaria);
             }
             
             .content h2 {
@@ -236,17 +236,18 @@
             	color: #000;
             	border-collapse: collapse;
             	margin-bottom: 25px;
+				width: 95%;
             }
             
             .tabela-sobre tr {
-            	border: 2px solid black;
+            	border: 2px solid var(--corPrincipal);
             	padding: 5px;
             }
             
             .tabela-sobre th {
             	padding: 10px;
-            	border: 2px solid black;
-            	font-size: 16px;
+            	border: 2px solid var(--corPrincipal);
+            	font-size: 14.5px;
             	font-weight: 700;
             	background-color: var(--corSecundaria);
             	color: white;
@@ -254,26 +255,10 @@
             
             .tabela-sobre td {
             	padding: 10px;
-            	border: 2px solid black;
-            	font-size: 16px;
+            	border: 2px solid var(--corPrincipal);
+            	font-size: 14px;
             	font-weight: 600;
-            	color: #191919;
-            }
-            
-            @media (max-width: 600px){
-            	
-	            .tabela-sobre th {
-	            	padding: 7px;
-	            	font-size: 15px;
-	            	font-weight: 700;
-	            }
-	            
-	            .tabela-sobre td {
-	            	padding: 7px;
-	            	font-size: 15px;
-	            	font-weight: 600;
-	            }
-            	
+            	color: var(--corPrincipal);
             }
             
             /*---------------------
@@ -282,7 +267,7 @@
             
             .governo {
             	width: 100%;
-            	height: 200px;
+            	height: auto;
             	background-color: #333;
             	color: white;
             	display: flex;
@@ -293,29 +278,38 @@
             
             .governo h1 {
             	color: white;
-            	font-size: 18px;
+            	font-size: 16px;
             	font-weight: 500;
-            	margin-bottom: 4px;
-            }
+				display: block;
+				margin: 15px 0px 8px 0px;
+				width: 95%;
+			}
             
             .governo p {
             	color: gray;
-            	font-size: 14px;
+            	font-size: 15px;
             	font-weight: 500;
-            	width: 80%;
+            	width: 90%;
             	margin-bottom: 8px;
             }
             
             .governo img {
             	width: 100px;
             	height: 100px;
-		border: none;
+				border: none;
             }
 
-		/* Logo link */
-		.navbar-left img {
-		  cursor: pointer;
-		}
+			/* Logo link */
+			.navbar-left img {
+				cursor: pointer;
+			}
+
+			.links {
+				cursor: pointer;
+			} .links:hover {
+				color: var(--corQuarta);
+				transition: all .3s ease-in-out;
+			}
   
 		</style>
 		
@@ -386,12 +380,12 @@
 						
 						<tr>
 							<th>Instagram</th>
-							<td onclick="instagram()">@e.e.prof.leticia</td>
+							<td class="links" onclick="instagram()">@e.e.prof.leticia</td>
 						</tr>
 
 						<tr>
 							<th>Facebook</th>
-							<td onclick="facebook()">@E E Letícia Informes </td>
+							<td class="links" onclick="facebook()">@E E Letícia Informes </td>
 						</tr>
 						
 					</table>

@@ -27,19 +27,22 @@
    }
 			
 			*{
-			padding: 0;
-			margin: 0;
-			border: 0;
-			box-sizing: border-box;
-			text-decoration: none;
-    }
+				padding: 0;
+				margin: 0;
+				border: 0;
+				box-sizing: border-box;
+				text-decoration: none;
+			}
 			
-			body{
-   	     font-family: 'Montserrat', sans-serif;
-			background-color: white;
-			color: white;
-			user-select: none;
-            }
+			body {
+				font-family: 'Montserrat', sans-serif;
+				background-color: white;
+				color: white;
+				user-select: none;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
             
             .navbar{
             width: 100vw;
@@ -164,473 +167,469 @@
             
             /* --- Container --- */
             
-            .container{
-            margin-top: 10px;
-            margin-left: 1vw;
-            width: 98vw;
-            border: 2px solid var(--corSecundaria);
-            position: relative;
-            padding-bottom: 10px;
+            .container {
+				margin-top: 10px;
+				margin-left: 1vw;
+				width: 98vw;
+				max-width: 650px;
+				border: 2px solid var(--corSecundaria);
+				position: relative;
+				padding-bottom: 10px;
             }
             
-            .container-titulo{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            align-items: center;
+            .container-titulo {
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				background-color: var(--corSecundaria);
+				display: flex;
+				align-items: center;
             }
             
-            .container-titulo h1{
-            font-size: 18px;
-            color: white;
-            margin-left: 10px;
-            font-weight: 500;
+            .container-titulo h1 {
+				font-size: 18px;
+				color: white;
+				margin-left: 10px;
+				font-weight: 500;
             }
             
-            .content{
-            position: relative;
-            top: 10;
-            left: 50%;
-            transform: translate(-50%, -0%);
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--corTerceira);
+            .content {
+				position: relative;
+				top: 10;
+				left: 50%;
+				transform: translate(-50%, -0%);
+				width: 95%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				color: var(--corTerceira);
             }
             
-            .informacoes{
-            position: relative;
-            bottom: 0;
-            left: 0;
-            width: 97.7vw;
-            height: 300px;
-            background: linear-gradient(180deg, white 50%, var(--corPrincipal) 50%);
-           }
+            .informacoes {
+				position: relative;
+				bottom: 0;
+				left: 0;
+				width: 97.7vw;
+				height: 300px;
+				background: linear-gradient(180deg, white 50%, var(--corPrincipal) 50%);
+				border: 2px solid var(--corPrincipal);
+				margin: 20px 0px 0px 0px;
+			}
             
-            .informacoes h1{
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 20px;
-            font-weight: 500;
-            color: white;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corPrincipal);
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
+            .informacoes h1 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-size: 20px;
+				font-weight: 500;
+				color: white;
+				width: 100%;
+				height: 30px;
+				background-color: var(--corPrincipal);
+				display: flex;
+				align-items: center;
+				padding-left: 10px;
             }
             
-            .informacoes-content{
-            position: absolute;
-            top: 25%;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            padding-left: 3px;
-            padding-right: 3px;
+            .informacoes-content {
+				position: absolute;
+				top: 25%;
+				left: 0;
+				width: 100%;
+				height: 150px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				padding-left: 3px;
+				padding-right: 3px;
             }
             
-            .info{
-            width: 160px;
-            height: 160px;
-            background-color: var(--corPrincipal);
-            box-shadow: 0 0 5px black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
+            .info {
+				width: 160px;
+				height: 160px;
+				background-color: var(--corPrincipal);
+				box-shadow: 0 0 5px black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				position: relative;
             }
             
-            .info:hover{
-            background-color: white;
-            top: -9;
-            box-shadow: 0 0 10px black;
-            transition: all .3s ease-in;
+            .info:hover {
+				background-color: white;
+				top: -9;
+				box-shadow: 0 0 10px black;
+				transition: all .3s ease-in;
             }
             
-            .info:hover *{
-            color: black;
-            transition: all .4s ease-in;
+            .info:hover * {
+				color: black;
+				transition: all .4s ease-in;
             }
             
-            .info-content{
-            width: 90%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: space-start;
-            padding-left: 4px;
+            .info-content {
+				width: 90%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: space-start;
+				padding-left: 4px;
             }
   			
-  		  .info-content h2{
-  		  color: white;
-  		  font-size: 18px;
-  		  margin-bottom: 5px;
-  		  font-weight: 900;
-  		  }
+			.info-content h2 {
+				color: white;
+				font-size: 18px;
+				margin-bottom: 5px;
+				font-weight: 900;
+			}
   		  
-  		  .info-content p{
-  		  margin-bottom: 10px;
-  		  color: white;
-  		  font-size: 12px;
-  		  font-family: var(--fontSans);
-  		  font-weight: 550;
-  		  }
+			.info-content p {
+				margin-bottom: 10px;
+				color: white;
+				font-size: 12px;
+				font-family: var(--fontSans);
+				font-weight: 550;
+			}
   		  
-  		  .info-content ion-icon{
-  		  width: 50px;
-  		  height: 50px;
-  		  color: white;
-  		  margin-bottom: 3px;
-  		  margin-top: 7px;
-  		  }
+			.info-content ion-icon {
+				width: 50px;
+				height: 50px;
+				color: white;
+				margin-bottom: 3px;
+				margin-top: 7px;
+			}
   		  
-  		  /* Noticias */
-  		  
-  		  .noticias{
-  		  width: 100%;
-  		  margin-bottom: 15px;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  border: 2px solid var(--corSecundaria);
-  		  }
-  		  
-  		  .noticias h1{
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  color: white;
-  		  background-color: var(--corSecundaria);
-  		  width: 100%;
-  		  height: 30px;
-  		  display: flex;
-  		  align-items: center;
-  		  padding-left: 10px;
-  		  }
-  		  
-  		  .noticias-content{
-  		  margin-top: 15px;
-  		  margin-bottom: 15px;
-  		  width: 95%;
-  		  height: 200px;
-  		  background-color: #f1f1f1;
-  		  box-shadow: 0 0 10px gray; /* <----- */
-  		  display: flex;
-  		  flex-direction: row;
-  		  align-items: center;
-  		  }
-  		  
-  		  .noticias-content img{
-  		  width: 180px;
-  		  height: 90%;
-  		  margin-left: 5px;
-  		  }
-  		  
-  		  .noticias-text{
-  		  width: 56%;
-  		  height: 90%;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: flex-start;
-  		  padding-left: 2.5%;
-  		  }
-  		  
-  		  .noticias-text h2{
-  		  font-size: 19px;
-  		  font-weight: 400;
-  		  color: #191919;
-  		  text-transform: uppercase;
-  		  margin-top: 10px;
-  		  }
-  		  
-  		  .noticias-text p{
-  		  margin-top: 5px;
-  		  font-size: 16px;
-  		  font-weight: 350;
-  		  }
-  		  
-  		  /* Dia do Desafio */
-  		  
-  		  .desafio{
-  		  width: 100%;
-  		  border: 2px solid var(--corSecundaria);
-  		  margin-bottom: 15px;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  position: relative;
-  		  }
-  		  
-  		  .desafio h1{
-  		  position: absolute;
-  		  top: 0;
-  		  color: white;
-  		  font-size: 20px;
-  		  font-weight: 600;
-  		  height: 30px;
-  		  background-color: var(--corSecundaria);
-  		  width: 100%;
-  		  display: flex;
-  		  align-items: center;
-  		  padding-left: 10px;
-  		  }
-  		  
-  		  .desafio h2{
-  		  color: var(--corQuarta);
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  text-transform: uppercase;
-  		  margin-top: 45px;
-  		  margin-bottom: 10px;
-  		  }
-  		  
-  		  .desafio h3{
-  		  color: red;
-  		  font-size: 20px;
-  		  font-weight: 500;
-  		  text-transform: uppercase;
-  		  margin-top: 10px;
-  		  margin-bottom: 10px;
-  		  }
-  		  
-  		  .tabela-desafio{
-  		  border: 2px solid black;
-  		  border-collapse: collapse;
-  		  color: black;
-  		  margin-bottom: 5px;
-  		  font-size: 14px;
-  		  font-weight: 500;
-  		  }
-  		  
-  		  @media (max-width: 600px){
-  		      
-  		      .tabela-desafio{
-  		          font-size: 11px;
-  		          font-weight: 400;
-  		      }
-  		      
-  		      .tabela-desafio th {
-  		          padding: 5px;
-  		      }
-  		      
-  		      .tabela-desafio td {
-  		          padding: 5px;
-  		      }
-  		      
-  		  }
-  		  
-  		  .tabela-desafio th{
-  		  border: 2px solid black;
-  		  padding: 10px;
-  		  color: red;
-  		  }
-  		  
-  		  .tabela-desafio td{
-  		  padding: 10px;
-  		  border: 2px solid black;
-  		  }
-  		  
-  		  #lose{
-  		  color: red;
-  		  }
-  		  
-  		  #win{
-  		  color: green;
-  		  }
-  		  
-  		  .tabela-desafio-tarde{
-  		  margin-bottom: 30px;
-  		  }
-  		  
-  		  /* Simulado */
-  		  
-  		  .simulado{
-  		  width: 100%;
-  		  border: 2px solid var(--corSecundaria);
-  		  margin-bottom: 20px;
-  		  margin-top: 10px;
-  		  }
-  		  
-  		  .simulado h1{
-  		  width: 100%;
-  		  height: 30px;
-  		  background-color: var(--corSecundaria);
-  		  color: white;
-  		  font-size: 20px;
-  		  padding-left: 10px;
-  		  padding-top: 3px;
-  		  }
-  		  
-  		  .simulado-content{
-  		  width: 100%;
-  		  height: 100%;
-  		  display: flex;
-  		  flex-direction: column;
-  		  align-items: center;
-  		  }
-  		  
-  		  .simulado video {
-  		  	width: 90%;
-  		  	height: 300px;
-  		  	margin-top: 20px;
-  		  }
-  		  
-  		  .simulado-content h2{
-  		  color: #191919;
-  		  font-size: 22px;
-  		  font-weight: 400;
-  		  margin-top: 25px;
-  		  margin-bottom: 20px;
-  		  }
-  		  
-  		  .simulado-text{
-  		  width: 80%;
-  		  text-align: center;
-  		  }
-  		  
-  		  .simulado-text div{
-  		  margin-top: 20px;
-  		  margin-bottom: 30px;
-  		  display: flex;
-  		  justify-content: center;
-  		  align-items: center;
-  		  }
-  		  
-  		  .simulado-text div button{
-  		  width: 100px;
-  		  height: 35px;
-  		  color: white;
-  		  background-color: var(--corSecundaria);
-  		  border: none;
-  		  border-radius: 5px;
-  		  cursor: pointer;
-  		  margin-left: 5px;
-  		  margin-right: 5px;
-  		  }
-  		  
-  		  .simulado-text div button:hover{
-  		  color: #191919;
-  		  text-shadow: 0 0 1px black;
-  		  background-color: var(--corQuarta);
-  		  transition: all .3s ease-in;
-  		  }
+			/* Noticias */
+			
+			.noticias{
+			width: 100%;
+			margin-bottom: 15px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 2px solid var(--corSecundaria);
+			}
+			
+			.noticias h1{
+			font-size: 20px;
+			font-weight: 500;
+			color: white;
+			background-color: var(--corSecundaria);
+			width: 100%;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			padding-left: 10px;
+			}
+			
+			.noticias-content{
+			margin-top: 15px;
+			margin-bottom: 15px;
+			width: 95%;
+			height: 200px;
+			background-color: #f1f1f1;
+			box-shadow: 0 0 10px gray; /* <----- */
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			}
+			
+			.noticias-content img{
+			width: 180px;
+			height: 90%;
+			margin-left: 5px;
+			}
+			
+			.noticias-text{
+			width: 56%;
+			height: 90%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding-left: 2.5%;
+			}
+			
+			.noticias-text h2 {
+				font-size: 19px;
+				font-weight: 400;
+				color: #191919;
+				text-transform: uppercase;
+				margin-top: 10px;
+			}
+			
+			.noticias-text p {
+				margin-top: 5px;
+				font-size: 16px;
+				font-weight: 350;
+			}
+			
+			/* Dia do Desafio */
+			
+			.desafio {
+				width: 100%;
+				border: 2px solid var(--corSecundaria);
+				margin-bottom: 15px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				padding: 15px;
+			}
+			
+			.desafio h1 {
+				position: absolute;
+				top: 0;
+				color: white;
+				font-size: 20px;
+				font-weight: 600;
+				height: 30px;
+				background-color: var(--corSecundaria);
+				width: 100%;
+				display: flex;
+				align-items: center;
+				padding-left: 10px;
+			}
+			
+			.desafio h2 {
+				color: var(--corQuarta);
+				font-size: 20px;
+				font-weight: 500;
+				text-transform: uppercase;
+				margin-top: 45px;
+				margin-bottom: 10px;
+			}
+			
+			.desafio h3 {
+				color: red;
+				font-size: 20px;
+				font-weight: 500;
+				text-transform: uppercase;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.tabela-desafio {
+				border: 2px solid black;
+				border-collapse: collapse;
+				color: black;
+				margin-bottom: 5px;
+				font-size: 12px;
+				font-weight: 500;
+				width: auto;
+			}
+			
+			.tabela-desafio th {
+				padding: 5px;
+			}
+			
+			.tabela-desafio td {
+				padding: 5px;
+			}
+			
+			.tabela-desafio th{
+			border: 2px solid black;
+			padding: 10px;
+			color: red;
+			}
+			
+			.tabela-desafio td{
+			padding: 10px;
+			border: 2px solid black;
+			}
+			
+			#lose{
+			color: red;
+			}
+			
+			#win{
+			color: green;
+			}
+			
+			.tabela-desafio-tarde{
+			margin-bottom: 30px;
+			}
+			
+			/* Simulado */
+			
+			.simulado{
+			width: 100%;
+			border: 2px solid var(--corSecundaria);
+			margin-bottom: 20px;
+			margin-top: 10px;
+			}
+			
+			.simulado h1{
+			width: 100%;
+			height: 30px;
+			background-color: var(--corSecundaria);
+			color: white;
+			font-size: 20px;
+			padding-left: 10px;
+			padding-top: 3px;
+			}
+			
+			.simulado-content{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			}
+			
+			.simulado video {
+				width: 90%;
+				height: 300px;
+				margin-top: 20px;
+			}
+			
+			.simulado-content h2{
+			color: #191919;
+			font-size: 22px;
+			font-weight: 400;
+			margin-top: 25px;
+			margin-bottom: 20px;
+			}
+			
+			.simulado-text{
+			width: 80%;
+			text-align: center;
+			}
+			
+			.simulado-text div{
+			margin-top: 20px;
+			margin-bottom: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+			
+			.simulado-text div button{
+			width: 100px;
+			height: 35px;
+			color: white;
+			background-color: var(--corSecundaria);
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-left: 5px;
+			margin-right: 5px;
+			}
+			
+			.simulado-text div button:hover{
+			color: #191919;
+			text-shadow: 0 0 1px black;
+			background-color: var(--corQuarta);
+			transition: all .3s ease-in;
+			}
 
-		 /* Logo link */
-		.navbar-left img {
-		  cursor: pointer;
-		}
-		
-		
-		
-		
-		/* COMUNICADO */
-		
-		.comunicado {
-		   width: 100%;
-		   height: auto;
-		   border: 2px solid var(--corSecundaria);
-	  	   margin: 15px 0px 15px 0px;
-		}
+			/* Logo link */
+			.navbar-left img {
+			cursor: pointer;
+			}
+			
+			
+			
+			
+			/* COMUNICADO */
+			
+			.comunicado {
+			width: 100%;
+			height: auto;
+			border: 2px solid var(--corSecundaria);
+			margin: 15px 0px 15px 0px;
+			}
 
-		.comunicado h1 {
-		  width: 100%;
-		  height: 30px;
-		  background-color: var(--corSecundaria);
-		  color: white;
-		  font-size: 20px;
-		  padding-left: 10px;
-		  padding-top: 3px;
-		}
+			.comunicado h1 {
+			width: 100%;
+			height: 30px;
+			background-color: var(--corSecundaria);
+			color: white;
+			font-size: 20px;
+			padding-left: 10px;
+			padding-top: 3px;
+			}
 
-		.comunicado img {
-		   width: 100%;
-		   height: auto;
-		}
+			.comunicado img {
+			width: 100%;
+			height: auto;
+			}
 
-		/* AVISOS */
-  
-        .aviso {
-        	width: 375px;
-        	height: auto;
-        	border-radius: 10px;
-        	background: var(--corSecundaria);
-        	box-shadow: 0px 5px 15px var(--corSecundaria);
-        	position: fixed;
-        	top: 50%;
-        	left: 50%;
-        	transform: translate(-50%, -50%);
-        	transition: all .5s ease-in-out;
-        	display: flex;
-        	flex-direction: column;
-        	align-items: center;
-        }          
-        
-        .aviso h1{
-        	width: 100%;
-        	height: 35px;
-        	background: var(--corPrincipal);
-        	font-size: 18px;
-        	font-weight: 800;
-        	border-radius: 10px 10px 0px 0px;
-        	display: flex;
-        	align-items: center;
-        	justify-content: center;
-        	letter-spacing: 0.8px;
-        }
-        
-        .aviso h2 {
-        	margin: 10px 0px 5px 0px;
-        	text-transform: uppercase;
-        	font-size: 21px;
-        	font-weight: 700;
-        	letter-spacing: 0.5px;
-        }
-        
-        .aviso p {
-        	margin: 0px;
-        	text-transform: uppercase;
-        	font-size: 15px;
-        	font-weight: 400;
-        	letter-spacing: 0.8px;
-        	color: #CCC;
-        }
-        
-        .aviso button {
-        	width: 80%;
-        	height: 32.5px;
-        	border-radius: 5px;
-        	border: none;
-        	background: white;
-        	color: #191919;
-        	font-size: 16px;
-        	font-weight: 700;
-        	box-shadow: 0px 4px 10px white;
-        	margin: 25px auto 25px auto;
-        	cursor: pointer;
-        	transition: all .3s ease-in-out;
-        }
-        
-        .aviso button:hover {
-        	background: #191919;
-        	color: #F1F1F1;
-        	box-shadow: 0px 4px 10px gray;
-        }
-        
-        #araraquara {
-        	display: none;
-        	opacity: 0%;
-	}
+			/* AVISOS */
+	
+			.aviso {
+				width: 375px;
+				height: auto;
+				border-radius: 10px;
+				background: var(--corSecundaria);
+				box-shadow: 0px 5px 15px var(--corSecundaria);
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				transition: all .5s ease-in-out;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}          
+			
+			.aviso h1{
+				width: 100%;
+				height: 35px;
+				background: var(--corPrincipal);
+				font-size: 18px;
+				font-weight: 800;
+				border-radius: 10px 10px 0px 0px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				letter-spacing: 0.8px;
+			}
+			
+			.aviso h2 {
+				margin: 10px 0px 5px 0px;
+				text-transform: uppercase;
+				font-size: 21px;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+			}
+			
+			.aviso p {
+				margin: 0px;
+				text-transform: uppercase;
+				font-size: 15px;
+				font-weight: 400;
+				letter-spacing: 0.8px;
+				color: #CCC;
+			}
+			
+			.aviso button {
+				width: 80%;
+				height: 32.5px;
+				border-radius: 5px;
+				border: none;
+				background: white;
+				color: #191919;
+				font-size: 16px;
+				font-weight: 700;
+				box-shadow: 0px 4px 10px white;
+				margin: 25px auto 25px auto;
+				cursor: pointer;
+				transition: all .3s ease-in-out;
+			}
+			
+			.aviso button:hover {
+				background: #191919;
+				color: #F1F1F1;
+				box-shadow: 0px 4px 10px gray;
+			}
+			
+			#araraquara {
+				display: none;
+				opacity: 0%;
+		}
 		
       </style>
 		
@@ -666,7 +665,7 @@
 				</div>
 
 				<!-- Comunicados -->
-				<div class="content">
+				<section class="content">
 
 					<div class="comunicado">
 					   <h1>Prova Paulista</h1>
@@ -696,9 +695,9 @@
 								<div>
 									
 									<button onclick="nonoAno()">9°ano</button>
-									<button onclick="1ano()">1°ano</button>
-									<button onclick="2ano()">2°ano</button>
-									<button onclick="3ano()">3°ano</button>
+									<button onclick="">1°ano</button>
+									<button onclick="">2°ano</button>
+									<button onclick="">3°ano</button>
 									
 								</div>
 							</div>	
@@ -778,52 +777,51 @@
 							</table>
 							
 					</div>
-									
-					<!-- Informacoes -->
-					<div class="informacoes">
-						<h1>Informações</h1>
-							
-							<div class="informacoes-content">
-								
-								<div class="info provas">
-									<div class="info-content">
-										
-										<ion-icon name="book-outline"></ion-icon>
-										<h2>Provas</h2>
-										<p>Confira as datas das provas e aproveite as oportunidades de aprendizado...</p>
-									
-									</div>
-								</div>
-								
-								<div class="info interclasse">
-									<div class="info-content">
-										
-										<ion-icon name="ribbon-outline"></ion-icon>
-										<h2>Interclasses</h2>
-										<p>Fique atento ao nosso calendário escolar para participar e torcer pela sua sala!</p>
-									
-									</div>
-								</div>
-								
-								<div class="info horarios">
-									<div class="info-content">
-										
-										<ion-icon name="time-outline"></ion-icon>
-										<h2>Horários</h2>
-										<p>Confira as datas das provas e quais questões podem cair nos vestibulares...</p>
-									
-									</div>
-								</div>
-								
-							</div>
-								
-					</div>
 					
-				</div>
-				
+				</section>
 				
 			</main>
 			
+			<!-- Informacoes -->
+			<section class="informacoes">
+				<h1>Informações</h1>
+					
+					<div class="informacoes-content">
+						
+						<div class="info provas">
+							<div class="info-content">
+								
+								<ion-icon name="book-outline"></ion-icon>
+								<h2>Provas</h2>
+								<p>Confira as datas das provas e aproveite as oportunidades de aprendizado...</p>
+							
+							</div>
+						</div>
+						
+						<div class="info interclasse">
+							<div class="info-content">
+								
+								<ion-icon name="ribbon-outline"></ion-icon>
+								<h2>Interclasses</h2>
+								<p>Fique atento ao nosso calendário escolar para participar e torcer pela sua sala!</p>
+							
+							</div>
+						</div>
+						
+						<div class="info horarios">
+							<div class="info-content">
+								
+								<ion-icon name="time-outline"></ion-icon>
+								<h2>Horários</h2>
+								<p>Confira as datas das provas e quais questões podem cair nos vestibulares...</p>
+							
+							</div>
+						</div>
+						
+					</div>
+						
+			</section>
+
 			<main class="navgation">
 				
 				<div class="navgation-pagins">
