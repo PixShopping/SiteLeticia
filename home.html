@@ -531,15 +531,19 @@
 			}
 			
 			
-			
-			
 			/* COMUNICADO */
-			
+			.comunicados {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
 			.comunicado {
-			width: 100%;
-			height: auto;
-			border: 2px solid var(--corSecundaria);
-			margin: 15px 0px 15px 0px;
+				width: 100%;
+				height: auto;
+				border: 2px solid var(--corSecundaria);
+				margin: 15px 0px 15px 0px;
 			}
 
 			.comunicado h1 {
@@ -667,14 +671,8 @@
 				<!-- Comunicados -->
 				<section class="content">
 
-					<div class="comunicado">
-					   <h1>Prova Paulista</h1>
-						<img src="./imagem/prova.png">
-					</div>
-					
-					<div class="comunicado">
-					   <h1>Reuniao de Pais</h1>
-						<img src="./imagem/reuniao.png">
+					<div class="comunicados">
+
 					</div>
 					
 					<div class="simulado">
@@ -951,8 +949,61 @@
                         });
 			
 		</script>
+
+	<!-- BANCO DE DADOS FIREBASE -->
 	
-			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+		
+
+		// LENDO TODOS OS COMUNICADOS
+		const div = document.querySelector('.comunicados');
+		db.collection(ANO)
+		.doc('site')
+		.collection('comunicados')
+		.onSnapshot((data) => {
+			data.docs.map((val) => {
+				const titulo = val.data().titulo;
+				const imagem = val.data().imagem;
+				const storageRef = storage.ref().child(`site/comunicados/${imagem}`);
+				storageRef.getDownloadURL().then(function (urlImagem) {	
+					div.innerHTML += `
+						<div class="comunicado">
+							<h1>${titulo}</h1>
+							<img src="${urlImagem}" alt="${imagem}">
+						</div>
+					`;
+				});
+				
+			});
+		});
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
