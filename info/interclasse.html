@@ -24,18 +24,21 @@
 			--fontNegrito: 'Ysabeau', sans-serif;
             }
 			
-			*{
-			padding: 0;
-			margin: 0;
-			box-sizing: border-box;
-			text-decoration: none;
-          }
+			* {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+            }
 			
-			body{
-   	     font-family: 'Montserrat', sans-serif;
-			background-color: white;
-			color: white;
-			user-select: none;
+			body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: white;
+                color: white;
+                user-select: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             
             .navbar{
@@ -166,13 +169,13 @@
             
             /* --- Container --- */
             
-            .container{
-            margin-top: 10px;
-            margin-left: 1vw;
-            width: 98vw;
-            border: 2px solid var(--corSecundaria);
-            position: relative;
-            padding-bottom: 20px;
+            .container {
+				margin-top: 10px;
+				margin-left: 1vw;
+				width: 95vw;
+				max-width: 650px;
+				border: 2px solid var(--corSecundaria);
+				position: relative;
             }
             
             .container-titulo{
