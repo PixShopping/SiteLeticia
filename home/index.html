@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="https://escola-leticia.netlify.app/src/img/icon.png" type="x-icon">
+		<link rel="stylesheet" href="./style.css">
+		<title>Escola Letícia | Home </title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+		
+		<body>
+			
+			<!-- NAVIGATION -->
+			<header class="navigation">
+			
+				<article class="navigation-content">
+				
+					<section class="navigation-top">
+
+						<img src="../src/img/logo.png">
+	
+						<ul class="navigation-links">
+	
+							<li>
+								<a href="../home/">Home</a>
+							</li>
+							<li>
+								<a href="../comunicados/">Comunicados</a>
+							</li>
+							<!--<li>
+								<a href="../noticias/">Notícias</a>
+							</li>-->
+							<li>
+								<a href="../sobre/">Sobre</a>
+							</li>
+							<li>
+								<a href="tel:1633244623">Contato</a>
+							</li>
+	
+						</ul>
+
+						<ion-icon onclick="abrirMenu()" id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon onclick="fecharMenu()" id="iconFecharMenu" name="close"></ion-icon>
+	
+					</section>
+					
+					<section class="navigation-bottom">
+	
+						<div class="barra-de-pesquisa">
+							<input placeholder="Pesquisar" id="pesquisa" type="text">
+							<ion-icon onclick="chatGPT()" name="search"></ion-icon>
+						</div>
+						
+					</section>
+
+				</article>
+				
+				
+			</header>
+			
+			<div onclick="fecharMenu()" class="fosco"></div>
+
+			<nav class="menu-mobile">
+
+				<div class="menu-mobile-logo">
+					<img src="../src/img/logo.png">
+				</div>
+
+				<ul class="menu-mobile-links">
+					
+					<li onclick="home()" class="atual">
+						<ion-icon name="home"></ion-icon>
+						<p>Home</p>
+					</li>
+					<li onclick="comunicados()">
+						<ion-icon name="mail"></ion-icon>
+						<p>Comunicados</p>
+					</li>
+					<li onclick="sobre()">
+						<ion-icon name="person"></ion-icon>
+						<p>Sobre</p>
+					</li>
+					<li onclick="contato()">
+						<ion-icon name="call"></ion-icon>
+						<p>Contato</p>
+					</li>
+
+				</ul>
+
+			</nav>
+			
+			<main class="container">
+				
+				<article class="content">
+
+					<section class="noticias">
+
+						<div class="titulo">
+							<h1>Notícias</h1>
+						</div>
+
+						<article onclick="noticias()">
+
+							<div>
+								<img src="../src/img/icon.png">
+								<div class="column">
+									<h1>Página de notícias em construção!</h1>
+									<p>Estamos construindo uma pagina de notícias para a escola, tendo jornal, avisos, comunicados, etc..</p>
+								</div>
+							</div>
+						
+						</article>
+
+					</section>
+
+					<section class="simulados">
+
+						<div class="titulo">
+							<h1 id="h1simulado">Simulados</h1>
+						</div>
+
+						<article class="materias">
+
+							<div class="materia">
+								<h1>Selecione uma matéria!</h1>
+								<p onclick="selecionarMateria('Matemática')">Matemática</p>
+								<p onclick="selecionarMateria('Português')">Português</p>
+								<p onclick="selecionarMateria('Geografia')">Geografia</p>
+								<p onclick="selecionarMateria('História')">História</p>
+								<p onclick="selecionarMateria('Inglês')">Inglês</p>
+								<p onclick="selecionarMateria('Ciências')">Ciências</p>
+							</div>
+
+							<div class="anos">
+								<h1>Selecione um nível!</h1>
+								<p onclick="selecionarAno('6°ano do Ensino Fundamental')">6°ano do Ensino Fundamental</p>
+								<p onclick="selecionarAno('7°ano do Ensino Fundamental')">7°ano do Ensino Fundamental</p>
+								<p onclick="selecionarAno('8°ano do Ensino Fundamental')">8°ano do Ensino Fundamental</p>
+								<p onclick="selecionarAno('9°ano do Ensino Fundamental')">9°ano do Ensino Fundamental</p>
+								<p onclick="selecionarAno('1°ano do Ensino Médio')">1°ano do Ensino Médio</p>
+								<p onclick="selecionarAno('2°ano do Ensino Médio')">2°ano do Ensino Médio</p>
+								<p onclick="selecionarAno('3°ano do Ensino Médio')">3°ano do Ensino Médio</p>
+							</div>
+
+							<div class="questoes">
+
+								<section class="carregando">
+									<span></span>
+									<h2>Carregando..</h2>
+								</section>
+							
+							</div>
+
+						</article>
+
+					</section>
+					
+					 <!-- CANVAS -->
+				    <canvas id="my-canvas"></canvas>
+
+				</article>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+		<!-- CONFETE -->
+		<script src="./index-min.js"></script>
+
+		<script>
+
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
+		
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
+		
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
+			}
+		}
+
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
+
+		function abrirMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "none";
+				iconFechar.style.display = "flex";
+
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "flex";
+				menu.style.display = "flex";
+				document.body.style.overflowY = "hidden";
+			}
+
+			function fecharMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "flex";
+				iconFechar.style.display = "none";
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "none";
+				menu.style.display = "none";
+				document.body.style.overflowY = "auto";
+			}
+
+			function home() {
+				window.location.href = "../home/";
+			}
+
+			function comunicados() {
+				window.location.href = "../comunicados/";
+			}
+
+			function sobre() {
+				window.location.href = "../sobre/";
+			}
+
+			function contato() {
+				window.location.href = "tel:1633244623";
+			}
+
+			function noticias() {
+				window.location.href = "../noticias/";
+			}
+
+			function reload() {
+				window.location.reload();
+			}
+
+			function selecionarMateria(materia) {
+				localStorage.setItem('materia', materia);
+				const divMateria = document.querySelector('.materia');
+				const divAnos = document.querySelector('.anos');
+				divMateria.style.display = "none";
+				divAnos.style.display = "flex";
+			}
+
+			function selecionarAno(ano) {
+				localStorage.setItem('anoLetivo', ano);
+				const divQuestoes = document.querySelector('.questoes');
+				const divAnos = document.querySelector('.anos');
+				divAnos.style.display = "none";
+				divQuestoes.style.display = "flex";	
+				mostrarQuestao();
+			}
+
+			function verificarResposta() {
+				const div = document.querySelector('.questoes');
+				const divCanvas = document.getElementById('my-canvas');
+				const input = document.querySelector('.questoes input[value="certa"]');
+				if (!input) {
+					const input = document.querySelector('.questoes input[value="Certa"]');
+				}
+				if (input.checked) {
+					div.innerHTML = `
+						<h1 style="text-align: center;">Você Acertou, Parabens!</h1>
+						<button onclick="mostrarQuestao()">Proximo</button>
+					`;
+					divCanvas.style.display = 'flex';
+				} else {
+					div.innerHTML = `
+						<h1 style="text-align: center;">Você Errou, Tente Novamente!</h1>
+						<button class='segundo-btn' onclick="mostrarQuestao()">Tentar Novamente</button>
+						<button onclick="reload()">Voltar</button>
+					`;
+				}
+			}
+
+			function paginaCarregando() {
+				document.body.style.cursor = "wait";
+			}
+
+			function paginaNormal() {
+				document.body.style.cursor = "default";
+			}
+
+			async function mostrarQuestao() {
+				paginaCarregando();
+				const div = document.querySelector('.questoes');
+				const divCanvas = document.getElementById('my-canvas');
+				div.innerHTML = `
+					<section class="carregando">
+						<span></span>
+						<h2>Carregando..</h2>
+					</section>
+				`;
+				divCanvas.style.display = "none";
+				const apiKey = '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';
+				const ano = localStorage.getItem('anoLetivo');
+				const materia = localStorage.getItem('materia');
+				const h1simulado = document.getElementById('h1simulado');
+				h1simulado.textContent = `Simulados de ${materia} do ${ano}`;
+				const mensagem = `
+					Use como exemplo: '
+						<h1>1+1 é</h1>
+						
+						coloque 5 alternativas
+						
+						exemplo de alternativa ERRADA:
+						<div>
+							<input type="radio" name="alternativa" value="errada">
+							<label>3</label>
+						</div>
+
+						exemplo de alternativa CERTA:
+						<div>
+							<input type="radio" name="alternativa" value="certa">
+							<label>2</label>
+						</div>
+					'
+					Dessa forma, me de um questão de ${materia} de multipla escolha, com situações problemas, com nivel de vestibular para ${ano}, 
+					seguindo o modelo de exemplo; siga o ex.. só use h1, div, input e label por favor, só de a questão, não fale nada alem dela. Obrigado
+				`;
+
+				const respostaElemento = document.querySelector('.questoes');
+
+				const resposta = await fetch('https://api.openai.com/v1/chat/completions', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${apiKey}`
+					},
+					body: JSON.stringify({
+						model: 'gpt-3.5-turbo',
+						messages: [{ role: 'user', content: `${mensagem}` }],
+						max_tokens: 500,
+					})
+				});
+
+
+				const dadosResposta = await resposta.json();
+
+				// Exibir a resposta gerada
+				respostaElemento.innerHTML = `
+					${dadosResposta.choices[0].message.content.trim()}
+					<button onclick="verificarResposta()">Verificar Resposta</button>
+				`;
+				paginaNormal();
+			}
+
+			
+		</script>
+
+	<!-- BANCO DE DADOS FIREBASE -->
+	
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+		
+
+		// LENDO TODAS AS NOTICIAS
+		const div = document.querySelector('.comunicados');
+		
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<!--
+		API DE QUESTÕES
+
+		// URL base da API
+		const apiUrl = "https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple";
+
+		// Parâmetros da sua consulta (exemplo: 10 perguntas de categoria geral)
+		const params = {
+			amount: 10,
+			category: 9, // Categoria geral
+			type: "multiple", // Perguntas de múltipla escolha
+		};
+
+		// Construir a URL adicionando parâmetros
+		const url = new URL(apiUrl);
+		//url.search = new URLSearchParams(params).toString();
+
+		// Fazer a chamada à API usando fetch
+		const resposta = await fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			// Processar os dados recebidos (as perguntas estão em data.results)
+			console.log(data.results);
+		})
+		.catch(error => {
+			console.error("Erro ao fazer a chamada à API:", error);
+		});
+
+	-->
+
+</html>

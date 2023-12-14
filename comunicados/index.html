@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="https://escola-leticia.netlify.app/src/img/icon.png" type="x-icon">
+		<link rel="stylesheet" href="./style.css">
+		<title>Escola Letícia | Comunicados </title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+		
+		<body>
+			
+			<!-- NAVIGATION -->
+			<header class="navigation">
+			
+				<article class="navigation-content">
+				
+					<section class="navigation-top">
+
+						<img src="../src/img/logo.png">
+	
+						<ul class="navigation-links">
+	
+							<li>
+								<a href="../home/">Home</a>
+							</li>
+							<li>
+								<a href="../comunicados/">Comunicados</a>
+							</li>
+							<!--<li>
+								<a href="../noticias/">Notícias</a>
+							</li>-->
+							<li>
+								<a href="../sobre/">Sobre</a>
+							</li>
+							<li>
+								<a href="tel:1633244623">Contato</a>
+							</li>
+	
+						</ul>
+
+						<ion-icon onclick="abrirMenu()" id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon onclick="fecharMenu()" id="iconFecharMenu" name="close"></ion-icon>
+						
+					</section>
+					
+					<section class="navigation-bottom">
+	
+						<div class="barra-de-pesquisa">
+							<input placeholder="Pesquisar" id="pesquisa" type="text">
+							<ion-icon onclick="chatGPT()" name="search"></ion-icon>
+						</div>
+						
+					</section>
+
+				</article>
+				
+				
+			</header>
+
+			<div onclick="fecharMenu()" class="fosco"></div>
+
+			<nav class="menu-mobile">
+
+				<div class="menu-mobile-logo">
+					<img src="../src/img/logo.png">
+				</div>
+
+				<ul class="menu-mobile-links">
+					
+					<li onclick="home()">
+						<ion-icon name="home"></ion-icon>
+						<p>Home</p>
+					</li>
+					<li onclick="comunicados()" class="atual">
+						<ion-icon name="mail"></ion-icon>
+						<p>Comunicados</p>
+					</li>
+					<li onclick="sobre()">
+						<ion-icon name="person"></ion-icon>
+						<p>Sobre</p>
+					</li>
+					<li onclick="contato()">
+						<ion-icon name="call"></ion-icon>
+						<p>Contato</p>
+					</li>
+
+				</ul>
+
+			</nav>
+			
+			<main class="container">
+				
+				<article class="content">
+
+					<section class="comunicados">
+
+						<div class="titulo">
+							<h1>Comunicados</h1>
+						</div>
+
+						<ul>
+		
+							<section class="carregando">
+								<span></span>
+								<h2>Carregando..</h2>
+							</section>
+		
+						</ul>
+
+					</section>
+
+				</article>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+
+		<script>
+
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
+		
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
+		
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
+			}
+		}
+
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
+		
+		// Fim da area dos avisos
+
+			
+			function home() {
+				window.location.href = "../home/";
+			}
+
+			function comunicados() {
+				window.location.href = "../comunicados/";
+			}
+
+			function sobre() {
+				window.location.href = "../sobre/";
+			}
+
+			function contato() {
+				window.location.href = "tel:1633244623";
+			}
+
+			function noticias() {
+				window.location.href = "../noticias/";
+			}
+
+
+			function abrirMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "none";
+				iconFechar.style.display = "flex";
+
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "flex";
+				menu.style.display = "flex";
+				document.body.style.overflowY = "hidden";
+			}
+
+			function fecharMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "flex";
+				iconFechar.style.display = "none";
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "none";
+				menu.style.display = "none";
+				document.body.style.overflowY = "auto";
+			}
+			
+
+		</script>
+
+	<!-- BANCO DE DADOS FIREBASE -->
+	
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+		
+
+		// LENDO TODOS OS COMUNICADOS
+		const div = document.querySelector('.comunicados ul');
+		db.collection(ANO)
+		.doc('site')
+		.collection('comunicados')
+		.orderBy("data")
+		.onSnapshot((data) => {
+			div.innerHTML = '';
+			data.docs.map((val) => {
+				const titulo = val.data().titulo;
+				const imagem = val.data().imagem;
+				const storageRef = storage.ref().child(`site/comunicados/${imagem}`);
+				storageRef.getDownloadURL().then(function (urlImagem) {	
+					div.innerHTML += `
+						<div class="comunicado">
+							<img src="${urlImagem}" alt="${imagem}">
+						</div>
+					`;
+				});
+				
+			});
+		});
+
+
+
+		// CHAT GPT 
+		async function chatGPT() {
+            const apiKey = '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';
+            const mensagem = document.getElementById('pesquisa').value;
+			const respostaElemento = document.getElementById('resposta');
+
+            const resposta = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'gpt-3.5-turbo',
+                    messages: [{ role: 'user', content: `${mensagem}` }]
+                })
+            });
+
+            const dadosResposta = await resposta.json();
+
+            // Exibir a resposta gerada
+            respostaElemento.innerHTML = `
+				<h1>${dadosResposta.choices[0].message.content.trim()}</h1>
+			`
+        }
+
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

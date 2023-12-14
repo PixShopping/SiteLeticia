@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="https://escola-leticia.netlify.app/src/img/icon.png" type="x-icon">
+		<link rel="stylesheet" href="./style.css">
+		<title>Escola Letícia | Notícias</title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+		
+		<body>
+			
+			<!-- NAVIGATION -->
+			<nav class="navigation">
+			
+				<article class="navigation-content">
+				
+					<section class="navigation-top">
+
+						<img src="../src/img/logo.png">
+	
+						<ul class="navigation-links">
+	
+							<li>
+								<a href="../home/">Home</a>
+							</li>
+							<li>
+								<a href="../comunicados/">Comunicados</a>
+							</li>
+							<!--<li>
+								<a href="../noticias/">Notícias</a>
+							</li>-->
+							<li>
+								<a href="../sobre/">Sobre</a>
+							</li>
+							<li>
+								<a href="tel:1633244623">Contato</a>
+							</li>
+	
+						</ul>
+
+						<ion-icon id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon id="iconFecharMenu" name="close"></ion-icon>
+	
+					</section>
+					
+					<section class="navigation-bottom">
+	
+						<div class="barra-de-pesquisa">
+							<input placeholder="Pesquisar" id="pesquisa" type="text">
+							<ion-icon onclick="chatGPT()" name="search"></ion-icon>
+						</div>
+						
+					</section>
+
+				</article>
+				
+				
+			</nav>
+			
+			
+			<main class="container">
+				
+				<article class="content">
+
+					<section class="noticias">
+
+						<div class="titulo">
+							<h1>Notícias</h1>
+						</div>
+
+						<h1>Em breve</h1>
+
+					</section>
+					
+
+				</article>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+
+		<script>
+
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
+		
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
+		
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
+			}
+		}
+
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
+		
+		// Fim da area dos avisos
+
+			
+		function home(){
+		window.location.href = "./home.html";
+		}
+			
+		//Questoes
+		function nonoAno(){
+		window.location.href = "./questoes/9ano.html";
+		}function primeiroAno(){
+		window.location.href = "./questoes/1ano.html";
+		}function segundoAno(){
+		window.location.href = "./questoes/2ano.html";
+		}function terceiroAno(){
+		window.location.href = "./questoes/3ano.html";
+		}
+		
+			
+		// MENU
+		var abrirMenu = document.getElementById("abrirMenu");
+		var fecharMenu = document.getElementById("fecharMenu");
+		var container = document.querySelector(".container");
+		var menuPagin = document.querySelector(".menuPagin");
+		abrirMenu.addEventListener("click", openMenu);
+		fecharMenu.addEventListener("click", closeMenu);
+			
+			function openMenu(){
+			menuPagin.style.transition = "top .2s ease-in";
+			menuPagin.style.top = "105";
+			container.style.transition = "margin-top .2s ease-in";
+			container.style.marginTop = "105px";
+			abrirMenu.style.display = "none";
+			fecharMenu.style.display = "block";
+			}
+			
+			function closeMenu(){menuPagin.style.top = "0";
+			container.style.marginTop = "10px";
+			fecharMenu.style.display = "none";
+			abrirMenu.style.display = "block";
+			}
+			
+			//OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
+			
+			
+			// Entrar em Pagins BOTTOM-NAVGATION
+			
+			//Interclasse
+			var interclasse = document.querySelector(".interclasse");
+			interclasse.addEventListener("click", () => {
+				window.location.href = "./info/interclasse.html";
+			});
+			
+			//Provas
+			var provas = document.querySelector(".provas");
+			provas.addEventListener("click", () => {
+				window.location.href = "./info/provas.html";
+			});
+			
+			//Horarios
+			var horarios = document.querySelector(".horarios");
+			horarios.addEventListener("click", () => {
+				window.location.href = "./info/horarios.html";
+			});
+
+                        var video = document.getElementById("meuVideo");
+
+                        video.addEventListener("ended", function() {
+                        video.currentTime = 0; // Reinicia o vídeo para o início
+                        video.play(); // Inicia novamente
+                        });
+			
+		</script>
+
+	<!-- BANCO DE DADOS FIREBASE -->
+	
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+		
+
+		// LENDO TODAS AS NOTICIAS
+		const div = document.querySelector('.comunicados');
+		
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

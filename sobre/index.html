@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="https://escola-leticia.netlify.app/src/img/icon.png" type="x-icon">
+		<link rel="stylesheet" href="./style.css">
+		<title>Escola Letícia | Sobre </title>
+		
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
+        	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style>
+		
+		<body>
+			
+			<!-- NAVIGATION -->
+			<header class="navigation">
+			
+				<article class="navigation-content">
+				
+					<section class="navigation-top">
+
+						<img src="../src/img/logo.png">
+	
+						<ul class="navigation-links">
+	
+							<li>
+								<a href="../home/">Home</a>
+							</li>
+							<li>
+								<a href="../comunicados/">Comunicados</a>
+							</li>
+							<!--<li>
+								<a href="../noticias/">Notícias</a>
+							</li>-->
+							<li>
+								<a href="../sobre/">Sobre</a>
+							</li>
+							<li>
+								<a href="tel:1633244623">Contato</a>
+							</li>
+	
+						</ul>
+
+						<ion-icon onclick="abrirMenu()" id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon onclick="fecharMenu()" id="iconFecharMenu" name="close"></ion-icon>
+						
+					</section>
+					
+					<section class="navigation-bottom">
+	
+						<div class="barra-de-pesquisa">
+							<input placeholder="Pesquisar" id="pesquisa" type="text">
+							<ion-icon onclick="chatGPT()" name="search"></ion-icon>
+						</div>
+						
+					</section>
+
+				</article>
+				
+				
+			</header>
+
+			<div onclick="fecharMenu()" class="fosco"></div>
+
+			<nav class="menu-mobile">
+
+				<div class="menu-mobile-logo">
+					<img src="../src/img/logo.png">
+				</div>
+
+				<ul class="menu-mobile-links">
+					
+					<li onclick="home()">
+						<ion-icon name="home"></ion-icon>
+						<p>Home</p>
+					</li>
+					<li onclick="comunicados()">
+						<ion-icon name="mail"></ion-icon>
+						<p>Comunicados</p>
+					</li>
+					<li onclick="sobre()" class="atual">
+						<ion-icon name="person"></ion-icon>
+						<p>Sobre</p>
+					</li>
+					<li onclick="contato()">
+						<ion-icon name="call"></ion-icon>
+						<p>Contato</p>
+					</li>
+
+				</ul>
+
+			</nav>
+			
+			<main class="container">
+				
+				<article class="content">
+
+					<section class="sobre">
+
+						<div class="titulo">
+							<h1>Informações da Escola</h1>
+						</div>
+
+						<article>
+		
+							<img src="../src/img/frenteEscola.jpg" alt="">					
+		
+							<table class="tabela-sobre">
+						
+								<tr>
+									<th>Nome da escola</th>
+									<td>Letícia Godoy Bueno de Carvalho Lopes PROFA</td>
+								</tr>
+								
+								<tr>
+									<th>Tipo de escola</th>
+									<td>E.E (Escola Estadual)</td>
+								</tr>
+								
+								<tr>
+									<th>Endereço</th>
+									<td>Avenida Pedro Galeazi, 370 - Jardim das Roseiras - Araraquara</td>
+								</tr>
+								
+								<tr>
+									<th>CEP</th>
+									<td>14806015</td>
+								</tr>
+								
+								<tr>
+									<th>Telefone</th>
+									<td>(16) 33242256</td>
+								</tr>
+								
+								<tr>
+									<th>Instagram</th>
+									<td class="links" onclick="instagram()">@e.e.prof.leticia</td>
+								</tr>
+		
+								<tr>
+									<th>Facebook</th>
+									<td class="links" onclick="facebook()">@E E Letícia Informes </td>
+								</tr>
+								
+							</table>
+							
+							<div class="governo">
+								
+								<h1>Secretária da Educação do Estado de São Paulo</h1>
+								<p>Praça da República, 53 - Centro - CEP 01045-903 - São Paulo / SP - Brasil - Tel: 0800 77 000 12</p>
+								<img src="../src/img/SaoPaulo.png">
+								
+														
+							</div>
+
+						</article>
+
+					</section>
+
+				</article>
+				
+			</main>
+			
+		</body>
+
+		<!---- JavaScript ---->
+
+		<script>
+
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
+		
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
+		
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
+			}
+		}
+		
+			// Fim da area dos avisos
+
+			
+			function home() {
+				window.location.href = "../home/";
+			}
+
+			function comunicados() {
+				window.location.href = "../comunicados/";
+			}
+
+			function sobre() {
+				window.location.href = "../sobre/";
+			}
+
+			function contato() {
+				window.location.href = "tel:1633244623";
+			}
+
+			function noticias() {
+				window.location.href = "../noticias/";
+			}
+
+
+			function abrirMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "none";
+				iconFechar.style.display = "flex";
+
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "flex";
+				menu.style.display = "flex";
+				document.body.style.overflowY = "hidden";
+			}
+
+			function fecharMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "flex";
+				iconFechar.style.display = "none";
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "none";
+				menu.style.display = "none";
+				document.body.style.overflowY = "auto";
+			}
+			
+
+		</script>
+
+	<!-- BANCO DE DADOS FIREBASE -->
+	
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+
+
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
