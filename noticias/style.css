@@ -128,7 +128,101 @@
         cursor: pointer;
     }
 
+    /* MENU MOBILE */
+
+    .fosco {
+        display: none;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 150;
+        background: #232323;
+        opacity: 0.6;
+    }
+
+    .menu-mobile {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80vw;
+        height: auto;
+        min-height: 100vh;
+        max-height: 100vh;
+        background: var(--white);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 200;
+        overflow: scroll;
+    }
+
+    .menu-mobile-logo {
+        width: 100%;
+        height: auto;
+        border-radius: 0px 0px 20px 20px;
+        background: var(--one);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-mobile-logo img {
+        width: 100%;
+        max-width: 225px;
+        height: auto;
+    }
+
+    .menu-mobile-links {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0px;
+    }
+
+    .menu-mobile-links li {
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5px 0px;
+        padding: 15px 20px;
+        color: var(--one);
+        cursor: pointer;
+        border-radius: 0px 15px 15px 0px;
+    } .menu-mobile-links li:hover {
+        background: var(--one);
+        color: var(--white);
+    }
+
+    .menu-mobile-links .atual {
+        background: var(--one);
+        color: var(--white);
+    }
+
+    .menu-mobile-links li ion-icon {
+        font-size: 28px;
+        margin: 0px 10px 0px 5px;
+    }
+
+    .menu-mobile-links li p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+
     @media (min-width: 1000px) {
+       
+       
+        /* PARA DESKTOP */
+
+        .menu-mobile {
+            display: none;
+        }
 
         /* NAVIGATION TOP */
 

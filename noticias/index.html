@@ -15,7 +15,7 @@
 		<body>
 			
 			<!-- NAVIGATION -->
-			<nav class="navigation">
+			<header class="navigation">
 			
 				<article class="navigation-content">
 				
@@ -27,6 +27,9 @@
 	
 							<li>
 								<a href="../home/">Home</a>
+							</li>
+							<li>
+								<a href="../noticias/">Notícias</a>
 							</li>
 							<li>
 								<a href="../comunicados/">Comunicados</a>
@@ -43,8 +46,8 @@
 	
 						</ul>
 
-						<ion-icon id="iconAbrirMenu" name="menu"></ion-icon>
-						<ion-icon id="iconFecharMenu" name="close"></ion-icon>
+						<ion-icon onclick="abrirMenu()" id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon onclick="fecharMenu()" id="iconFecharMenu" name="close"></ion-icon>
 	
 					</section>
 					
@@ -60,6 +63,41 @@
 				</article>
 				
 				
+			</header>
+
+			<div onclick="fecharMenu()" class="fosco"></div>
+
+			<nav class="menu-mobile">
+
+				<div class="menu-mobile-logo">
+					<img src="../src/img/logo.png">
+				</div>
+
+				<ul class="menu-mobile-links">
+					
+					<li onclick="home()">
+						<ion-icon name="home"></ion-icon>
+						<p>Home</p>
+					</li>
+					<li onclick="noticia()" class="atual">
+						<ion-icon name="home"></ion-icon>
+						<p>Notícias</p>
+					</li>
+					<li onclick="comunicados()">
+						<ion-icon name="mail"></ion-icon>
+						<p>Comunicados</p>
+					</li>
+					<li onclick="sobre()">
+						<ion-icon name="person"></ion-icon>
+						<p>Sobre</p>
+					</li>
+					<li onclick="contato()">
+						<ion-icon name="call"></ion-icon>
+						<p>Contato</p>
+					</li>
+
+				</ul>
+
 			</nav>
 			
 			
@@ -114,77 +152,58 @@
 		}
 		
 		// Fim da area dos avisos
+			
 
-			
-		function home(){
-		window.location.href = "./home.html";
-		}
-			
-		//Questoes
-		function nonoAno(){
-		window.location.href = "./questoes/9ano.html";
-		}function primeiroAno(){
-		window.location.href = "./questoes/1ano.html";
-		}function segundoAno(){
-		window.location.href = "./questoes/2ano.html";
-		}function terceiroAno(){
-		window.location.href = "./questoes/3ano.html";
-		}
-		
-			
-		// MENU
-		var abrirMenu = document.getElementById("abrirMenu");
-		var fecharMenu = document.getElementById("fecharMenu");
-		var container = document.querySelector(".container");
-		var menuPagin = document.querySelector(".menuPagin");
-		abrirMenu.addEventListener("click", openMenu);
-		fecharMenu.addEventListener("click", closeMenu);
-			
-			function openMenu(){
-			menuPagin.style.transition = "top .2s ease-in";
-			menuPagin.style.top = "105";
-			container.style.transition = "margin-top .2s ease-in";
-			container.style.marginTop = "105px";
-			abrirMenu.style.display = "none";
-			fecharMenu.style.display = "block";
+			function abrirMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "none";
+				iconFechar.style.display = "flex";
+
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "flex";
+				menu.style.display = "flex";
+				document.body.style.overflowY = "hidden";
+			}
+
+			function fecharMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "flex";
+				iconFechar.style.display = "none";
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "none";
+				menu.style.display = "none";
+				document.body.style.overflowY = "auto";
 			}
 			
-			function closeMenu(){menuPagin.style.top = "0";
-			container.style.marginTop = "10px";
-			fecharMenu.style.display = "none";
-			abrirMenu.style.display = "block";
+
+			function home() {
+				window.location.href = "../home/";
 			}
-			
-			//OBS: criar os arquivos dentro de uma pasta(informacoes) sendo (provas), (horarios), (interclasse)
-			
-			
-			// Entrar em Pagins BOTTOM-NAVGATION
-			
-			//Interclasse
-			var interclasse = document.querySelector(".interclasse");
-			interclasse.addEventListener("click", () => {
-				window.location.href = "./info/interclasse.html";
-			});
-			
-			//Provas
-			var provas = document.querySelector(".provas");
-			provas.addEventListener("click", () => {
-				window.location.href = "./info/provas.html";
-			});
-			
-			//Horarios
-			var horarios = document.querySelector(".horarios");
-			horarios.addEventListener("click", () => {
-				window.location.href = "./info/horarios.html";
-			});
 
-                        var video = document.getElementById("meuVideo");
+			function comunicados() {
+				window.location.href = "../comunicados/";
+			}
 
-                        video.addEventListener("ended", function() {
-                        video.currentTime = 0; // Reinicia o vídeo para o início
-                        video.play(); // Inicia novamente
-                        });
-			
+			function sobre() {
+				window.location.href = "../sobre/";
+			}
+
+			function contato() {
+				window.location.href = "tel:1633244623";
+			}
+
+			function noticias() {
+				window.location.href = "../noticias/";
+			}
+
+			function reload() {
+				window.location.reload();
+			}
+
 		</script>
 
 	<!-- BANCO DE DADOS FIREBASE -->
