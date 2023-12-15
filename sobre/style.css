@@ -341,7 +341,7 @@
     }
 
     .content section {
-        width: 85%;
+        width: 90%;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -404,26 +404,26 @@
         color: #000;
         border-collapse: collapse;
         margin-bottom: 25px;
-        width: 95%;
+        width: 100%;
     }
     
     .tabela-sobre tr {
-        border: 2px solid var(--one);
+        border: 2px solid var(--two);
         padding: 5px;
     }
     
     .tabela-sobre th {
         padding: 10px;
-        border: 2px solid var(--one);
+        border: 2px solid var(--two);
         font-size: 14.5px;
         font-weight: 700;
-        background-color: var(--two);
+        background-color: var(--one);
         color: var(--white);
     }
     
     .tabela-sobre td {
         padding: 10px;
-        border: 2px solid var(--one);
+        border: 2px solid var(--two);
         font-size: 14px;
         font-weight: 600;
         color: var(--one);
@@ -481,7 +481,7 @@
 
     .sobre article .governo h1 {
         color: white;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 500;
         display: block;
         margin: 20px 0px 8px 0px;
@@ -490,7 +490,7 @@
 
     .sobre article .governo p {
         color: gray;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         width: 90%;
         margin-bottom: 8px;

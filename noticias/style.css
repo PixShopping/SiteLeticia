@@ -260,7 +260,7 @@
     }
 
     .content section {
-        width: 85%;
+        width: 90%;
         height: auto;
         display: flex;
         flex-direction: column;
