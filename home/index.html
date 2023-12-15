@@ -306,7 +306,8 @@
 					</section>
 				`;
 				divCanvas.style.display = "none";
-				const apiKey = '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';
+				await pegarAPIKEY();
+				const apiKey = localStorage.getItem('key');
 				const ano = localStorage.getItem('anoLetivo');
 				const materia = localStorage.getItem('materia');
 				const h1simulado = document.getElementById('h1simulado');
@@ -359,6 +360,21 @@
 				paginaNormal();
 			}
 
+			async function pegarAPIKEY() {
+				try {
+					await db.collection(ANO)
+					.doc('restrito')
+					.collection('apikey')
+					.onSnapshot((data) => {
+						data.docs.map((val) => {
+							const key = val.data().key;
+							localStorage.setItem('key', key);
+						});
+					});
+				} catch {
+					console.log('erro')
+				}
+			}
 			
 		</script>
 
