@@ -1,375 +1,406 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="https://escola-leticia.netlify.app/imagem/icon.png" type="x-icon">
-		<meta name="author" content="Escola Letícia">
-		<meta property="og:site_name" content="Escola Letícia">
-		<meta property="og:url" content="/">
-		<meta property="og:title" content="Escola Letícia">
-	  
-		<title>Escola Letícia</title>
+		<link rel="icon" href="https://escola-leticia.netlify.app/src/img/icon.png" type="x-icon">
+		<link rel="stylesheet" href="./style.css">
+		<title>Escola Letícia | Home </title>
 		
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@900&display=swap');
         	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
         </style>
-
-		<style scoped>
-
-			:root{ /* #1b204f */  /* 1956ac */
-			--corPrincipal:  #091930; /* Azul Escuro: */
-			--corSecundaria: #163259; /*Azul Medio */
-			--corTerceira: #060427 ; /*Azul Normal*/
-			--corQuarta: #5089D8; /* Azul Claro*/
-			--text: black; /* Texto */
-			--textShadow: 2.5px 2.5px 5px gray; /* Texto Shadow */
-			--destaque: #d94241; /* Vermelho */
-			--fontNegrito: 'Ysabeau', sans-serif;
-            }
-			
-			* {
-                padding: 0;
-                margin: 0;
-                box-sizing: border-box;
-                text-decoration: none;
-            }
-			
-			body {
-                font-family: 'Montserrat', sans-serif;
-                background-color: white;
-                color: white;
-                user-select: none;
-            }
-             
-            .navbar{
-            width: 100vw;
-            height: 120px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            z-index: 10;
-            }
-            
-            .navbar-right{
-            width: 20%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            z-index: 10;
-            background: var(--corSecundaria);
-            position: relative;
-            }
-            
-            .navbar-right ion-icon{
-            position: absolute;
-            right: 35;
-            top: 35;
-            width: 60px;
-            height: 60px;
-            color: white;
-            cursor: pointer;
-            }
-            
-            #abrirMenu{
-            display: block;
-            }
-            
-            #fecharMenu{
-            display: none;
-            }
-            
-            .navbar-left{
-            width: 90%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            z-index: 10;
-            background: var(--corSecundaria);
-            }
-            
-            .navbar-left img{
-            width: 170px;
-            height: 170px;
-            margin-bottom: 20px;
-            }
-            
-            /* --- Container --- */
-            
-            .container{
-            margin-top: 10px;
-            margin-left: 1vw;
-            width: 98vw;
-            border: 2px solid var(--corSecundaria);
-            position: relative;
-            padding-bottom: 20px;
-            }
-            
-            .container-titulo{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-color: var(--corSecundaria);
-            display: flex;
-            align-items: center;
-            }
-            
-            .container-titulo h1{
-            font-size: 18px;
-            color: whtie;
-            margin-left: 10px;
-            }
-            
-            .content{
-            position: relative;
-            top: 10;
-            left: 50%;
-            transform: translate(-50%, -0%);
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--corTerceira);
-            padding-bottom: 15px;
-            }
-            
-            .content h1{
-            margin-top: 30px;
-            margin-bottom: 30px;
-            font-size: 26px;
-            }
-            
-            .content-text{
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            }
-            
-            .content-text p{
-            font-size: 17px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 1px black;
-            }
-            
-            .content-text a{
-            color: var(--corQuarta);
-            font-size: 17px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 1px black;
-            }
-            
-            .content-text button{
-            width: 110px;
-            height: 29px;
-            border: none;
-            border-radius: 2px;
-            background: var(--corQuarta);
-            color: white;
-            box-shadow: 1.5px 2px 1px var(--corQuarta);
-            cursor: pointer;
-            transition: all .2s ease-in;
-            }
-            
-            .content-text button:hover{
-            color: white;
-            text-shadow: 0 0 10px white;
-            background-color: #000000;
-            box-shadow: 1.5px 2px 1px black;
-            }
-            
-            /* Navgation em baixo */
-            
-            .navgation{
-            margin: 1vw;
-            width: 98vw;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            }
-             
-            .navgation-pagins{
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            width: 100%;
-            height: 50%;
-            }
-            
-            .navgation-pagins a{
-            padding: 10px;
-            color: var(--corQuarta);
-            font-size: 17px;
-            text-shadow: 0 0 1px black;
-            }
-            
-            .navgation-pagins a:hover{
-            transition: all .3s ease-in;
-            color: var(--corTerceira);
-            }
-            
-            .navgation-creditos{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: center;
-            width: 100%;
-            height: 50%;
-            }
-            
-            .navgation-creditos p{
-            color: black;
-            text-shadow: 0 0 1px black;
-            font-size: 16px;
-            }
-            
-            /* MenuPagin */
-            
-            .menuPagin{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 110px;
-            background-color: var(--corSecundaria);
-            color: black;
-            z-index: 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            }
-            
-            .menuPagin a{
-            color: white;
-            font-size: 17px;
-            padding: 12px;
-            }
-            
-            .menuPagin a:hover{
-            color: var(--corQuarta);
-            transition: all .2s ease-in;
-            }
-
-		/* Logo link */
-		.navbar-left img {
-		  cursor: pointer;
-		}
-            																
-		</style>
 		
 		<body>
 			
-			<nav class="navbar">
-				
-				<nav class="navbar-left">
-					<img onclick="home()" src="./imagem/logo.png"/>
-				</nav>
-				
-				<nav class="navbar-right">
-						<ion-icon id="abrirMenu" name="menu-outline"></ion-icon>
-						<ion-icon id="fecharMenu" name="close-outline"></ion-icon>
-				</nav>
-				
-		
-			</nav>
+			<!-- NAVIGATION -->
+			<header class="navigation">
 			
-			 <!-- MenuPagin -->
+				<article class="navigation-content">
 				
-				<div class="menuPagin">
-					<div class="menuPagin-pagins">
-						<a href="./home.html">Home</a>
-						<a href="./sobre.html">Sobre</a>
-						<a href="tel:5516998877665">Contato</a>
-					</div>
+					<section class="navigation-top">
+
+						<img src="./src/img/logo.png">
+	
+						<ul class="navigation-links">
+	
+							<li>
+								<a href="./home/">Home</a>
+							</li>
+							<li>
+								<a href="./comunicados/">Comunicados</a>
+							</li>
+							<!--<li>
+								<a href="./noticias/">Notícias</a>
+							</li>-->
+							<li>
+								<a href="./sobre/">Sobre</a>
+							</li>
+							<li>
+								<a href="tel:1633244623">Contato</a>
+							</li>
+	
+						</ul>
+
+						<ion-icon onclick="abrirMenu()" id="iconAbrirMenu" name="menu"></ion-icon>
+						<ion-icon onclick="fecharMenu()" id="iconFecharMenu" name="close"></ion-icon>
+	
+					</section>
+					
+					<section class="navigation-bottom">
+	
+						<div class="barra-de-pesquisa">
+							<input placeholder="Pesquisar" id="pesquisa" type="text">
+							<ion-icon onclick="chatGPT()" name="search"></ion-icon>
+						</div>
+						
+					</section>
+
+				</article>
+				
+				
+			</header>
+			
+			<div onclick="fecharMenu()" class="fosco"></div>
+
+			<nav class="menu-mobile">
+
+				<div class="menu-mobile-logo">
+					<img src="./src/img/logo.png">
 				</div>
+
+				<ul class="menu-mobile-links">
+					
+					<li onclick="home()" class="atual">
+						<ion-icon name="home"></ion-icon>
+						<p>Home</p>
+					</li>
+					<li onclick="comunicados()">
+						<ion-icon name="mail"></ion-icon>
+						<p>Comunicados</p>
+					</li>
+					<li onclick="sobre()">
+						<ion-icon name="person"></ion-icon>
+						<p>Sobre</p>
+					</li>
+					<li onclick="contato()">
+						<ion-icon name="call"></ion-icon>
+						<p>Contato</p>
+					</li>
+
+				</ul>
+
+			</nav>
 			
 			<main class="container">
 				
-				<div class="container-titulo">
-					<h1>Bem Vindo ao Site Letícia</h1>
-				</div>
-				
-				<div class="content">
+				<article class="content">
+
+					<section class="noticias">
+
+						<div class="titulo">
+							<h1>Bem-Vindo ao Site</h1>
+						</div>
+
+						<article>
+
+							<div>
+								<div class="column">
+									<h1>O Site Letícia foi criado para divulgação de notícias escolares e publicações importantes, como: Comunicados,  Horários, etc.. </h1>
 					
-					<h1> Bem Vindo ao Letícia </h1>
-					
-					<div class="content-text">
-					<p>O website Letícia foi criado para divulgação de notícias escolares e publicações importantes (Datas,  Horários, etc...)</p>
-					
-					<p>O site Letícia possui:
-					<br>• Horários de aulas e Reuniões.
-					<br>• Datas de provas externas e interna.
-					<br>• Novidades da Escola e muito mais...</p>
-					
-					
-					<p>Para <a href="./home/">Entrar</a>, Clique no botão abaixo</p>
-					
-					<button onclick="home()">Entrar no Site</button>
-					
-					</div>
-					
-					
-				</div>
-				
-			</main>
-			
-			<main class="navgation">
-				
-				<div class="navgation-pagins">
-					<a href="./home/">Home</a>
-					<a href="./sobre/">Sobre</a>
-					<a href="tel:1633244623">Contato</a>
-				</div>
-				
-				<div class="navgation-creditos">
-					<p>9°A Production
-					<br>Letícia © 2023</p>
-				</div>
+                                    <p>O site Letícia possui:
+                                    <br>• Horários de aulas e Reuniões.
+                                    <br>• Datas de provas externas e interna.
+                                    <br>• Novidades da Escola e muito mais...</p>
+									
+									<button onclick="home()">Ir para o início</button>
+								</div>
+							</div>
+						
+						</article>
+
+					</section>
+	
+
+				</article>
 				
 			</main>
 			
 		</body>
 
-		<!---- JavaScript ---->
-
 		<script>
+
+                // Area de avisos pelo JavaScript:
+		var agora = new Date();
+		// Designer dos avisos
+		const avisoAraraquara = document.getElementById('araraquara');
+		const avisos = document.querySelector('.aviso');
 		
-		function home(){
-		    window.location.href = "./home/";
-		}	
-			
-		// MENU
-		var abrirMenu = document.getElementById("abrirMenu");
-		var fecharMenu = document.getElementById("fecharMenu");
-		var container = document.querySelector(".container");
-		var menuPagin = document.querySelector(".menuPagin");
-		abrirMenu.addEventListener("click", openMenu);
-		fecharMenu.addEventListener("click", closeMenu);
-			
-			function openMenu(){
-			menuPagin.style.transition = "top .2s ease-in";
-			menuPagin.style.top = "105";
-			container.style.transition = "margin-top .2s ease-in";
-			container.style.marginTop = "105px";
-			abrirMenu.style.display = "none";
-			fecharMenu.style.display = "block";
+		// Aniversario de Araraquara
+		var aniversario = new Date(agora.getFullYear(),  7, 22, 0, 0, 0);
+		
+		if (agora.getTime() >=  aniversario.getTime()) {
+			if (agora.getTime() <= aniversario.getTime() + 24 * 60 * 60 * 1000) {
+				avisoAraraquara.style.display = "flex";
+				setTimeout( () => {
+					avisoAraraquara.style.opacity = "100%";
+				}, 200);
 			}
-			
-			function closeMenu(){menuPagin.style.top = "0";
-			container.style.marginTop = "10px";
-			fecharMenu.style.display = "none";
-			abrirMenu.style.display = "block";
+		}
+
+		function closeAviso() {
+			avisos.style.opacity = "0%";
+			setTimeout( () => {
+				avisos.style.display = "none";
+			}, 300);
+		}
+
+			function abrirMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "none";
+				iconFechar.style.display = "flex";
+
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "flex";
+				menu.style.display = "flex";
+				document.body.style.overflowY = "hidden";
 			}
-			
+
+			function fecharMenu() {
+				const iconAbrir = document.getElementById('iconAbrirMenu');
+				const iconFechar = document.getElementById('iconFecharMenu');
+				iconAbrir.style.display = "flex";
+				iconFechar.style.display = "none";
+				const fosco = document.querySelector('.fosco');
+				const menu = document.querySelector('.menu-mobile');
+				fosco.style.display = "none";
+				menu.style.display = "none";
+				document.body.style.overflowY = "auto";
+			}
+
+			function home() {
+				window.location.href = "./home/";
+			}
+
+			function comunicados() {
+				window.location.href = "./comunicados/";
+			}
+
+			function sobre() {
+				window.location.href = "./sobre/";
+			}
+
+			function contato() {
+				window.location.href = "tel:1633244623";
+			}
+
+			function noticias() {
+				window.location.href = "./noticias/";
+			}
+
+			function reload() {
+				window.location.reload();
+			}
+
+			function selecionarMateria(materia) {
+				localStorage.setItem('materia', materia);
+				const divMateria = document.querySelector('.materia');
+				const divAnos = document.querySelector('.anos');
+				divMateria.style.display = "none";
+				divAnos.style.display = "flex";
+			}
+
+			function selecionarAno(ano) {
+				localStorage.setItem('anoLetivo', ano);
+				const divQuestoes = document.querySelector('.questoes');
+				const divAnos = document.querySelector('.anos');
+				divAnos.style.display = "none";
+				divQuestoes.style.display = "flex";	
+				mostrarQuestao();
+			}
+
+			function verificarResposta() {
+				const div = document.querySelector('.questoes');
+				const divCanvas = document.getElementById('my-canvas');
+				const input = document.querySelector('.questoes input[value="certa"]');
+				if (!input) {
+					const input = document.querySelector('.questoes input[value="Certa"]');
+				}
+				if (input.checked) {
+					div.innerHTML = `
+						<h1 style="text-align: center;">Você Acertou, Parabens!</h1>
+						<button onclick="mostrarQuestao()">Proximo</button>
+					`;
+					divCanvas.style.display = 'flex';
+				} else {
+					div.innerHTML = `
+						<h1 style="text-align: center;">Você Errou, Tente Novamente!</h1>
+						<button class='segundo-btn' onclick="mostrarQuestao()">Tentar Novamente</button>
+						<button onclick="reload()">Voltar</button>
+					`;
+				}
+			}
+
+			function paginaCarregando() {
+				document.body.style.cursor = "wait";
+			}
+
+			function paginaNormal() {
+				document.body.style.cursor = "default";
+			}
+
+			async function mostrarQuestao() {
+				paginaCarregando();
+				const div = document.querySelector('.questoes');
+				const divCanvas = document.getElementById('my-canvas');
+				div.innerHTML = `
+					<section class="carregando">
+						<span></span>
+						<h2>Carregando..</h2>
+					</section>
+				`;
+				divCanvas.style.display = "none";
+				await pegarAPIKEY();
+				const apiKey = localStorage.getItem('key');
+				const ano = localStorage.getItem('anoLetivo');
+				const materia = localStorage.getItem('materia');
+				const h1simulado = document.getElementById('h1simulado');
+				h1simulado.textContent = `Simulados de ${materia} do ${ano}`;
+				const mensagem = `
+					Use como exemplo: '
+						<h1>1+1 é</h1>
+						
+						coloque 5 alternativas
+						
+						exemplo de alternativa ERRADA:
+						<div>
+							<input type="radio" name="alternativa" value="errada">
+							<label>3</label>
+						</div>
+
+						exemplo de alternativa CERTA:
+						<div>
+							<input type="radio" name="alternativa" value="certa">
+							<label>2</label>
+						</div>
+					'
+					Dessa forma, me de um questão de ${materia} de multipla escolha, com situações problemas, com nivel de vestibular para ${ano}, 
+					seguindo o modelo de exemplo; só use h1, div, input e label, e certifique-se de a alternativa correta tem o value 'certa' por favor, e só de questoes de texto, sem figura.. só de a questão, não fale nada alem dela. Obrigado
+				`;
+
+				const respostaElemento = document.querySelector('.questoes');
+
+				const resposta = await fetch('https://api.openai.com/v1/chat/completions', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${apiKey}`
+					},
+					body: JSON.stringify({
+						model: 'gpt-3.5-turbo',
+						messages: [{ role: 'user', content: `${mensagem}` }],
+						max_tokens: 500,
+					})
+				});
+
+
+				const dadosResposta = await resposta.json();
+
+				// Exibir a resposta gerada
+				respostaElemento.innerHTML = `
+					${dadosResposta.choices[0].message.content.trim()}
+					<button onclick="verificarResposta()">Verificar Resposta</button>
+				`;
+				paginaNormal();
+			}
+
+			async function pegarAPIKEY() {
+				try {
+					await db.collection(ANO)
+					.doc('restrito')
+					.collection('apikey')
+					.onSnapshot((data) => {
+						data.docs.map((val) => {
+							const key = val.data().key;
+							localStorage.setItem('key', key);
+						});
+					});
+				} catch {
+					console.log('erro')
+				}
+			}
 			
 		</script>
-	
-			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-	</html>
+	<!-- BANCO DE DADOS FIREBASE -->
+	
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-storage-compat.js"></script>
+	
+	<script>
+
+		// Pegar o ANO LETICO ATUAL
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        localStorage.setItem('ano', anoAtual);
+        const ANO = localStorage.getItem('ano');
+
+		const firebaseConfig = {
+            apiKey: "AIzaSyC6aMNEjsgeGK-rw4hzLUximzh1YQ6OEII",
+            authDomain: "banco-de-dados-32cac.firebaseapp.com",
+            projectId: "banco-de-dados-32cac",
+            storageBucket: "banco-de-dados-32cac.appspot.com",
+            messagingSenderId: "1001209948956",
+            appId: "1:1001209948956:web:e28198053d747377aee8d9"
+        };
+
+		// Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+		const storage = firebase.storage();
+		
+
+		// LENDO TODAS AS NOTICIAS
+		const div = document.querySelector('.comunicados');
+		
+
+	</script>
+	
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<!--
+		API DE QUESTÕES
+
+		// URL base da API
+		const apiUrl = "https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple";
+
+		// Parâmetros da sua consulta (exemplo: 10 perguntas de categoria geral)
+		const params = {
+			amount: 10,
+			category: 9, // Categoria geral
+			type: "multiple", // Perguntas de múltipla escolha
+		};
+
+		// Construir a URL adicionando parâmetros
+		const url = new URL(apiUrl);
+		//url.search = new URLSearchParams(params).toString();
+
+		// Fazer a chamada à API usando fetch
+		const resposta = await fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			// Processar os dados recebidos (as perguntas estão em data.results)
+			console.log(data.results);
+		})
+		.catch(error => {
+			console.error("Erro ao fazer a chamada à API:", error);
+		});
+
+	-->
+
+</html>
