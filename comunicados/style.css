@@ -1,3 +1,6 @@
+/* FONTE POPPINS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap');
+
 :root {
     /* Cores do aplicativo */
     --one: #002242;
@@ -7,6 +10,7 @@
     --five: #6fadd2;
     --six: #9ecae3;
     --white: white;
+    --poppins: 'Poppins', sans-serif;
     --font: "Ubuntu", sans-serif;
     --green: rgb(20, 218, 20);
     --red: rgb(240, 36, 36);
@@ -389,23 +393,61 @@
     }
 
     .comunicados ul {
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         height: auto;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
+        gap: 25px;
         margin: 30px 0px 0px 0px;
     }
 
-    .comunicados ul img {
-        width: 85%;
-        max-width: 325px;
+    .comunicados ul .comunicado {
+        width: 100%;
+        max-width: 100%;
+        height: max-content;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #002242;
+        color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .comunicados ul .comunicado img {
+        width: 100%;
         height: auto;
         margin: 5px;
-        box-shadow: 0px 0px 15px #ccc;
-        border-radius: 15px;
+    }
+
+    .comunicados ul .comunicado .column {
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 15px auto 15px auto;
+        font-family: var(--poppins);
+    }
+
+    .comunicados ul .comunicado .column h1 {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0px;
+        text-transform: capitalize;
+        margin: 0px 0px 10px 0px;
+        width: 100%;
+        text-align: start;
+    }
+
+    .comunicados ul .comunicado .column p {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        text-align: justify;
+        white-space: pre-wrap;
     }
 
 
@@ -419,6 +461,8 @@
         align-items: center;
         color: var(--one);
         margin: 20px 0px;
+        background: transparent;
+        box-shadow: 0px 0px 10px transparent;
     }
 
     .carregando span {
