@@ -239,6 +239,7 @@
 		div.innerHTML = '';
 		data.docs.map((val) => {
 			const titulo = val.data().titulo;
+			const mensagem = val.data().mensagem;
 			const imagem = val.data().imagem;
 			const storageRef = storage.ref(`${ANO}/comunicados/${imagem}`);
 			storageRef.getDownloadURL().then( function (urlImagem) {	
