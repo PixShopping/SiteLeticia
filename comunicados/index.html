@@ -235,7 +235,6 @@
 	db.collection(ANO)
 	.doc('comunicados')
 	.collection('comunicados')
-	.orderBy("data")
 	.onSnapshot((data) => {
 		div.innerHTML = '';
 		data.docs.map((val) => {
