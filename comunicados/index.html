@@ -105,12 +105,14 @@
 
 						<ul>
 		
-							<section class="carregando">
-								<span></span>
-								<h2>Carregando..</h2>
-							</section>
-		
+                            <section class="carregando">
+                                <span></span>
+                                <h2>Carregando..</h2>
+                            </section>
+
 						</ul>
+
+                        
 
 					</section>
 
@@ -224,9 +226,9 @@
 	  appId: "1:279714243746:web:4e3ba3a98987f5cf7e63fb"
 	};
 
-		// Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 	const storage = firebase.storage();
 		
 
@@ -237,20 +239,45 @@
 	.collection('comunicados')
 	.onSnapshot((data) => {
 		div.innerHTML = '';
-		data.docs.map((val) => {
+		data.docs.map( async (val) => {
 			const titulo = val.data().titulo;
 			const mensagem = val.data().mensagem;
 			const imagem = val.data().imagem;
-			const storageRef = storage.ref(`${ANO}/comunicados/${imagem}`);
-			storageRef.getDownloadURL().then( function (urlImagem) {	
-				div.innerHTML += `
-					<div class="comunicado">
-						<img src="${urlImagem}" alt="${imagem}">
-						<h1>${titulo}</h1>
-						<p>${mensagem}</p>
-					</div>
-				`;
-			});
+			if (imagem) {
+                const storageRef = await storage.ref(`${ANO}/comunicados/${imagem}`);
+                if (storageRef) {
+                    storageRef.getDownloadURL().then( function (urlImagem) {	
+                        div.innerHTML += `
+                            <div class="comunicado">
+                                <img src="${urlImagem}" alt="${imagem}">
+                                <div class="column">
+                                    <h1>${titulo}</h1>
+                                    <p>${mensagem}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    div.innerHTML += `
+                        <div class="comunicado">
+                            <div class="column">
+                                <h1>${titulo}</h1>
+                                <p>${mensagem}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } else {
+                div.innerHTML += `
+                    <div class="comunicado">
+                        <div class="column">
+                            <h1>${titulo}</h1>
+                            <p>${mensagem}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
 			
 		});
 	});
